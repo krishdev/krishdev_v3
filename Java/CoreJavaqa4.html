@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>
+Difference between process and thread
+</b></div>
+<div class="answer">
+Process - heavy weight, a program or an application. inter process communication is costly
+Thread - a small task in the process, light weight, inter thread communication is easy
+</div>
+<div class="question">
+<b>
+Difference between user thread and deomon thread
+</b></div>
+<div class="answer">
+user thread - jvm shuts down only after all user threads are executed <br/>
+deomon thread - jvm shuts down even if its running. it runs in the background. .setDeamon(true) will create a deamon thread
+
+</div>
+
+<div class="question">
+<b>
+Difference between synchronized method and synchronized block
+</b></div>
+<div class="answer">
+synchronized method -  gets implicit lock on that object
+synchronized block - can get lock on any object. This is advantageous.
+
+</div>
+
+<div class="question">
+<b>
+Difference between wait, sleep and yield
+</b></div>
+<div class="answer">
+sleep -> thread goes to sleep state, does not release lock on monitor, can go to runnable state based on priority after the sleep time <br/>
+wait -> thread goes to suspended state, releases lock. can go to runnable state only when a notify() is called on that object or notifyAll is called by another object<br/>
+yield -> yields scheduler time to another thread, releases lock
+</div>
+
+<div class="question">
+<b>
+Difference between notify and notifyAll
+</b></div>
+<div class="answer">
+notify -> wakes up an arbitrary thread waiting on that object
+notifyAll -> wakes up all the threads waiting on that object
+</div>
+
+<div class="question">
+<b>
+Difference between submit and execute()
+</b></div>
+<div class="answer">
+Both methods are used to submit tasks to thread pool <br/>
+submit -> implemented in Executor interface, returns future object<br/>
+execute -> implemented in Executor Service interface, does not return anything
+
+</div>
+</body>
+</html>

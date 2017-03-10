@@ -1,0 +1,40 @@
+<div id="section5" class="container-fluid" >
+   <div style="margin-top:3%">
+      <div align="center"><span class="projectHeader">Academics</span></div>
+      <div>
+         <div class="row-fluid">
+            <div class="col-md-7">
+               <h2>{{myEducation.Name}}</h2>
+               <div>
+                  <h3> Computer Science </h3>
+               </div>
+               <div>
+                  <table class="table">
+                     <tr ng-repeat="edu in myEducation.CourseWork">
+                        <td class="tdLeft">
+                           <img src="images/checkmark.png" iconImgText atl="1"/>
+                           <span ng-bind="edu.courseName"></span>
+                        </td>
+                        <td>
+                           <span ng-bind="edu.courseDetails"></span>
+                        </td>
+                     </tr>
+                  </table>
+               </div>
+            </div>
+            <div class="col-md-5">
+               <ul style="list-style:none;">
+                  <li ng-repeat="skills in mySkills.WebTechnologies">
+                     <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{skills.rate}}" aria-valuemin="0" aria-valuemax="100" ng-style="{width:skills.rate}">
+                           <span ng-bind="skills.techName"></span>
+                        </div>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+            <div class="clr"></div>
+         </div>
+      </div>
+   </div>
+</div>

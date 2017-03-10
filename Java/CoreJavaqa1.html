@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>
+What is difference between JDK,JRE and JVM?
+</b></div>
+<div class="answer">
+
+JVM is an acronym for Java Virtual Machine, it is an abstract machine which provides the runtime environment in which java bytecode can be executed.
+JVMs are available for many hardware and software platforms (so JVM is plateform dependent).<br/>
+JRE stands for Java Runtime Environment. It is the implementation of JVM and physically exists.<br/>
+JDK is an acronym for Java Development Kit. It physically exists. It contains JRE + development tools.
+</div>
+<div class="question">
+<b>
+How many types of memory areas are allocated by JVM?
+</b></div>
+<div class="answer">
+
+Class(Method) Area <br/>
+    Heap - Objects and instance variables are stored in heap<br/>
+    Stack - local variables are stored in stack. Each thread has its own stack<br/>
+    Program Counter Register - address of the next instruction to be executed in stored in PC Register<br/>
+    Native Method Stack<br/>
+</div>
+<div class="question">
+<b>
+What gives Java its 'write once and run anywhere' nature?
+</b></div>
+<div class="answer">
+
+The bytecode. Java is compiled to be a byte code which is the intermediate language between source code and machine code. This byte code is not platorm specific and hence can be fed to any platform.
+</div>
+<div class="question">
+<b>
+What is classloader?
+</b></div>
+<div class="answer">
+
+The classloader is a subsystem of JVM that is used to load classes and interfaces.There are many types of classloaders e.g. Bootstrap classloader, Extension classloader, System classloader, Plugin classloader etc.
+</div>
+
+<div class="question">
+<b>
+If I do not provide any arguments on the command line, then the String array of Main method will be empty or null?
+</b></div>
+<div class="answer">
+
+Its empty, not null
+</div>
+
+<div class="question">
+<b>
+What is the default value of the local variables?
+</b></div>
+<div class="answer">
+
+The local variables are not initialized to any default value, neither primitives nor object references.
+</div>
+<div class="question">
+<b>
+Few facts about constructor
+</b></div>
+<div class="answer">
+
+It does not explicitly return any value, but implicitly returns the object instance. <br/>
+Cannot be final or is not inherited
+</div>
+
+<div class="question">
+<b>
+Few facts about static variables
+</b></div>
+<div class="answer">
+
+Created in class area at the time of class loading, static blocks are executed before the main method. We can execute a program with main method using a static block
+</div>
+<div class="question">
+<b> What is marker interface?</b>
+<div class="answer">
+An interface that have no data member and method is known as a marker interface.For example Serializable,Cloneable etc.
+</div>
+</body>
+</html>

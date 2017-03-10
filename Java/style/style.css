@@ -1,0 +1,73 @@
+/* CSS Document */
+
+/*PAGE LAYOUT*/
+body {
+	padding:10px;
+	margin-top: 20px;
+	margin-right: 20px;
+	margin-bottom: 20px;	
+	background:#F2F2F2;
+	
+}
+
+#topheader{float:left;width:100%;height:40px;background:white;margin-bottom:10px;margin-left:10px}
+#toppanel{float:left;width:100%;height:30px;background:white;margin-left:10px}
+#content{height:1000px;width:100%;float:left;}
+#content iframe {top: 0;bottom: 0;left: 0;right: 0;height:100%;width:100%;}
+#framecontent iframe {top: 0;bottom: 0;left: 200Px;right: 0;height:700px;padding:10px;width:100%;border:3px solid white;}
+
+#leftpanel{float:left; height:720px;width:170px;background: #F2F3F3;border:3px solid white;}
+
+/*TEXT STYLES*/
+.bodytext {
+	font: 0.9em Tahoma, sans-serif;
+	color: black;
+	align:left;	
+	float:left;
+	width:100%;
+    }
+
+    .titletext {
+	font: 0.7em Tahoma, sans-serif;
+	font-size:15px;
+	font-weight:bold;
+	color:grey;
+	\*margin-right:20%;*\
+	
+}
+
+.paneltext {
+	font: 0.9em Tahoma, sans-serif;
+	color: blue;
+    \*margin-right:36%;*\
+}
+.question{
+   font-weight:bold;
+   font: 0.9em Tahoma, sans-serif;   
+   margin:0px;
+   margin-bottom:0px;
+}
+.answer{
+font: 0.8em Tahoma, sans-serif;   
+   margin:0px;
+   background:white;
+}
+
+ul.menu li a:link {text-decoration:none;color:black;background-color:white}
+ul.menu li a:visited {text-decoration:none;color:black;background-color:transparent}
+ul.menu li a:hover {text-decoration:none;color:blue;background-color:#FFF; border-left:1px dotted #BBBBBB;border-right:1px dotted #bbbbbb; font-size:100%}
+ul.menu li a:active {text-decoration:none;color:blue;background-color:white;}
+
+ul
+{
+    list-style-type: none;
+}
+
+ul.menu li a {
+   display:block;
+   padding:3px 0px;
+   border-bottom:1px dotted #bbbbbb;
+   border-top:1px dotted #bbbbbb;
+   margin-right:30Px;
+}
+   

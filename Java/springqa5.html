@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question"><b>
+What are the exceptions thrown by the Spring DAO classes ?</div></b>
+<div class="answer"><p>
+Spring DAO classes throw exceptions which are subclasses of DataAccessException(org.springframework.dao.DataAccessException).Spring provides a convenient translation from technology-specific exceptions like SQLException to its own exception class hierarchy with the DataAccessException as the root exception. These exceptions wrap the original exception.
+</div></p>
+<div class="question"><b>What is SQLExceptionTranslator ?</div></b>
+<div class="answer"><p>
+SQLExceptionTranslator, is an interface to be implemented by classes that can translate between SQLExceptions and Spring's own data-access-strategy-agnostic org.springframework.dao.DataAccessException.</div></p>
+
+<div class="question"><b>What is Spring's JdbcTemplate ?</div></b>
+<div class="answer"><p>
+With use of Spring JDBC framework the burden of resource management and error handling is reduced a lot. So it leaves developers to write the statements and queries to get the data to and from the database.
+<br/> JdbcTemplate template = new JdbcTemplate(myDataSource);</div></p>
+<div class="question"><b>What is PreparedStatementCreator ?</div></b>
+<div class="answer"><p>
+Is one of the most common used interfaces for writing data to database.
+<br/>    Has one method – createPreparedStatement(Connection)
+<br/>    Responsible for creating a PreparedStatement.
+<br/>    Does not need to handle SQLExceptions.
+</div></p>
+<div class="question"><b> What is RowCallbackHandler ? </div></b>
+<div class="answer"><p>
+   The RowCallbackHandler interface extracts values from each row of a ResultSet.
+ <br/> Has one method – processRow(ResultSet)    Called for each row in ResultSet.
+ </div></p>
+
+ </body>
+ </html>

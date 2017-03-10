@@ -1,0 +1,64 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>What are Spring beans?</b>
+</div>
+<div class="answer">
+<p>A bean is an object that is instantiated, assembled, and managed by a Spring IoC container. These beans are created with the configuration metadata that you supply to the container, for example, in the form of XML &lt;bean/&gt; definitions.</p>
+</div>
+<div class="question">
+<b>What does a bean definition contain?</b>
+</div>
+<div class="answer">
+<p>How to create a bean, Bean's lifecycle details,bean scopes etc</p>
+</div>
+<div class="question">
+<b>How do you provide configuration metadata to the Spring Container?</b>
+</div>
+<div class="answer">
+<p>XML based configuration file.,Annotation-based configuration,Java-based configuration</p>
+</ul>
+</div>
+<div class="question">
+<b>How do add a bean in spring application?</b>
+</div>
+<div class="answer">
+<p>Check the following example:</p>
+<pre class="prettyprint">
+   &lt;bean id="helloWorld" class="com.tutorialspoint.HelloWorld"&gt;
+       &lt;property name="message" value="Hello World!"/&gt;
+   &lt;/bean&gt;
+</pre>
+</div>
+<div class="question">
+<b>Explain Bean lifecycle in Spring framework?</b>
+</div>
+<div class="answer">
+<p></p>
+<ul class="list">
+<li><b>Instantiate</b> - First the spring container finds the bean's definition from the XML file and instantiates the bean.</li>
+<li><b>Populate properties</b> - Using the dependency injection, spring populates all of the properties as specified in the bean definition.</li>
+<li><b>Set Bean Name</b> - If the bean implements BeanNameAware interface, spring passes the  bean's id to setBeanName() method.</li>
+<li><b>Set Bean factory</b> - If Bean implements BeanFactoryAware interface, spring passes the beanfactory to setBeanFactory() method.</li>
+<li><b>Pre Initialization</b> -  Also called postprocess of bean. If there are any bean BeanPostProcessors associated with the bean,  Spring calls postProcesserBeforeInitialization() method.</li>
+<li><b>Initialize beans</b> - If the bean implements IntializingBean,its afterPropertySet() method is called. If the bean has init method declaration, the specified initialization method is called.</li>
+<li><b>Post Initialization</b> -  If there are any BeanPostProcessors associated with the bean, their postProcessAfterInitialization() methods will be called.</li>
+<li><b>Ready to use</b> - Now the bean is ready to use by the application.</li>
+<li><b>Destroy</b> - If the bean implements DisposableBean , it will call the destroy() method .</li>
+</ul>
+</div>
+<div class="question">
+<b>What are inner beans in Spring?</b>
+</div>
+<div class="answer">
+<p>A &lt;bean/&gt; element inside the &lt;property/&gt; or &lt;constructor-arg/&gt; elements defines a so-called inner bean. An inner bean definition does not require a defined id or name; the container ignores these values. It also ignores the scope flag.  Inner beans are always anonymous and they are always scoped as prototypes. </p>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question"><b> What is AOP? </b> </div>
+<div class="answer"><p>
+       Aspect-oriented programming, or AOP, is a programming technique that allows programmers to modularize crosscutting concerns, or behavior that cuts across the typical divisions of responsibility, such as logging and transaction management. The core construct of AOP is the aspect, which encapsulates behaviors affecting multiple classes into reusable modules.</p></div>
+
+<div class="question"><b> How the AOP used in Spring?</b> </div>
+<div class="answer"><p>
+       AOP is used in the Spring Framework: To provide declarative enterprise services, especially as a replacement for EJB declarative services. The most important such service is declarative transaction management, which builds on the Spring Framework's transaction abstraction.To allow users to implement custom aspects, complementing their use of OOP with AOP.</p></div>
+
+<div class="question"><b>What do you mean by Aspect ?</b> </div>
+<div class="answer"><p>
+       A modularization of a concern that cuts across multiple objects. Transaction management is a good example of a crosscutting concern in J2EE applications. In Spring AOP, aspects are implemented using regular classes (the schema-based approach) or regular classes annotated with the @Aspect annotation (@AspectJ style).</p></div>
+
+<div class="question"><b>What do you mean by JointPoint?</b> </div>
+<div class="answer"><p>
+    A point during the execution of a program, such as the execution of a method or the handling of an exception. In Spring AOP, a join point always represents a method execution.</p></div>
+
+<div class="question"><b>What do you mean by Advice?</b> </div>
+ <div class="answer"><p>
+    Action taken by an aspect at a particular join point. Different types of advice include "around," "before" and "after" advice. Many AOP frameworks, including Spring, model an advice as an interceptor, maintaining a chain of interceptors "around" the join point.</p></div>
+
+<div class="question"><b>What are the types of Advice?</b> </div>
+<div class="answer"><p>
+        <b>Before advice:</b> Advice that executes before a join point, but which does not have the ability to prevent execution flow proceeding to the join point (unless it throws an exception).
+    <br/>
+        <b>After returning advice:</b> Advice to be executed after a join point completes normally: for example, if a method returns without throwing an exception.
+    <br/>
+        <b>After throwing advice:</b> Advice to be executed if a method exits by throwing an exception.
+    <br/>
+        <b>After (finally) advice:</b> Advice to be executed regardless of the means by which a join point exits (normal or exceptional return).
+    <br/>
+        <b>Around advice: </b>Advice that surrounds a join point such as a method invocation. This is the most powerful kind of advice. Around advice can perform custom behavior before and after the method invocation. It is also responsible for choosing whether to proceed to the join point or to shortcut the advised method execution by returning its own return value or throwing an exception  </p></div>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>How do you define a bean scope?</b>
+</div>
+<div class="answer">
+<p>while defining a bean in xml file, we can mention the bean scope. bean id="bean id" scope="prototype" or by using @Scope("prototype") annotation. Default scope is singleton</p>
+</div>
+<div class="question">
+<b>What bean scopes does Spring support? Explain them.</b>
+</div>
+<div class="answer">
+<p>The Spring Framework supports following five scopes, three of which are available only if you use a web-aware ApplicationContext.</p>
+<ul class="list">
+<li><p><b>singleton:</b> This scopes the bean definition to a single instance per Spring IoC container.</p></li>
+<li><p><b>prototype:</b> This scopes a single bean definition to have any number of object instances.</p></li>
+<li><p><b>request:</b> This scopes a bean definition to an HTTP request. Only valid in the context of a web-aware Spring ApplicationContext.</p></li>
+<li><p><b>session:</b> This scopes a bean definition to an HTTP session. Only valid in the context of a web-aware Spring ApplicationContext.</p></li>
+<li><p><b>global-session:</b> This scopes a bean definition to a global HTTP session. Only valid in the context of a web-aware Spring ApplicationContext.</p></li>
+</ul>
+</div>
+<div class="question">
+<b>What is default scope of bean in Spring framework?</b>
+</div>
+<div class="answer">
+<p>Singleton</p>
+</div>
+<div class="question">
+<b>Are Singleton beans thread safe in Spring Framework?</b>
+</div>
+<div class="answer">
+<p>No, singleton beans are not thread-safe in Spring framework.</p>
+</div>
+<div class="question"><b>What is Auto wiring?</b></div>
+<div class="answer"><p>
+The Spring container is able to autowire relationships between collaborating beans. This means that it is possible to automatically let Spring resolve collaborators (other beans) for your bean by inspecting the contents of the BeanFactory.
+1	<beans>
+2	 <bean id="bar" class="com.act.Foo" Autowire=”autowire type”/>
+3	</beans>
+</div></P>
+<div class="question"><b>What are different types of Autowiring?</b></div>
+<div class="answer"><p>no, byName,byType,constructor,autodetect</p>
+</div>
+<div class="question"><b>What are the important beans lifecycle methods?</div>
+<div class="answer"><p>There are two important bean lifecycle methods. The first one is setup which is called when the bean is loaded in to the container. The second method is the teardown method which is called when the bean is unloaded from the container.
+ <br/> <beans>
+ <br/> <bean id="bar" class="com.act.Foo" init-method=”fooSetup” destroy=”fooTeardown”/>
+ <br/> </beans></div></p>
+</body>
+</html>

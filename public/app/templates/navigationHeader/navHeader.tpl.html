@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+		  <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>   
+      </button>
+            <a href="#/" class="navbar-brand">
+                 <div class="parent" style="float: left;width: 21px;">
+		    <div class="small kLeft"></div>
+		    <div class="small kTop"></div>
+		    <div id="rotateThis" class="small kBottom"></div>
+		  </div>
+		  <div style="display: inline-block;">
+		<div>Krishna</div><div class="navbar-tag">Front End Developer</div>
+		</div>
+		  </a>
+
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li data-toggle="collapse" data-target="#myNavbar" ng-repeat="nav in navHeader" ng-class="nav.cssClass" ng-click="displayContent(nav.menu)">
+                    <a ng-href="{{nav.href}}" ng-bind="nav.menu"></a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,46 @@
+<div class="container blog-posts">
+
+	<div class="row">
+
+		<!-- Blog Post Content Column -->
+		<div class="col-lg-8">
+
+			<!-- Blog Post -->
+
+			<!-- Title -->
+			<h1>{{post.title}}</h1>
+
+			<!-- Author -->
+			<p class="lead" ng-if="post.author">
+				by <a href="#">{{post.author}}</a>
+			</p>
+
+			<hr>
+
+			<!-- Date/Time -->
+			<p ng-if="post.date"><span class="glyphicon glyphicon-time"></span> {{post.date | date:'yyyy dd, MMMM'}}</p>
+
+			<hr>
+
+			<!-- Preview Image -->
+			<img class="img-responsive" ng-src="{{post.imgSrc}}" alt="">
+
+			<hr>
+
+			<!-- Post Content -->
+			<article ng-bind-html="post.article">
+
+			</article>
+
+			<hr>
+		</div>
+		<div class="col-md-4">
+			<h2>Related Articles</h2>
+			<div class="well" ng-repeat="bg in blogData">
+				<h4><a href="#/?id={{bg.id}}" target="_blank" ng-bind="bg.title"></a></h4>
+				<p ng-bind="bg.intro"></p>
+			</div>
+
+		</div>
+	</div>
+</div>

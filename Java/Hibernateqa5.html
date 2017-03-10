@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>
+What is First level Cache in Hibernate?</b>
+</div>
+<div class="answer">
+<p>
+Also called as session level cache. It is default and mandatory cache. When an object is updated inside a session, hibernate does not update the DB and retains it in the session cache until possible. Only when the session is closed, the object is persisted to DB. <br/>
+When similar select statements are made, hibernate retrieves data for 2nd select from the cache rather than from the DB.<br/>
+Example: <br/>Employee emp1 = session.get(1); <br/>
+Employee emp2 = session.get(1); -> Obtained from session cache<br/>
+session.getTransaction().commit();<br/>
+session.close();<br/>
+Employee emp3 = session.get(1); -> Hibernate looks for this object in first level cache, it'll not be found, so it looks in 2nd level cache, if its not found then hibernate hits DB
+</p></div>
+<div class="question">
+<b>
+What is Second level Cache in Hibernate?</b>
+</div>
+<div class="answer">
+<p>
+Second level Cache is maintained at SessionFactory level and can improve performance by saving few database round trip. second level cache is available to whole application rather than any particular session.
+<br/>From the above example it is evident that 2nd level cache, objects are available across sessions, clusters and applications.
+</p></div>
+<div class="question">
+<b>
+How to configure a Second level Cache in Hibernate?</b>
+</div>
+<div class="answer">
+<p>
+In Hibernate.cfg.xml file configure cache <br/>
+&ltproperty name = "cache.use-secondlevel-cache"&gttrue &lt/property&gt 			<br/>
+&ltproperty name = "cache.provider-class"&gtorg.hibernate....EHCache&lt/property&gt <br/>
+
+Add @Cacheable annotation to entity, @cache(Usage = CacheConcurrencyStrategy.READ_ONLY)
+</p></div>
+<div class="question">
+<b>
+Different concurrent strategies in 2nd level cache</b>
+</div>
+<div class="answer">
+<p>
+Read Only - Only select <br/>
+Read Write - update and fetch - updates cache when data is updated, does not read dirty data<br/>
+Non Strict Read write - reads dirty data ie. data updated in some other place<br/>
+Transactional - cache is transactional level
+</p></div>
+<div class="question">
+<b>
+What is query cache in Hibernate ?</b>
+</div>
+<div class="answer">
+<p>
+QueryCache actually stores result of sql query for future calls. Query cache can be used along with second level cache for improved performance. Hibernate support various open source caching solution to implement Query cache e.g. EhCache.
+<br/>Query.setCacheable(true) option available with Query criteria
+</p></div>
+<div class="question">
+<b>
+How to clear cache ?</b>
+</div>
+<div class="answer">
+<p>
+session.evict(Employee.class) -> Will clear first level cache <br/>
+sessionFactory.evict(Employee.class) -> Will clear second level cache
+</p></div>
+</body>
+</html>

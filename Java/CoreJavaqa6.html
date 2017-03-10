@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>
+What is shallow cloning and deep cloning?
+</b></div>
+<div class="answer">
+Shallow cloning - Just the top layer of the object is copied, no new references are created for dependent objects. Object.clone() defaults to shallow cloning <br/>
+Deep cloning - replicates entrire object structure. creates new reference for dependent objects..
+</div>
+<div class="question">
+<b>
+why cloning?
+</b></div>
+<div class="answer">
+We can clone an object and do modifications and operations on that object without modifying the original object
+</div>
+
+<div class="question">
+<b>
+How to create an immutable class
+</b></div>
+<div class="answer">
+class should be final, all variables private final and can be set only thru' constructor, no setter for any variable. If there are any mutable objects that are referenced, dont provide any method to modify that mutable object or dont share that mutable object's reference
+</div>
+
+<div class="question">
+<b>
+Which classes are immutable in java?
+</b></div>
+<div class="answer">
+All wrapper classes like String,Interger,Boolean,Double,Char are immutable in java
+</div>
+
+<div class="question">
+<b>
+How to remove elements from a list without getting concurrent modification exception
+</b></div>
+<div class="answer">
+Use Iterator to iterate through the list, and use iterator.remove() method to remove any element from the list
+</div>
+</body>
+</html>

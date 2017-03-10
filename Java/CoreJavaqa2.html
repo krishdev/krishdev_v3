@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>
+Is Empty .java file name a valid source file name?
+</b></div>
+<div class="answer">
+
+Yes, save your java file by .java only, compile it by javac .java and run by java yourclassname
+</div>
+<div class="question">
+<b>
+Can you use this() and super() both in a constructor?
+</b></div>
+<div class="answer">
+
+No. Because super() or this() must be the first statement.
+</div>
+<div class="question">
+<b>
+Can we overload main method?
+</b></div>
+<div class="answer">
+Yes, but the main method with public static void main(String[] args) can be only one
+</div>
+<div class="question">
+<b>
+Can abstract class or Interface be final
+</b></div>
+<div class="answer">
+No. Because they always have to be implemented, they cant be final
+</div>
+<div class="question">
+<b>
+Can abstract or interafce method be static?
+</b></div>
+<div class="answer">
+No. because an abstract method will not have implementation and hence there is no point in it being static. And also all interface methods are abstract by default
+</div>
+<div class="question">
+<b>
+Will finally block get executed if an exception is caught and there is a return statement in the catch block?
+</b></div>
+<div class="answer">
+Yes finally block is executed irrespective of the return statement. But it will not be executed if it occurs after a system.exit(0)
+</div>
+<div class="question">
+<b>
+Can a main class be private or protected?
+</b></div>
+<div class="answer">
+No. Compiler throws an error. Main class can only be public or default access modifier
+</div>
+<div class="question">
+<b>
+When can an object reference be cast to an interface reference?
+</b></div>
+<div class="answer">
+An object reference can be cast to an interface reference when the object implements the referenced interface.
+</div>
+<div class="question">
+<b>
+How many objects will be created in the following code?</b><br/>
+    a. String s1="Welcome";  <br/>
+    String s2="Welcome";  <br/>
+    String s3="Welcome"; <br/>
+    b. String s1 =  new String("Welcome");
+</div>
+<div class="answer">
+Only one object "Welcome" will be created in the string literal(constant). b-> 2 objects, one in string literal and other in heap
+</div>
+<div class="question">
+<b>
+Can we call run() method of a thread?</b><br/>
+</div>
+<div class="answer">
+Yes. But it will be called as a normal method. Only way to execute a thread is to start it first
+</div>
+
+
+</body>
+</html>

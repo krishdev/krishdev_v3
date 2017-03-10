@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>
+What are Servlets and their advantages
+</b></div>
+<div class="answer">
+Servlets are server side java components. They receive the request from HTTP, process it and render the response back to the client <br/>
+Advantages of Servers over CGI processes <br/>
+Servlets run within the same address space of the server. So it does not require extra memory <br/>
+In Servlets, each request is a thread. Where as in CGI its a process. Thread performance is much better than process. <br/>
+All features of java available like security, platform independent and oops
+</div>
+<div class="question">
+<b>
+Servlet Life cycle
+</b></div>
+<div class="answer">
+Load - Servlet is loaded when the application begins (can specify using load-on-startup) or when the servlet is called for the first time. <br/>
+Init - the init() method is called after the servlet is loaded, servlet enters the service only after it successfully executes the init method. It is called only once during the life time of servlet <br/>
+service - based on the request, either doGet(), doPut(), doDelete() or doPost() method is invoked. For each request, the web container spawns a new request. Override doGet or doPost, cannot override service method<br/>
+destroy - when the server is no longer in service or when server shutsdown, the destroy method is called. It is called only once for a servlet, after it is called, the servlet is marked for garbage collection
+</div>
+
+<div class="question">
+<b>
+Web Container
+</b></div>
+<div class="answer">
+Web Container is a part of web server. It handles the request and response from the servlet <br/>
+1. It loads the servlet <br/>
+2. It handles the communication between servlet and the server <br/>
+3. It spawns a new thread for each request <br/>
+4. It delegates requests to the right servlet <br/>
+</div>
+
+<div class="question">
+<b>
+How to configure a servlet in web.xml file
+</b></div>
+<div class="answer">
+&ltservlet&gt <br/>
+        &ltservlet-name&gtHelloWorld&lt/servlet-name&gt<br/>
+        &ltservlet-class&gtHelloWorld&lt/servlet-class&gt<br/>
+    &lt/servlet&gt<br/>
+
+    &ltservlet-mapping&gt<br/>
+        &ltservlet-name&gtHelloWorld&lt/servlet-name&gt<br/>
+        &lturl-pattern&gt/HelloWorld&lt/url-pattern&gt<br/>
+    &lt/servlet-mapping&gt<br/>
+</div>
+
+<div class="question">
+<b>
+What is the difference between get and post method
+</b></div>
+<div class="answer">
+Get - all data is passed thru' url rewriting, so we can pass only less data (1024 char) and data that is not very sensitive. We can bookmark the request. generally used to get some data from server <br/>
+Post - data is packed and sent to the servlet as a seperate message. no restriction on amount of data to pass, can pass sensitive data, cannot bookmark the request. Generally used when there is something to update
+</div>
+<div class="question">
+<b>
+Can we have doget and dopost methods in the same servlet
+</b></div>
+<div class="answer">
+yes. have one method (post) in the html file. override both methods in servlet and call get from post method
+</div>
+<div class="question">
+<b>
+Servlet Implementation Hirerchey
+</b></div>
+<div class="answer">
+Servlet (IF) -> Generic Servlet implements Servlet (abstract class) -> HttpServlet (abstract class) extends GenericServlet -> Myserver extends HttpServlet <br/>
+HttpServlet is the class that is specific to http and https protocols and contains methods like doGet, doPost, cookie handling etc.,
+</div>
+
+</body>
+</html>

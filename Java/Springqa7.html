@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question"><b>How to integrate Spring and Hibernate using HibernateTemplate?</b></div>
+<div class="answer"><p>
+1. Define datasource bean <br/>
+&ltbean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close"&gt <br/>
+&ltproperty name="driverClassName" value="org.hsqldb.jdbcDriver"/&gt<br/>
+&ltproperty name="url" value="jdbc:hsqldb:hsql://localhost:9001"/&gt<br/>
+&ltproperty name="username" value="sa"/&gt<br/>
+&ltproperty name="password" value=""/&gt<br/>
+&lt/bean&gt<br/><br/>
+2. Define SessionFactory bean<br/>
+&ltbean id="sqlSessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"&gt<br/>
+&ltproperty name="dataSource" ref="myDataSource" /&gt<br/>
+&ltproperty name="hibernateProperties"&gt<br/>
+&ltprops&gt<br/>
+&ltprop key="hibernate.dialect"&gt org.hibernate.dialect.HSQLDialect&lt/prop&gt<br/>
+&ltprop key="hibernate.show_sql"&gttrue&lt/prop&gt<br/>
+&ltprop key="hibernate.hbm2ddl.auto"&gtcreate&lt/prop&gt<br/>
+&lt/props&gt<br/>
+&lt/property&gt<br/>
+&lt/bean&gt<br/><br/>
+3. Define HibernateTemplate bean<br/>
+&ltbean id = "hibernateTemplate" class = "org.springframework.orm.hibernate3.HibernateTemplate"/&gt<br/>
+&ltconstructor-arg index="0" ref="sqlSessionFactory" /&gt<br/>
+&lt/bean&gt<br/><br/>
+
+Inject hibernatetemplate in DAO class and use it
+@Inject
+HibernateTemplate hibernateTemplate;
+hibernateTemplate.save(obj);
+hibernateTemplate.update(obj); etc.,
+</p>
+</div>
+
+
+<div class="question"><b>How to integrate Spring and Hibernate using HibernateDaoSupport?</b></div>
+<div class="answer"><p>Spring and Hibernate can integrate using Spring’s SessionFactory called LocalSessionFactory. The integration process is of 3 steps.<br/>
+        Configure the Hibernate SessionFactory<br/>
+        Extend your DAO Implementation from HibernateDaoSupport<br/>
+        Wire in Transaction Support with AOP</p></div>
+<div class="question"> <b>What are ORM’s Spring supports ? </b></div>
+<div class="answer"><p>Hibernate,iBatis,JPA (Java Persistence API)</p></div>
+<div class="question"><b>What are the ways to access Hibernate using Spring ?</b></div>
+<div class="answer"><p>Inversion of Control with a HibernateTemplate and Callback</p></div>
+</body>
+</html>

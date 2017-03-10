@@ -1,0 +1,52 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+
+<div class="question">
+<b>Benefits of using spring</b>
+</div>
+<div class="answer">
+<p>Minimizes the amount of code in your application.<br/>Loose coupling.<br/>IOC containers support eager instantiation and lazy loading of services.<br/>Spring has layered architecture.<br/> Open source</p>
+</div>
+<div class="question">
+<b>Different modules in Spring framework</b>
+</div>
+<div class="answer">
+<p>Core, Web, MVC, AOP, ORM, JDBC (Spring DAO), Context</p>
+</div>
+<div class="question">
+<b>What is Spring configuration file?</b>
+</div>
+<div class="answer">
+<p>Spring configuration file is an XML file. This file contains the classes information and describes how these classes are configured and related to each other.</p>
+</div>
+<div class="question">
+<b>What is Dependency Injection?</b>
+</div>
+<div class="answer">
+<p>Injecting the object dependencies through configuration files. Class A depedentant of class B, to over come the dependency of B on A, inject B in to A. You don't directly connect your components and services together in code but describe which services are needed by which components in a configuration file. Spring IOC Container is responsible for hooking up the objects.<p>
+<p>This concept says that you do not create your objects but describe how they should be created. You don't directly connect your components and services together in code but describe which services are needed by which components in a configuration file. A container (the IOC container) is then responsible for hooking it all up.</p>
+</div>
+<div class="question">
+<b>Different types of IoC (dependency injection)</b>
+</div>
+<div class="answer">
+<ul class="list">
+<li><p><b>Constructor-based dependency injection:</b> Constructor-based DI is accomplished when the container invokes a class constructor with a number of arguments, each representing a dependency on other class.</p></li>
+<li><p><b>Setter-based dependency injection:</b> Setter-based DI is accomplished by the container calling setter methods on your beans after invoking a no-argument constructor or no-argument static factory method to instantiate your bean.</p></li>
+</ul>
+</div>
+<div class="question">
+<b>Which DI would you suggest Constructor-based or setter-based DI?</b>
+</div>
+<div class="answer">
+<p>Since you can mix both, Constructor- and Setter-based DI, it is a good rule of thumb to use constructor arguments for mandatory dependencies and setters for optional dependencies. Note that the use of a <i>@Required</i> annotation on a setter can be used to make setters required dependencies.</p>
+</div>
+</body>
+</html>

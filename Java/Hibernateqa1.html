@@ -1,0 +1,72 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Hibernate</title>
+
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+
+<div class="question">
+<b>Benefits of using hibernate</b>
+</div>
+<div class="answer">
+<p>Productivity. Maintainability, portability (can easily switch to any other sql driver)</p>
+</div>
+<div class="question">
+<b>Explain Hibernate flow</b>
+</div>
+<div class="answer">
+<p>1. Write a pojo representing the table <br/> 2. Write a hbm (hibernate mapping file) specifying the mapping information between table and pojo. 3. Write a configuration file - it has details like driver class, url, username, password, sql dilect, showsql, default schema, mapping file location</p>
+</div>
+<div class="question"><b>hbm file example</b> >/div>
+<div class="answer">
+<p> &lthibernate-mapping&gt<br/>
+  &ltclass name="com.test.User"  table="user"&gt<br/>
+   &ltproperty  column="USER_NAME" length="255"
+      name="userName" not-null="true"  type="java.lang.String"/&gt<br/>
+   &ltproperty  column="USER_PASSWORD" length="255"
+     name="userPassword" not-null="true"  type="java.lang.String"/&gt<br/>
+ &lt/class&gt<br/>
+&lt/hibernate-mapping&gt</p>
+</div>
+<div class="question">
+<b>Basic hibernate code</b>
+</div>
+<div class="answer">
+<p>SessionFactory sessionFactory = Configuration.configure.buildSessionFactory(); <br/>Session session = sessionFactory.openSession(); <br/>Transaction transaction = session.beginTransaction(); <br/>session.save(obj); <br/>transaction.commit();</p>
+</div>
+<div class="question">
+<b>What is ORM?</b>
+</div>
+<div class="answer">
+<p>ORM Stands for Object Relational Mapping. It represents automated persistence of java objects in database. There are different levels of ORM <br/> Pure relational (stored procedure.)<br/>    Light objects mapping (JDBC)<br/>    Medium object mapping<br/>    Full object Mapping (composition,inheritance, polymorphism, persistence by reachability)<br/></p>
+</div>
+<div class="question">
+<b>Core Interfaces of hibernate</b>
+</div>
+<div class="answer">
+
+Configuration,
+Session Factory ,
+Session,
+Transaction,
+Query and Criteria interfaces
+
+</div>
+<div class="question">
+<b>What is SessionFactory</b>
+</div>
+<div class="answer">
+<p>There is only one sesssionfactory in an application. It is multi-threaded,We can get sessions from session factory</p>
+</div>
+<div class="question">
+<b>What is Session</b>
+</div>
+<div class="answer">
+<p>Session is a short lived, single-threaded object obtained from SF. It represents the conversation bw the appl. and persistance store. It is used to save objects and retrieve objects from the persistance store</p>
+</div>
+
+</body>
+</html>

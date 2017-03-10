@@ -1,0 +1,81 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+
+<div class="question">
+<b>Difference between load() and get()</b>
+</div>
+<div class="answer">
+<p>Only use the load() method if you are sure that the object exists.  	If you are not sure that the object exists, then use one of the get() methods.
+load() method will throw an exception if the unique id is not found in the database.  	get() method will return null if the unique id is not found in the database.
+load() just returns a proxy by default and database won’t be hit until the proxy is first invoked.   	get() will hit the database immediately.
+</p>
+</div>
+<div class="question">
+<b>Difference between and merge and update</b>
+</div>
+<div class="answer">
+<p>Use update() if you are sure that the session does not contain an already persistent instance with the same identifier, and merge() if you want to merge your modifications at any time without consideration of the state of the session.</p>
+</div>
+<div class="question">
+<b>What is generator</b>
+</div>
+<div class="answer">
+Used for generating the id column, there are different classes for generator such as sequence, increment, native etc.
+<p>&ltid column="USER_ID" name="id" type="java.lang.Long"&gt<br/>
+   &ltgenerator class="sequence"&gt<br/>
+     &ltparam name="table"&gtSEQUENCE_NAME&lt/param&gt<br/>
+   &ltgenerator&gt<br/>
+&lt/id&gt</p>
+</div>
+<div class="question">
+<b>How to access an instance variable directly and not through a setter method ?
+</b>
+</div>
+<div class="answer">
+<p>
+By mapping the property with access="field" in Hibernate metadata. This forces hibernate to bypass the setter method and access the instance variable directly while initializing a newly loaded object.</p>
+</div>
+<div class="question">
+<b>How can a whole class be mapped as immutable?</b>
+</div>
+<div class="answer">
+Mark the class as mutable="false" (Default is true),. This specifies that instances of the class are (not) mutable. Immutable classes, may not be updated or deleted by the application.
+</div>
+<div class="question">
+<b>Types of Hibernate instance states ?</b>
+</div>
+<div class="answer">
+<p>Transient -Newly created objects which are not yet associated with any session. Can make it persistant by calling save or update method<br/>
+    Persistent -The instance that is associated with a session<br/>
+    Detached -The instance was associated with a session which has been closed – currently not associated. Can make it persistant by calling save or update method<br/></p>
+</div>
+<div class="question">
+<b>
+Define cascade and inverse option in one-many mapping?</b>
+</div>
+<div class="answer">
+<p>
+cascade - enable operations to cascade to child entities.<br/>
+cascade="all|none|save-update|delete|all-delete-orphan"<br/>
+
+inverse - mark this collection as the "inverse" end of a bidirectional association.
+inverse="true|false"
+Essentially "inverse" indicates which end of a relationship should be ignored
+</div>
+<div class="question">
+<b>
+What are derived properties?</b>
+</div>
+<div class="answer">
+<p>
+The properties that are not mapped to a column, but calculated at runtime by evaluation of an expression are called derived properties. The expression can be defined using the formula attribute of the element.</p>
+</div>
+</body>
+</html>

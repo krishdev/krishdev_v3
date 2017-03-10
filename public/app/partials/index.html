@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Krishnakumar Rajendran | FrontEnd UI Developer</title>
+	<meta name="description" content=" Krish - A professional FrontEnd Developer. Designs beautiful websites for mobile, tablet and desktops, 100% Responsive And Cost Efficient.">
+	<meta name="keywords" content="Krishnakumar,Krishna,krish,Krishnakumar Rajendran,UI Developer,Freelancer,Website Design,Responsive Design,FrontEnd Developer,AngularJS Developer,HTML5,ui,ux,freelance,design,web design,web,interface,user,california,united states,usa,india,coimbatore,los angeles,la,irvine,newport beach,">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="help" href="#/aboutMe">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/sticky-footer.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Cabin|Lobster|Lobster+Two:700|Pacifico|Nunito:800|Eczar|Sanchez|Trirong|Vesper+Libre" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/angular.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular-route.js"></script>
+	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.js"></script>
+	<script src="js/projectScript.js"></script>
+	<style>
+		#section1 {
+			background-image: url(images/gplaypattern.png)
+		}
+		
+		#section4 {
+			margin-top: 5%;
+		}
+		
+		#section5 {
+			padding-top: 5px;
+			background-image: url(images/grey.png)
+		}
+		
+		<!--#section5 {
+			padding-top: 5px;
+			background-color: #f7f7f7
+		}
+		
+		--> #rcorners2 {
+			border-radius: 2%;
+		}
+		
+		#technical {
+			width: 65%;
+		}
+		
+		@media only screen and (max-width: 768px) {
+			#technical {
+				width: 100%;
+			}
+		}
+
+	</style>
+</head>
+
+<body ng-app="mainModule" ng-cloak>
+	<div>
+		<div ng-controller="navigationCtrl">
+			<div ng-controller="headerNavCtrl" ng-include="headerTemplate">
+			</div>
+		</div>
+		<div ng-view></div>
+	</div>
+	<div ng-controller="navFooterCtrl" ng-include="footerTemplate"></div>
+	<!-- Modal -->
+	<div class="chat-box mobile-chat" ng-controller="chatController" ng-click="toggleChat($event)">
+		<section>
+			<i class="chat-close fa fa-times" aria-hidden="true"></i>
+			<article class="chat-header">
+				<h2 class="heading">Let's chat<i class="fa fa-comment-o"></i></h2></article>
+			<article class="chat-body">
+				<div class="chat-user">
+					<p>Hello Krish Hello Krish Hello Krish Hello Krish Hello Krish</p>
+				</div>
+				<div class="chat-krish">
+					<p>Sorry.. </p>
+				</div>
+				<div class="chat-krish">
+					<p>Sorry.. </p>
+				</div>
+				<div class="chat-user">
+					<p>Hello Krish Hello Krish Hello Krish Hello Krish Hello Krish</p>
+				</div>
+			</article>
+			<footer>
+				<textarea ng-model="chatContent" class="form-input" placeholder="type here and click enter.."></textarea>
+			</footer>
+		</section>
+	</div>
+	<div class="modal fade" id="myModalpop" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Success!!</h4>
+				</div>
+				<div class="modal-body">
+					<p>{{emailSuccessMessage}}</p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	<script type="text/javascript" src="js/viewportckecker.js"></script>
+	<script src="app/common/common.js"></script>
+	<script src="app/common/APP_CONSTANTS.js"></script>
+	<script src="app/templates/navigationHeader/navHeader.js"></script>
+	<script src="app/templates/navigationHeader/navHeaderCtrl.js"></script>
+	<script src="app/templates/navigationFooter/navigationFooter.js"></script>
+	<script src="app/templates/navigationFooter/navigationFooterCtrl.js"></script>
+	<script src="app/app.js"></script>
+	<script src="app/controllers/navigationController.js"></script>
+	<script src="app/controllers/viewController.js"></script>
+	<script src="app/services/dataFactory.js"></script>
+	<script src="app/services/postFactory.js"></script>
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-81177703-1', 'auto');
+		ga('send', 'pageview');
+
+	</script>
+</body>
+
+</html>

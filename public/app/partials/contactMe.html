@@ -1,0 +1,52 @@
+<div class="intro">
+   <div class="group">
+      <div class="animated zoomIn">Lets dicuss, How to do yours better?</div>
+   </div>
+</div>
+<div id="section4" class="animateMe hiddenContent visible animated fadeIn full-visible">
+   <form class="form-signin" method="post" name="index" ng-submit="sendPost(index.$valid)" novalidate>
+      <div align="center" style="margin-left:10%;margin-right:10%">
+         <div class="row">
+            <div class="col-md-6">
+               <input type="text" id="inputUsername" name="inputUsername" class="form-control" ng-model="nameContact" placeholder="Name" style="margin-bottom:1%" required>
+               <div class="errorMessage" ng-show="index.$submitted || index.inputUsername.$touched">
+			<span ng-show="index.inputUsername.$error.required">This field is required</span>
+		</div>
+            </div>
+            <div class="col-md-6">
+               <input type="email" id="inputEmail" name="inputEmail" class="form-control" ng-model="emailContact" placeholder="Email address" style="margin-bottom:1%" required>
+               <div class="errorMessage" ng-show="index.$submitted || index.inputEmail.$touched">
+			  		<span ng-show="index.inputEmail.$error.required">This field is required</span>
+					<span ng-show="index.inputEmail.$error.email">This is not a valid email.</span>
+				</div>
+            </div>
+            <div class="col-md-4">
+               <input type="number" id="inputPhoneNumber" name="inputPhoneNumber" ng-model="phoneContact" class="form-control" placeholder="Phone Number" style="margin-bottom:1%" required>
+               <div class="errorMessage" ng-show="index.$submitted || index.inputPhoneNumber.$touched">
+			  		<span ng-show="index.inputPhoneNumber.$error.required">This field is required</span>
+				</div>
+            </div>
+            <div class="col-md-4">
+               <select class="form-control" ng-model="projectType" ng-options="contact.id as contact.typeName for contact in contactMeProd">
+                  <option value="">--Choose type--</option>
+               </select>
+            </div>
+            <div class="col-md-4">
+               <select class="form-control" ng-model="budgetContact" ng-options="contact.id as contact.amt for contact in contactMeBudget">
+                  <option value="">--Choose Budget--</option>
+               </select>
+            </div>
+            <div class="col-md-12">
+               <textarea name="inputContent" ng-model="contentContact" id="inputContent" class="form-control" placeholder="Content" style="height:170px;margin-bottom:1%" required ></textarea>
+               <div class="errorMessage" ng-show="index.$submitted || index.inputContent.$touched">
+			  		<span ng-show="index.inputContent.$error.required">This field is required</span>
+				</div>
+            </div>
+            <div class="col-md-12">
+               <input class="btn btn-lg btn-primary btn-block"  type="submit" value="I reply in less than 24 hrs.">
+            </div>
+            <div class="clr"></div>
+         </div>
+      </div>
+   </form>
+</div>

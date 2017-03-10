@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>
+Can servlet have a constructor and why
+</b></div>
+<div class="answer">
+Yes, it will be used by the container for instantiation
+</div>
+<div class="question">
+<b>
+Servlet Config object
+</b></div>
+<div class="answer">
+Servlet config is specific to each servlet. We can pass parameters to the servlet using the servlet config object
+&ltservlet&gt<br/>
+		&ltservlet-name&gtServletName&lt/servlet-name&gt<br/>
+		&ltservlet-class&gtcom.mkyong.ServletDemo&lt/servlet-class&gt <br/>
+		&ltinit-param&gt<br/>
+			&ltparam-name&gtemail&lt/param-name&gt<br/>
+			&ltparam-value&gtadmin@email.com&lt/param-value&gt<br/>
+		&lt/init-param&gt<br/>
+	&lt/servlet&gt<br/>
+
+And in the servlet's init method or any doget or dopost method, call getServletConfig().getInitParam(email");
+</div>
+<div class="question">
+<b>
+Servlet Context object
+</b></div>
+<div class="answer">
+It is common to all the servlets <br/>
+&ltcontext-param&gt<br/>
+&ltparam-name&gtglobalVariable&lt/param-name&gt<br/>
+&ltparam-value&gtjavapapers.com&lt/param-value&gt<br/>
+&lt/context-param&gt<br/>
+getServletConfig().getServletContext().getInitParam()
+</div>
+<div class="question">
+<b>
+Difference between forward and sendRedirect
+</b></div>
+<div class="answer">
+Forward - servlet forwards the request to a different servlet (browser has no idea of this and there is no url change) <br/>
+SendRedirect - Servlet asks the browser to redirect the request to a different url, in this case the url changes and browser is aware of the redirect
+</div>
+<div class="question">
+<b>
+Difference between forward and include
+</b></div>
+<div class="answer">
+Include - get the response content from other servlet and include it in the current servlet response <br/>
+forward - just forwards the request to a new servlet, current servlet response is lost
+</div>
+<div class="question">
+<b>
+What is lazy-loading/pre-initialization of servlet?
+</b></div>
+<div class="answer">
+lazy-loading - servlet is not loaded in the beginning, it is loaded only when it receives the first request <br/>
+pre-initialization - servlet is loaded when the application begins. Can be achieved by using <load-on-startup> element
+</div>
+<div class="question">
+<b>
+What is session and why should we track it
+</b></div>
+<div class="answer">
+Different requests from the same browser/user has to be treated as single session. This is essential in order to maintain the state of the user. Ex. shopping cart, login/logout status etc.,
+</div>
+<div class="question">
+<b>
+Means of Session tracking
+</b></div>
+<div class="answer">
+URL Rewriting, cookies, hidden form objects, SSL sessions
+</div>
+<div class="question">
+<b>
+Cookies
+</b></div>
+<div class="answer">
+User data which are not very sensitive can be saved as cookies in the users browser. Session data can be stored as cookie which needs no server interaction
+</div>
+<div class="question">
+<b>
+URL Re-writing
+</b></div>
+<div class="answer">
+extra data is attached to the URL everytime, session is identified based on the extra data in the url
+</div>
+<div class="question">
+<b>
+How to destroy session?
+</b></div>
+<div class="answer">
+session.invalidate()
+</div>
+
+</div>
+</div>
+</body>
+</html>

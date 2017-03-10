@@ -1,0 +1,207 @@
+{
+	"navMenu": [{
+		"menu": "Home",
+		"cssClass": "active",
+		"href": "#/"
+	}, {
+		"menu": "About Me",
+		"cssClass": ":",
+		"href": "#/aboutMe"
+	}, {
+		"menu": "Porfolio",
+		"cssClass": ":",
+		"href": "#/myproject"
+	}, {
+		"menu": "Contact Me",
+		"cssClass": ":",
+		"href": "#/contact"
+	}],
+	"aboutMe": {
+		"name": "Krishnakumar Rajendran",
+		"tagLine": "Everything starts from you, now and here. Several small excuses makes a big difference tomorrow.",
+		"quickLinks": [{
+			"linkName": "Cover Letter",
+			"target": "#myModal",
+			"img": "images/117.png",
+			"href": "#"
+		}, {
+			"linkName": "Resume",
+			"target": "#myModalResume",
+			"img": "images/list_ingredients.png",
+			"href": "#"
+		}, {
+			"linkName": "Facebook",
+			"target": ":",
+			"img": "images/facebook.png",
+			"href": "https://www.facebook.com/krishnarajen"
+		}, {
+			"linkName": "Linkedin",
+			"target": ":",
+			"img": "images/linkedin.png",
+			"href": "https://www.linkedin.com/in/krishnarajen"
+		}],
+		"contentPara": " I develop  highly interactive, responsive websites & web apps with recent technologies. I love designing web pages and I beleive that by enhancing the look and feel of the application with meaningful transitions it looks more realistic, so that, it gives a better user experience. I focus on modularity and maintainability and I pay great attention to details.",
+		"contentGreeting": "Hello and Welcome."
+	},
+	"myProjects": {
+		"title": "My Projects",
+		"listOfProjects": [{
+			"projectHeading": "Training Institute WebPage",
+			"img": "images/andragogy.png",
+			"href": "http://www.coimbatoretrainingcenter.com",
+			"color": "linear-gradient(to left, #4B79A1 , #283E51)",
+			"projectDetails": "College's official Alumni Website built using ASP.Net MVC, SQL. It is closely like a social website where people can be in groups according to their passedout year and departments. They can chat, post whatever, like and comment on any posts and change the color theme of their profile. The admin has all the rights to delete a member or his post or comments, update news feed and broadcast message to all the members registered in the website."
+		}, {
+			"projectHeading": "Online Educational Consultant",
+			"img": "images/hotelLogo.png",
+			"href": "http://helpwithmycareer.com",
+			"color": "linear-gradient(to left, #5A3F37 , #2C7744)",
+			"projectDetails": "As a team we developed this web application using Java and MySql. Two modules course and test, two user types admin and user. My contribution was on course moudle. Admin can add, update and delete a course. Each course has a period and can be limited by number of users.Users can either skip or jump to other sessions."
+		}, {
+			"projectHeading": "PaniPuri-Chat",
+			"img": "images/chat.png",
+			"color": "linear-gradient(to left, #4B79A1 , #283E51)",
+			"projectDetails": "During the mobile development course work I had developed a chat application in Android platform. User can register by creating a unique userId.User can send & accept friend requests. One to one chat is enabled. All the user details and chats are stored and retrieved from Amazon Web Service.",
+			"href": "https://github.com/krishdev/PaniPuri_Chat"
+		}, {
+			"projectHeading": "Golden Eagle Flight Plan",
+			"img": "images/gefp.png",
+			"color": "linear-gradient(to left, #DA22FF , #9733EE)",
+			"projectDetails": "This project was developed during the Advanced Web development course work. This project was developed using Java Spring and Hibernate with PostgreSQL . In a most simple form, this is a checklist that helps guiding the students through their college career. It looks like a table in which columns are called as Runways, Rows are Stages  and the contents in between are checkpoints with checkboxes. All the three can be added,updated and deleted upon that they are re-ordered by dragging them and the checked checklists should remain the same till it is been unchecked all these should happen without reloading when the functions are made, this was implemented using Ajax. There are three types of users students, advisor and dean.",
+			"href": "http://sun.calstatela.edu/gefp/login.html"
+		}, {
+			"projectHeading": "Chottu Ki Edu",
+			"img": "images/ngo.png",
+			"color": "linear-gradient(to left, #348F50 , #56B4D3)",
+			"projectDetails": "This is developed using Java Spring & Hibernate, PostgreSQL. It is an online consulting application where anyone can search for colleges and validate their profile. Users can post and review about the universities, majors and the housing.",
+			"href": "http://chottukieducation.com"
+		}, {
+			"projectHeading": "Coffee Shop Locator",
+			"img": "images/coffeShopLocator.png",
+			"color": "linear-gradient(to left, #DA22FF , #9733EE)",
+			"projectDetails": "As a part of a team worked on UI. I had used HTML5,CSS3,AngularJS framework,NodeJS. Items can be viewed in grid and list formats  and on hover items are zoomed. During this project I got ideas on using AngularJS and JSON.",
+			"href": "https://github.com/krishdev/CoffeeShop"
+		}]
+	},
+	"myEducation": {
+		"Masters": {
+			"Name": "California State University, Los Angeles",
+			"Department": "Computer Science",
+			"CourseWork": [{
+				"courseName": "Advanced Web Designing",
+				"courseDetails": "J2EE Frameworks like Spring and Hibernate, Ajax, JSP, JSTL, JavaScript, jQuery and PostgreSQL."
+			}, {
+				"courseName": "Data Structures",
+				"courseDetails": "Real time experience with most of the sorting algorithms, Trees, Graphs, Dynamic Programming"
+			}, {
+				"courseName": "Big Data",
+				"courseDetails": "Experience in Map Reduce, JSON, Non Relational Database-MongoDB, Dynamic Data visualization using D3.js"
+			}, {
+				"courseName": "Mobile Development-Android",
+				"courseDetails": "As a part of the course work developed a Chat Application using Android Studio, SQLite"
+			}, {
+				"courseName": "Database Systems",
+				"courseDetails": "Comparison of relational database and object-relational data modeling, and database administration using Oracle technology."
+			}]
+		},
+		"keySkills": {
+			"WebTechnologies": [{
+				"techName": "HTML5",
+				"rate": "90%"
+			}, {
+				"techName": "CSS3",
+				"rate": "90%"
+			}, {
+				"techName": "JavaScript",
+				"rate": "80%"
+			}, {
+				"techName": "jQuery",
+				"rate": "80%"
+			}, {
+				"techName": "Ajax",
+				"rate": "80%"
+			}, {
+				"techName": "Bootstrap",
+				"rate": "80%"
+			}, {
+				"techName": "AngularJS",
+				"rate": "60%"
+			}, {
+				"techName": "NodeJS",
+				"rate": "60%"
+			}, {
+				"techName": "JSON",
+				"rate": "80%"
+			}],
+			"WebServices": [{
+				"techName": "HTTP Web Server"
+			}, {
+				"techName": "Apache Tomcat"
+			}, {
+				"techName": "WebLogic Application Server"
+			}],
+			"ide": [{
+				"name": "Eclipse3.x/4.x"
+			}, {
+				"name": "Adobe Dreamweaver"
+			}, {
+				"name": "Brackets"
+			}, {
+				"name": "Notepad++"
+			}, {
+				"name": "Adobe Photoshop"
+			}],
+			"database": [{
+				"name": "MySql"
+			}, {
+				"name": "PostgreSQL"
+			}, {
+				"name": "SQL Server 2012"
+			}],
+			"debuggingTools": [{
+				"name": "Firebug"
+			}, {
+				"name": "Developer Tools"
+			}],
+			"versionControl": [{
+				"name": "SVN"
+			}, {
+				"name": "GIT"
+			}]
+		}
+	},
+	"contactMe": {
+		"budget": [{
+			"amt": "      < 500 ",
+			"id": "1"
+		}, {
+			"amt": " 500  < 2500 ",
+			"id": "2"
+		}, {
+			"amt": " 2500 < 5000 ",
+			"id": "3"
+		}, {
+			"amt": " 5000 <  ",
+			"id": "4"
+		}],
+		"projectType": [{
+			"typeName": "A Profile For You",
+			"id": "1"
+		}, {
+			"typeName": "Application For A Group",
+			"id": "2"
+		}, {
+			"typeName": "Application For Your Businness",
+			"id": "3"
+		}, {
+			"typeName": "Content Management Site",
+			"id": "4"
+		}, {
+			"typeName": "Resign A Previous Work",
+			"id": "5"
+		}, {
+			"typeName": "None of the above Please describe",
+			"id": "6"
+		}]
+	}
+}

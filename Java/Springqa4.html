@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+
+<div class="question"><b>
+How to integrate your Struts application with Spring? </b> </div>
+<div class="answer"> <p>
+Configure Spring to manage your Actions as beans, using the ContextLoaderPlugin, and set their dependencies in a Spring context file. </p> </div>
+
+<div class="question"><b>What is DelegatingVariableResolver?</b></div>
+<div class="answer"><p>Spring provides a custom JavaServer Faces VariableResolver implementation that extends the standard Java Server Faces managed beans mechanism which lets you use JSF and Spring together. This variable resolver is called as DelegatingVariableResolver</p> </div>
+
+<div class="question"><b>How to integrate  Java Server Faces (JSF) with Spring?</b></div>
+<div class="answer"><p>
+   JSF and Spring do share some of the same features, most noticeably in the area of IOC services. By declaring JSF managed-beans in the faces-config.xml configuration file, you allow the FacesServlet to instantiate that bean at startup. Your JSF pages have access to these beans and all of their properties.We can integrate JSF and Spring in two ways:<br/>
+
+    DelegatingVariableResolver: Spring comes with a JSF variable resolver that lets you use JSF and Spring together.
+    <?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+       "http://www.springframework.org/dtd/spring-beans.dtd">
+
+    <faces-config>
+       <application>
+          <variable-resolver>
+             org.springframework.web.jsf.DelegatingVariableResolver
+          </variable-resolver>
+       </application>
+    </faces-config>
+
+    The DelegatingVariableResolver will first delegate value lookups to the default resolver of the underlying JSF implementation, and then to Spring's 'business context' WebApplicationContext. This allows one to easily inject dependencies into one's JSF-managed beans.<br/>
+
+    FacesContextUtils:custom VariableResolver works well when mapping one's properties to beans in faces-config.xml, but at times one may need to grab a bean explicitly. The FacesContextUtils class makes this easy. It is similar to WebApplicationContextUtils, except that it takes a FacesContext parameter rather than a ServletContext parameter.<br/>
+
+    ApplicationContext ctx = FacesContextUtils.getWebApplicationContext(FacesContext.getCurrentInstance());<br/>
+
+Spring provides a custom JavaServer Faces VariableResolver implementation that extends the standard JavaServer Faces managed beans mechanism. When asked to resolve a variable name, the following algorithm is performed:<br/>
+
+    Does a bean with the specified name already exist in some scope (request, session, application)? If so, return it
+
+    Is there a standard JavaServer Faces managed bean definition for this variable name? If so, invoke it in the usual way, and return the bean that was created.<br/>
+
+    Is there configuration information for this variable name in the Spring WebApplicationContext for this application? If so, use it to create and configure an instance, and return that instance to the caller.<br/>
+
+    If there is no managed bean or Spring definition for this variable name, return null instead.<br/>
+
+    BeanFactory also takes part in the life cycle of a bean, making calls to custom initialization and destruction methods.<br/>
+
+    As a result of this algorithm, you can transparently use either JavaServer Faces or Spring facilities to create beans on demand.<br/>
+</p>
+</div>
+<div class="question"><b>
+What is Significance of JSF- Spring integration ?</b></div>
+<div class="answer"><p>
+Spring - JSF integration is useful when an event handler wishes to explicitly invoke the bean factory to create beans on demand, such as a bean that encapsulates the business logic to be performed when a submit button is pressed.</p> </div>
+
+
+
+

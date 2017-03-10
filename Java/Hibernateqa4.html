@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>What is Hibernate proxy?</b>
+</div>
+<div class="answer">
+<p>
+Hibernate will initially return CGLIB proxies which implement the named interface. The actual persistent object will be loaded when a getter method of the proxy is invoked.
+</p></div>
+
+<div class="question">
+<b>What is the use of dynamic-insert and dynamic-update attributes in a class mapping?</b>
+</div>
+<div class="answer">
+<p>
+dynamic-update (defaults to false): Specifies that UPDATE SQL should be generated at runtime and contain only those columns whose values have changed
+dynamic-insert (defaults to false): Specifies that INSERT SQL should be generated at runtime and contain only the columns whose values are not null.
+</p></div>
+
+<div class="question">
+<b>What do you mean by fetching strategy ?</b>
+</div>
+<div class="answer">
+<p>
+There are different fetching strategies to fetch associated instances and collections <br/>
+Join Fetching -  sql outer join in the same select statement <br/>
+select fetching - a different select statement. the 2nd select is called only when the assoc. is hit <br/>
+batch fetching - batches. can specify batch size in collection declarations <br/>
+lazy fetching - by default lazy-fetching is true for collections. assoc elements are fetched only when they are invoked <br/>
+proxy fetching - associated single-valued instances are fetched using this strategy. proxy is returned first and db is hit only when the instance is invoked <br/>
+</p></div>
+<div class="question">
+<b>What is automatic dirty checking?</b>
+</div>
+<div class="answer">
+<p>
+Without any explicit calls to save or update, hibernate automatically determines that a collection or object is modified inside a transaction and updates the DB. As long as the object is in persistant state (i.e., associated with a session) hibernate monitors the changes and executes SQL in write-behind fashion. This is called automatic dirty checking.
+</p></div>
+<div class="question">
+<b>What is transactional write-behind?</b>
+</div>
+<div class="answer">
+<p>
+Hibernate uses a sophisticated algorithm to determine an efficient ordering that avoids database foreign key constraint violations. This feature is called transactional write-behind.
+saved or deleted.</p>
+</div>
+<div class="question">
+<b>What are callback interfaces</b>
+</div>
+<div class="answer">
+<p>Callback interfaces are used to receive notification when some object events occur. Like when an object is loaded, saved or deleted.</p>
+</div>
+<div class="question">
+<b>What is lock method</b>
+</div>
+<div class="answer">
+<p>Session lock method associates an object with a session, but does not sync it with database. Where as update method will sync it with database and associate the object with the session</p>
+</div>
+<div class="question">
+<b>Pagination using Hibernate</b>
+</div>
+<div class="answer">
+<p>
+Criteria criteria = Session.createCriteria(Student.class);<br/>
+criteria.add(Restrictions.like("name","a%");<br/>
+criteria.addOrder(Order.asc("name"));<br/>
+criteria.setMaxResults(maxResults);<br/>
+criteria.setFirstResult(maxResults * (pageNum-1));<br/>
+List<Student> studentList = criteria.list();<br/><br/>
+
+Same can be done using Query Interface also<br/><br/>
+
+Other pagination solutions -> Use ScrollableResult result = Query.scroll(); or use SQL DB Pagination using row no.<br/>
+
+</p>
+</div>
+
+</body>
+</html>

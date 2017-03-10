@@ -1,0 +1,69 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+
+<div class="question">
+<b>What is HQL</b>
+</div>
+<div class="answer">
+<p>Hibernate query Language (HQL), is an object-oriented extension to SQL. flexible mechanism to query, store, update, and retrieve objects from a database
+</p>
+</div>
+<div class="question">
+<b>Named – SQL query</b>
+</div>
+<div class="answer">
+<p>Named SQL queries are defined in the mapping xml document and called wherever required.<br/>&ltsql-query name = "empdetails"&gt <br/>
+   &ltreturn alias="emp" class="com.test.Employee"/&gt<br/>
+      SELECT statement<br/>
+&lt/sql-query&gt<br/>
+List people = session.getNamedQuery("empdetails").setString("TomBrady", name).setMaxResults(50).list();</p>
+</div>
+<div class="question">
+<b>How to invoke stored procedure</b>
+</div>
+<div class="answer">
+<p>&ltsql-query name="selectAllEmployees_SP" callable="true"&gt<br/>
+ &ltreturn alias="emp" class="employee"&gt<br/>
+   &ltreturn-property name="empid" column="EMP_ID"/&gt  <br/>
+
+   &ltreturn-property name="name" column="EMP_NAME"/&gt    <br/>
+   &ltreturn-property name="address" column="EMP_ADDRESS"/&gt<br/>
+    { ? = call selectAllEmployees() }<br/>
+ &lt/return&gt<br/>
+&lt/sql-query&gt<br/></p>
+</div>
+<div class="question">
+<b>Criteria API example
+</b>
+</div>
+<div class="answer">
+<p>
+List employees = session.createCriteria(Employee.class)<br/>
+		         .add(Restrictions.like("name", "a%") )<br/>
+		         .add(Restrictions.like("address", "Boston"))<br/>
+			 .addOrder(Order.asc("name") )<br/>
+			 .list();
+</p>
+</div>
+<div class="question">
+<b>What is Hibernate Template</b>
+</div>
+<div class="answer">
+<p>HibernateTemplate is a helper class which provides different methods for querying/retrieving data from the database. It also converts checked HibernateExceptions into unchecked DataAccessExceptions.Sessions are automatically closed. </p>
+</div>
+<div class="question">
+<b>What is SQL Dialects?</b>
+</div>
+<div class="answer">
+<p>Using Hibernate SQL Dialects , we can switch databases. Hibernate will generate appropriate hql queries based on the dialect defined.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>
+How to create a thread
+</b></div>
+<div class="answer">
+1. MyThread extends Thread and implement run method <br/>
+2. MyThread implements Runnable Interface and override run method <br/>
+3. MyThread t = new Mythread("eg");
+4. t.start();
+</div>
+
+<div class="question">
+<b>
+Different constructors of thread
+</b></div>
+<div class="answer">
+Thread(String name);<br/>
+Thread(Runnable r, String name);<br/>
+Thread(Runnable);<br/>
+Thread(String);<br/>
+</div>
+
+<div class="question">
+<b>
+Different states of a thread
+</b></div>
+<div class="answer">
+1. New: Once it is instantiated and before start() is called -> New State <br/>
+2. Runnable: Once start() method is called, thread enters runnable state. will wait in a runnable queue <br/>
+3. Running: Once thread is picked by the scheduler for execution. It can either go to runnable state or wait/sleep/blocked state from here <br/>
+4. Wait/Sleep/Blocked: when wait() or sleep() is called or when waiting on a resource<br/>
+4. Dead - after it complete execution, thread goes to dead state, when start() is invoked on this RunTimeException occurs
+</div>
+
+<div class="question">
+<b>
+What is Monitor?
+</b></div>
+<div class="answer">
+A synchronized block of code on which a thread can obtain a lock. Only one thread can obtain lock to monitor at a time. Once that thread releases the lock, second thread waiting on that object's monitor can obtain the lock
+
+</div>
+
+<div class="question">
+<b>
+What is a semaphore?
+</b></div>
+<div class="answer">
+Semaphore is a shared object which is used for communication between two threads
+
+</div>
+
+<div class="question">
+<b>
+Thread dump and how to take it
+</b></div>
+<div class="answer">
+Thread dump will show all the active threads in JVM. We can analyse thread dump to find if there are any dead locks. Jstack tool used to obtain thread dump
+
+</div>
+
+<div class="question">
+<b>
+Thread pool
+</b></div>
+<div class="answer">
+Thread pool is a pool of worker threads or a colletion of Runnable objects. It has a queue where all tasks to be executed are waiting for execution<br/>
+Executor executor = Executors.newFixedThreadPool(100); <br/>
+executor.execute(New MyRunnable(1)); -> this will add runnable object to the thread pool
+</div>
+
+<div class="question">
+<b>
+Runnable, Callable and future?
+</b></div>
+<div class="answer">
+Runnable - I/F that implements run method, does not return anything<br/>
+Callable - I/F that implements run method, can return a generic object <br/>
+Future<MyObj> future = executor.submit(New MyCallable(10));
+we can use future.get() to get the Myobj instance
+</div>
+
+<div class="question">
+<b>
+How to achieve asynchronous programming?
+</b></div>
+<div class="answer">
+Use Callable and future with executor service interface. once we do a submit, threads are executed asynchronously. does not wait for completion before proceeding to next thread
+</div>
+
+<div class="question">
+<b>
+What is deadlock
+</b></div>
+<div class="answer">
+Thread A waiting for resource A and holding resource B. Thread B holding reasource A and waiting for resource B. This is called dead lock - will keep the threads hanging.
+How to prevent -> use synchronized blocks and locks
+</div>
+
+<div class="question">
+<b>
+What is atomic operations?
+</b></div>
+<div class="answer">
+An operation which has to happpen at a stretch and cannot be stopped in middle. Eg. read - write operations other than long or double. long or double can be atomic only if they are declared volatile
+
+</div>
+
+<div class="question">
+<b>
+What is volatile keyword
+</b></div>
+<div class="answer">
+Volatile keyword before a variable will make it thread safe. All threads read the variable from memory, cache cannot be created for a volatile variable
+</div>
+<div class="question">
+<b>
+How to solve producer - consumer problem
+</b></div>
+<div class="answer">
+Use wait() and notify() or BlockingQueue
+</div>
+
+<div class="question">
+<b>
+How to share data b/w 2 threads
+</b></div>
+<div class="answer">
+use shared object (with synchronized keyword) or use a blocking queue
+</div>
+
+<div class="question">
+<b>
+What is BlockingQueue
+</b></div>
+<div class="answer">
+concurrent.BlockingQueue -> implementation is such that it waits for the queue to be non-empty before removing an item from the queue and waits for the queue to have free space before loading items. It solves the producer-consumer issue
+</div>
+
+<div class="question">
+<b>
+How to avoid concurrency issues or how to make an object immutable?
+</b></div>
+<div class="answer">
+Avoid concurrency issues by using immutable classes. Class should be final, all fields private final, no setter method <br/>
+Avoid concurrency issues on collections by making a defensive copy and using that, eg. passing a collections.unmodifiableList(list) to another function so that the other function cant change the list
+</div>
+</body>
+</html>

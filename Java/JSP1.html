@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>
+What is JSP?
+</b></div>
+<div class="answer">
+Java code embedded in HTML
+</div>
+<div class="question">
+<b>
+Lifecycle methods of JSP
+</b></div>
+<div class="answer">
+jspInit, _jspService, jspDestroy
+</div>
+
+<div class="question">
+<b>
+JSP life cycle
+</b></div>
+<div class="answer">
+JSP -> translator (JSP Engine) -> .java file -> compiler -> .class file -> loaded in to webcontainer as a servlet. This is during first time execution or after a change in JSP file <br/>
+Otherwise servlet is loaded directly from the web container. So JSP is like any other servlet once its loaded.
+</div>
+
+<div class="question">
+<b>
+Different JSP Element
+</b></div>
+<div class="answer">
+Directives, Declarations, Scriplets, Expressions
+</div>
+
+<div class="question">
+<b>
+What are JSP Declarations and why we need them?
+</b></div>
+<div class="answer">
+Declarations are within &lt%! %&gt or &ltjsp:declaration&gt  &lt/jsp:declaration> tags <br/>
+All variable and method declarations are declared within this block. It goes outside the service method, its something like instance variable and members <br/>
+variables declared like this can be shared between multiple requests. and variable thats used across the jsp page can be declared inside &lt%! %&gt
+</div>
+<div class="question">
+<b>
+What are JSP Expressions and why we need them?
+</b></div>
+<div class="answer">
+Code inside &lt%= %> are called expressions <br/>
+Code inside the expression element are evaluated <br/>
+Can be used when we want to print some value to the console or to assign a value to some other variable
+</div>
+<div class="question">
+<b>
+What are JSP Scriplets and why we need them?
+</b></div>
+<div class="answer">
+Scriplets are within &lt% %&gt or &ltjsp:scriplet> &lt/jsp:scriplet> tags <br/>
+Java code can be added inside scriplets. This is used to execute small logic. if the logic is complex and large its better to be added in the servlet than in jsp.
+</div>
+<div class="question">
+<b>
+What are JSP Directives and why we need them?
+</b></div>
+<div class="answer">
+Directives are within &lt%@ %&gt tags <br/>
+There are different types of directives -> page, include, tablib <br/>
+&lt%@ page import="java.util.ArrayList" session = "true" contentType = "java/html" language = "java" errorPage ="errorpage.jsp" isErrorPage = "no"%&gt <br/>
+&lt%@ include page= "anotherjsp.jsp"%&gt <br/>
+&lt%@ taglib = .... %&gt
+</div>
+<div class="question">
+<b>
+What are implicit objects in JSP?
+</b></div>
+<div class="answer">
+request - instance of HttpSessionRequest, used as request.getAttribute and request.SetAttribute <br/>
+Response- instance of HttpSessionResponse, used as response.get/setAttribute, response.SendRedirect(newurl) <br/>
+Ssession - instance of HttpSession, used as session.get/setAttribute <br/>
+out - instance of JspWriter,used as out.println() <br/>
+config - instnace of ServletConfig, one config per one jsp page <br/>
+application - instance of ServletContext, one context per application <br/>
+page - JSP page, used as &lt@include page="anotherpage.jsp"&gt <br/>
+pageContext - Special object
+</div>
+</body>
+</html>

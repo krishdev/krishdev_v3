@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question"><b> Explain Spring MVC </b> </div>
+<div class="answer"><p>
+1. Dispatcher Servlet is configured in web.xml with url pattern *.*. So all requests go to dispatcher servlet. It acts as a front controller <br/>
+2. With the help of SimpleUrlHandlerMapping configured in applicationcontext.xml, request is sent to the appropriate controller <br/>
+3. Controller processes the request and sends response through ModelAndViewObject.
+4. With the help of ViewResolver, view is resolved and MV object is sent to the view
+5. View displays the response to user
+</div>
+
+<div class="question"><b> Dispatcher Servlet</b> </div>
+<div class="answer"><p>
+&ltservlet&gt		   <br/>
+     &ltservlet-name&gtdispatcher&lt/servlet-name&gt   <br/>
+     &ltservlet-class&gt	<br/>
+         org.springframework.web.servlet.DispatcherServlet		  <br/>
+     &lt/servlet-class&gt	   <br/>
+     &ltload-on-startup&gt2&lt/load-on-startup&gt	   <br/>
+ &lt/servlet&gt		<br/>
+
+ &ltservlet-mapping&gt		  <br/>
+     &ltservlet-name&gtdispatcher&lt/servlet-name&gt	   <br/>
+     &lturl-pattern&gt*.*&lt/url-pattern&gt	   <br/>
+ &lt/servlet-mapping&gt	   <br/>
+</p></div>
+<div class="question"><b>SimpleUrlHandlerMapping</b> </div>
+<div class="answer"><p>
+&ltbean id='simpleUrlMapping' class='org.springframework.web.servlet.handler.SimpleUrlHandlerMapping'&gt   <br/>
+    &ltproperty name='mappings'&gt		<br/>
+        &ltprops&gt		   <br/>
+            &ltprop key='/showAllMails.jsp'&gtshowController&lt/prop&gt	   <br/>
+            &ltprop key='/composeMail.jsp'&gtcomposeController&lt/prop&gt	<br/>
+            &ltprop key='/deleteMail.jsp'&gtdeleteController&lt/prop&gt	   <br/>
+        &lt/props&gt	   <br/>
+    &lt/property&gt		 <br/>
+
+&lt/bean&gt		<br/>
+</p></div>
+<div class="question"><b>ViewResolver</b> </div>
+<div class="answer"><p>
+&ltbean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"&gt <br/>
+   &ltproperty name="prefix"&gt<br/>
+   &ltvalue&gt/WEB-INF/jsp/&lt/value&gt<br/>
+  &lt/property&gt<br/>
+  &ltproperty name="suffix"&gt<br/>
+   &ltvalue&gt.jsp&lt/value&gt<br/>
+   &lt/property&gt<br/>
+&lt/bean&gt<br/>
+</p></div>
+
+</p></div>
+</body>
+</html>
+
+
+
+
+
+

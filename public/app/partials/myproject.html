@@ -1,0 +1,108 @@
+<div class="intro">
+	<div class="group">
+		<div class="animated zoomIn">Responsive Front-end Development</div>
+		<div class="profileIcon">
+			<a id="rotator" href="https://github.com/krishdev" target="_blank"><i class="fa fa-github"></i></a>
+		</div>
+	</div>
+</div>
+<div id="section3">
+	<!--<div align="center"><span class="projectHeader">My Projects</span></div>-->
+	<div class="">
+		<!--<div class="row">
+			<div class="col-md-4 hiddenContent visible animated fadeIn full-visible" ng-repeat="project in myProjects" ng-style="{'background':project.color}" ng-mouseenter="myClass='showMe'" ng-mouseleave="myClass=''">
+				<div class="projectDescription" style="height:300px;">
+					<a>
+						<div><img ng-src="assets/{{project.img}}" alt="hotels" class="img-responsive"></div>
+						<h3 ng-bind="project.projectHeading" class="animated bounceInDown"></h3>
+					</a>
+				</div>
+				<div class="btnHide animated fadeInUp" ng-class="myClass">
+					<a ng-href="{{project.href}}" target="_blank" class="btnContainer btn btn-secondary">Know More</a>
+				</div>
+			</div>
+		</div>-->
+		<section class="row">
+			<div class="container">
+
+				<figure class="col-md-4">
+					<img src="assets/images/responsive_device_foodCard.png" width="100%">
+				</figure>
+				<article class="col-md-8">
+					<header>
+						<h3>FoodCard</h3>
+						<p>Food Card is a restaurant consulting team based in Chennai.</p>
+						<div>
+							<section class="hashTag">
+								<h4><span  class="label label-default html5 hvr-bounce-to-right">Mobile Responsive</span></h4>
+								<h4><span  class="label label-default angularjs hvr-bounce-to-right">Front end using Angular Material</span></h4>
+								<h4><span  class="label label-default js hvr-bounce-to-right">Vanilla Javascript</span></h4>
+								<h4><span  class="label label-default angularjs hvr-bounce-to-right">AngularJs</span></h4>
+							</section>
+						</div>
+					</header>
+				</article>
+			</div>
+		</section>
+		<section class="row">
+			<div class="container">
+				<article class="col-md-8">
+					<header>
+						<h3>Andragogy</h3>
+						<p>Medical Transcription Trainging Center</p>
+						<div>
+							<section class="hashTag">
+								<h4><span class="label label-default html5 hvr-bounce-to-right">#Mobile Responsive</span></h4>
+								<h4><span class="label label-default angularjs hvr-bounce-to-right">#Front end using Bootstrap</span></h4>
+								<h4><span class="label label-default js hvr-bounce-to-right">#jQuery</span></h4>
+								<h4><span class="label label-default angularjs hvr-bounce-to-right">#AngularJs</span></h4>
+							</section>
+						</div>
+					</header>
+				</article>
+				<figure class="col-md-4">
+					<img src="assets/images/responsive_andragogy.png" width="100%">
+				</figure>
+			</div>
+		</section>
+		<section class="row">
+			<div class="container">
+
+				<figure class="col-md-4">
+					<img src="assets/images/cke.png" width="100%">
+				</figure>
+				<article class="col-md-8">
+					<header>
+						<h3>Chottu Ki Education</h3>
+						<p>Hydrebad based NGO, providing education for kids</p>
+						<div>
+							<section class="hashTag">
+								<h4><span class="label label-default html5 hvr-bounce-to-right">Mobile Responsive</span></h4>
+								<h4><span class="label label-default css3 hvr-bounce-to-right">Front end using Bootstrap</span></h4>
+								<h4><span class="label label-default js hvr-bounce-to-right">Vanilla Javascript</span></h4>
+								<h4><span class="label label-default angularjs hvr-bounce-to-right">AngularJs</span></h4>
+								<h4><span class="label label-default requireJs hvr-bounce-to-right">RequireJs</span></h4>
+								<h4><span class="label label-default gulp hvr-bounce-to-right">Gulp</span></h4>
+							</section>
+						</div>
+					</header>
+				</article>
+			</div>
+		</section>
+		<h3 class="container gitTitle"><span>Git Repositories</span></h3>
+		<section class="row gitRepo" ng-repeat="repo in repos" ng-if="repo.id == '68334879' || repo.id == '67054041' || repo.id == '55940874' || repo.id == '51949722' ">
+			<div class="container">
+				<figure class="col-md-3 gitFig">
+					<img src="assets/images/github.png" width="100%">
+				</figure>
+				<article class="col-md-9">
+					<header>
+						<h3>{{repo.name}}</h3>
+						<p>AngularJS, custom directive.</p>
+						<a ng-href="{{repo.html_url}}">View this directive.</a>
+					</header>
+				</article>
+			</div>
+		</section>
+	</div>
+</div>

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="answer">
+Class Student{ <br/>
+String name;<br/>
+Address address; --> One to One Mapping<br/>
+Department department; --> Many to One Mapping <br/>
+Set<Phone> Phonenos = new HashSet<Phone>(); --> One to Many<br/>
+Set<Elective> electivesList = new HashSet<Elective>(); --> Many to Many<br/>
+}<br/><br/>
+</div>
+<div class="question">
+<b>
+One-to-One Mapping
+</b></div>
+<div class="answer">
+<p>
+&ltclass name = "com.user.Student" table = "STUDENT" &gt <br/>
+&ltproperty name="studentName" type="string" not-null="true" length="100" column="STUDENT_NAME" /&gt <br/>
+&ltmany-to-one name="studentAddress" class="com.user.Address" column="STUDENT_ADDRESS" not-null="true" cascade="all" unique="true" /&gt<br/><br/>
+Student s1 = new Student("Shriya",new Address("123","abc","456"));<br/>
+session.save(s1); --> will generate two insert statements, one to insert address record and the other to insert student record<br/>
+</p></div>
+<div class="question">
+<b>
+Many-to-One relationship
+</b></div>
+<div class="answer">
+<p>
+&ltproperty name="studentName" type="string" length="100" not-null="true" column="STUDENT_NAME" /&gt<br/>
+&ltmany-to-one name="studentAddress" class="com.vaannila.student.Address" column="STUDENT_ADDRESS" cascade="all" not-null="true" /&gt<br/>
+Student s1 = new Student("Shriya",new Department(1, "Aeronautics","ABlock"));<br/>
+Student s2 = new Student("Liya",new Department(1, "Aeronautics","ABlock"));<br/>
+session.save(s1); --> will generate three insert statements, one to insert department record and the other to insert 2 student record<br/>
+</p></div>
+<div class="question">
+<b>
+One-to-Many relationship
+</b></div>
+<div class="answer">
+<p>
+&ltproperty name="studentName" type="string" not-null="true" length="100" column="STUDENT_NAME" /&gt
+&ltset name="studentPhoneNumbers" table="STUDENT_PHONE" cascade="all"&gt
+&ltkey column="STUDENT_ID" /&gt
+&ltmany-to-many column="PHONE_ID" unique="true" class="com.vaannila.student.Phone" /&gt
+&lt/set&gt
+</p></div>
+<div class="question">
+<b>
+Many-to-Many (unidirectional) relationship
+</b></div>
+<div class="answer">
+<p>
+same as one-to-many without unique = true
+</p></div>
+<div class="question">
+<b>
+All types of relationships
+</b></div>
+<div class="answer">
+<p>
+One-to-One      | <br/>
+Many-to-One     |_______Unidirectional, Unidir using join table, Bidir using foreign key, Bidir using jointable<br/>
+One-to-Many     |<br/>
+Many-to-Many    |<br/>
+</p></div>
+
+
+</body>
+</html>

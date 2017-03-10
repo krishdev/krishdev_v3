@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Spring</title>
+<link rel="stylesheet" href="style/style.css" type="text/css">
+</head>
+<body>
+<div class="question">
+<b>
+Difference between ArrayList and Vector
+</b></div>
+<div class="answer">
+ArrayList and Vector - for both, underlying implementation is Arrays<br/>
+ArrayList -> Not synchronized and hence not thread safe, ie the add and remove methods do not have synchronized keyword <br/>
+Vector -> Synchronized and thread safe. <br/>
+When increasing the size, vector just doubles the current size whereas ArrayList increases the size by 50%
+
+</div>
+<div class="question">
+<b>
+Difference between ArrayList and LinkedList
+</b></div>
+<div class="answer">
+ArrayList -> Implements List, Uses index for saving and retrieving. Random retrieving and adding is fast using index, but deletion takes time since all other items has to be moved after deletion. <br/>
+LinkedList -> Implements List and Queue Uses iterator for saving and retrieving, retrieving from middle of the list is slower than arraylist but deletion is very faster than arraylist
+
+</div>
+
+<div class="question">
+<b>
+Difference between List and Set
+</b></div>
+<div class="answer">
+List -> Retrieve in the same order it is saved. Can contain duplicates<br/>
+Set -> Does not guarantee same order retrievel. cannot contain duplicates. If we want ordered set, go for treeset.
+</div>
+
+<div class="question">
+<b>
+Implementations of List and Set
+</b></div>
+<div class="answer">
+List -> Vector, ArrayList, LinkedList <br/>
+Set -> TreeSet, HashSet (all objects are stored as keys in a hashmap)
+</div>
+
+<div class="question">
+<b>
+Can set contain null values?
+</b></div>
+<div class="answer">
+HashSet can contain one null value, but in treeset null value can be stored only if atleast one element is already present in the treeset. Since set checks for duplicates while inserting, if the first element is null, then it leads to null pointer exception
+</div>
+
+<div class="question">
+<b>
+Difference between HashMap and HashTable
+</b></div>
+<div class="answer">
+HashMap  -> Not synchronized/Hash table -> synchronized. <br/>
+HashMap -> failsafe/ Hashtable ->fail fast<br/>
+HashMap -> can contain one null key/ Hashtable -> Cannot contain a null key<br/>
+</div>
+
+<div class="question">
+<b>
+Difference between fail-safe and fail-fast iterators?
+</b></div>
+<div class="answer">
+fail-fast -> Iterators for all Collections in util.package are fail-fast iterators. If we modify an element after starting the iterator, by any other means other than using the iterator mthod, Concurrent Modification Exception is thrown <br/>
+fail-safe -> Iterators for all Collections in java.concurrent package are fail-safe. So they never throw a ConcurrentModificationException
+</div>
+
+<div class="question">
+<b>
+Different types of list from Collection
+</b></div>
+<div class="answer">
+Collections.synchronizedList(list); <br/>
+Collections.sort(list,String.String.CASE_INSENSITIVE_ORDER); -> to sort list irrespective of case<br/>
+Collections.sort(list,comp) -> to sort list based on a comparator<br/>
+Collections.unmodifieablelist(list); -> To create an unmodifiable list
+</div>
+</body>
+</html>
