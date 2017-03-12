@@ -26,6 +26,7 @@
     "http": "0.0.0",
     "mongoose": "^4.4.10",
     "multer": "^1.1.0",
+    "nodemailer": "^0.7.1",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.0",
     "passport-google-oauth": "^1.0.0",

@@ -1,7 +1,21 @@
 <footer class="footer">
-    <div class="container" ng-controller="aboutMeCtrl">
-        <span class="text-muted">
+	<div class="container" ng-controller="aboutMeCtrl">
+		<div class="footerIcons">
+			<a href=""><i class="fa fa-github"></i></a>
+			<a href=""><i class="fa fa-jsfiddle"></i></a>
+			<a href=""><i class="fa fa-instagram"></i></a>
+		</div>
+		<span class="text-muted">
 			Designed by Krishnakumar Rajendran | <a href="#/contact">Contact Support</a> | <span ng-bind="copyYear"></span>
-        </span>
-    </div>
+		</span>
+		<div class="row" back-to-top>
+			<div class="col-md-12">
+				<div class="triangle img-center">
+					<a ng-href="" class="back-to-top" title="Back to top"><i class="fa fa-arrow-up hidden-xs"></i><i class="fa fa-chevron-up hidden-lg hidden-md hidden-sm"></i></a>
+				</div>
+				<!-- end triangle -->
+			</div>
+			<!-- end col -->
+		</div>
+	</div>
 </footer>

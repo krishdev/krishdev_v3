@@ -1,4 +1,4 @@
-var mainModule = angular.module('mainModule', ['navModule', 'navFooter', 'common', 'ngRoute', 'ui.bootstrap']);
+var mainModule = angular.module('mainModule', ['navModule', 'navFooter', 'common', 'ngRoute', 'ui.bootstrap', 'backToTop']);
 mainModule.config(['$routeProvider',
     function ($routeProvider) {
 		$routeProvider

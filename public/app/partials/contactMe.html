@@ -1,52 +1,76 @@
 <div class="intro">
-   <div class="group">
-      <div class="animated zoomIn">Lets dicuss, How to do yours better?</div>
-   </div>
+	<div class="group">
+		<div class="animated zoomIn">Lets dicuss, How to do yours better?</div>
+	</div>
 </div>
-<div id="section4" class="animateMe hiddenContent visible animated fadeIn full-visible">
-   <form class="form-signin" method="post" name="index" ng-submit="sendPost(index.$valid)" novalidate>
-      <div align="center" style="margin-left:10%;margin-right:10%">
-         <div class="row">
-            <div class="col-md-6">
-               <input type="text" id="inputUsername" name="inputUsername" class="form-control" ng-model="nameContact" placeholder="Name" style="margin-bottom:1%" required>
-               <div class="errorMessage" ng-show="index.$submitted || index.inputUsername.$touched">
-			<span ng-show="index.inputUsername.$error.required">This field is required</span>
+<div id="section4" class="animateMe container-fluid hiddenContent visible animated fadeIn full-visible">
+	<section class="loop row">
+		<h2 class="col-md-2">
+			if:
+		</h2>
+		<pre class="col-md-10">
+			<ul>
+				<li>You have a project or an idea that I can help you to implement.</li>
+				<li>You want you or your business to be a vivid individuality.</li>
+				<li>There is a wish to to get me involved in some creative work or co-work.</li>
+				<li>You just want to say “Hi”.</li>
+			</ul>
+		</pre>
+	</section>
+	<section class="loop row">
+		<h2 class="col-md-2">then:</h2>
+		<pre class="col-md-10">
+			<ul>
+				<li>Then best and the most comfortable way to talk to me is to send me an email to: krishnasinbox@outlook.com</li>
+				<li>I’ll get back to you in 24 hours with my availability and we’ll discuss the dtails.</li>
+
+			</ul>
+		</pre>
+	</section>
+	<form class="form-signin" method="post" name="index" ng-submit="sendPost(index.$valid)" novalidate>
+		<div align="center" style="margin-left:10%;margin-right:10%">
+			<div class="row">
+				<div class="col-md-6">
+					<input type="text" id="inputUsername" name="inputUsername" class="form-control" ng-model="nameContact" placeholder="Name" style="margin-bottom:1%" required>
+					<div class="errorMessage" ng-show="index.$submitted || index.inputUsername.$touched">
+						<span ng-show="index.inputUsername.$error.required">This field is required</span>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<input type="email" id="inputEmail" name="inputEmail" class="form-control" ng-model="emailContact" placeholder="Email address" style="margin-bottom:1%" required>
+					<div class="errorMessage" ng-show="index.$submitted || index.inputEmail.$touched">
+						<span ng-show="index.inputEmail.$error.required">This field is required</span>
+						<span ng-show="index.inputEmail.$error.email">This is not a valid email.</span>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<input type="number" id="inputPhoneNumber" name="inputPhoneNumber" ng-model="phoneContact" class="form-control" placeholder="Phone Number" style="margin-bottom:1%" required>
+					<div class="errorMessage" ng-show="index.$submitted || index.inputPhoneNumber.$touched">
+						<span ng-show="index.inputPhoneNumber.$error.required">This field is required</span>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<select class="form-control" ng-model="projectType" ng-options="contact.id as contact.typeName for contact in contactMeProd">
+						<option value="">--Choose type--</option>
+					</select>
+				</div>
+				<div class="col-md-4">
+					<select class="form-control" ng-model="budgetContact" ng-options="contact.id as contact.amt for contact in contactMeBudget">
+						<option value="">--Choose Budget--</option>
+					</select>
+				</div>
+				<div class="col-md-12">
+					<textarea name="inputContent" ng-model="contentContact" id="inputContent" class="form-control" placeholder="Content" style="height:170px;margin-bottom:1%" required></textarea>
+					<div class="errorMessage" ng-show="index.$submitted || index.inputContent.$touched">
+						<span ng-show="index.inputContent.$error.required">This field is required</span>
+					</div>
+				</div>
+				<div class="col-md-12">
+					<input class="btn btn-lg btn-primary btn-block" type="submit" value="I reply in less than 24 hrs.">
+				</div>
+				<div class="clr"></div>
+			</div>
 		</div>
-            </div>
-            <div class="col-md-6">
-               <input type="email" id="inputEmail" name="inputEmail" class="form-control" ng-model="emailContact" placeholder="Email address" style="margin-bottom:1%" required>
-               <div class="errorMessage" ng-show="index.$submitted || index.inputEmail.$touched">
-			  		<span ng-show="index.inputEmail.$error.required">This field is required</span>
-					<span ng-show="index.inputEmail.$error.email">This is not a valid email.</span>
-				</div>
-            </div>
-            <div class="col-md-4">
-               <input type="number" id="inputPhoneNumber" name="inputPhoneNumber" ng-model="phoneContact" class="form-control" placeholder="Phone Number" style="margin-bottom:1%" required>
-               <div class="errorMessage" ng-show="index.$submitted || index.inputPhoneNumber.$touched">
-			  		<span ng-show="index.inputPhoneNumber.$error.required">This field is required</span>
-				</div>
-            </div>
-            <div class="col-md-4">
-               <select class="form-control" ng-model="projectType" ng-options="contact.id as contact.typeName for contact in contactMeProd">
-                  <option value="">--Choose type--</option>
-               </select>
-            </div>
-            <div class="col-md-4">
-               <select class="form-control" ng-model="budgetContact" ng-options="contact.id as contact.amt for contact in contactMeBudget">
-                  <option value="">--Choose Budget--</option>
-               </select>
-            </div>
-            <div class="col-md-12">
-               <textarea name="inputContent" ng-model="contentContact" id="inputContent" class="form-control" placeholder="Content" style="height:170px;margin-bottom:1%" required ></textarea>
-               <div class="errorMessage" ng-show="index.$submitted || index.inputContent.$touched">
-			  		<span ng-show="index.inputContent.$error.required">This field is required</span>
-				</div>
-            </div>
-            <div class="col-md-12">
-               <input class="btn btn-lg btn-primary btn-block"  type="submit" value="I reply in less than 24 hrs.">
-            </div>
-            <div class="clr"></div>
-         </div>
-      </div>
-   </form>
+	</form>
+	<img class="brackets" src="assets/images/bracket.png">
 </div>

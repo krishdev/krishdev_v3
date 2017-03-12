@@ -33,9 +33,15 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 	$scope.sendPost = function (isValid) {
 		if (isValid) {
 
-
-			var data = '{"inputUsername":"' + $scope.nameContact + '","inputEmail": "' + $scope.emailContact + '","inputContent":"' + $scope.contentContact + '","inputPhone":"' + $scope.phoneContact + '","inputProjectType":"' + $scope.projectType + '","inputBudget":"' + $scope.budgetContact + '"}';
-			data = JSON.parse(data);
+			var data = {
+					"fromEmailId": $scope.emailContact,
+					"toEmailId": "krishnasinbox@outlook.com",
+					"subject": $scope.nameContact + " " + $scope.projectType,
+					"emailBody": "Hello, <br> " + $scope.contentContact + " <br> Budget" + $scope.budgetContact
+				}
+				/*'{"inputUsername":"' + $scope.nameContact + '","inputEmail": "' + $scope.emailContact + '","inputContent":"' + $scope.contentContact + '","inputPhone":"' + $scope.phoneContact + '","inputProjectType":"' + $scope.projectType + '","inputBudget":"' + $scope.budgetContact + '"}';
+							data = JSON.parse(data)*/
+			;
 
 			postContact.postData(data).then(function (data) {
 				console.log(data + ' Data');

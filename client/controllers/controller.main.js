@@ -1,6 +1,8 @@
 var Account = require("../models/model.account");
 //var Universities = require("../models/model.univ");
 var passport = require("passport");
+var nodemailer = require("nodemailer");
+
 var registerUser = function (req, res) {
 	Account.register(new Account({
 			username: req.query.email
@@ -21,6 +23,34 @@ var registerUser = function (req, res) {
 			});
 		});
 };
+
+//Send email through npm sendmail
+var sendEmail = function (req, res) {
+	var smtpTransport = nodemailer.createTransport("SMTP", {
+		service: "Gmail", // sets automatically host, port and connection security settings
+		auth: {
+			user: "krishnakumar4315@gmail.com",
+			pass: "livehappily2013"
+		}
+	});
+	var mailOptions = { //email options
+		from: req.body.fromEmailId, // sender address.  Must be the same as authenticated user if using Gmail.
+		to: req.body.toEmailId, // receiver
+		subject: req.body.subject, // subject
+		text: '', // body,
+		html: req.body.emailBody
+	};
+	smtpTransport.sendMail(mailOptions, function (error, response) { //callback
+		if (error) {
+			console.log(error);
+		} else {
+			console.log("Message sent: " + response.message);
+		}
+
+		smtpTransport.close(); // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.
+	});
+}
+
 var loginUser = function (req, res, next) {
 	/* Users.findOne({
 	         email: req.body.register.email,
@@ -111,3 +141,4 @@ exports.loginUser = loginUser;
 exports.checkStatus = checkStatus;
 exports.logout = logout;
 exports.insertDataSet = insertDataSet;
+exports.sendEmail = sendEmail;

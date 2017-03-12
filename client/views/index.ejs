@@ -4,8 +4,14 @@
 <head>
 	<meta charset="utf-8">
 	<title>Krishnakumar Rajendran | FrontEnd UI Developer</title>
-	<meta name="description" content=" Krish - A professional FrontEnd Developer. Designs beautiful websites for mobile, tablet and desktops, 100% Responsive And Cost Efficient.">
+	<meta name="description" content="Krish - A professional FrontEnd Developer. Designs beautiful websites for mobile, tablet and desktops, 100% Responsive And Cost Efficient.">
 	<meta name="keywords" content="Krishnakumar,Krishna,krish,Krishnakumar Rajendran,UI Developer,Freelancer,Website Design,Responsive Design,FrontEnd Developer,AngularJS Developer,HTML5,ui,ux,freelance,design,web design,web,interface,user,california,united states,usa,india,coimbatore,los angeles,la,irvine,newport beach,">
+
+	<meta property="og:url" content="http://www.krishdev.com" />
+	<meta property="og:type" content="portfolio" />
+	<meta property="og:title" content="Front End Developer" />
+	<meta property="og:description" content="Krish - A professional FrontEnd Developer. Designs beautiful websites for mobile, tablet and desktops, 100% Responsive And Cost Efficient." />
+	<meta property="og:image" content="http://www.krishdev.com/assets/images/profile_pic2.jpeg" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="help" href="#/aboutMe">
 	<link rel="stylesheet" href="http://ianlunn.github.io/Hover/css/hover.css">
@@ -20,7 +26,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="assets/js/angular.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular-route.js"></script>
-	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.1.2.js"></script>
+	<script src="assets/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
 	<script src="assets/js/projectScript.js"></script>
 	<style>
 		#section1 {
@@ -28,7 +34,8 @@
 		}
 		
 		#section4 {
-			margin-top: 5%;
+			padding-top: 5%;
+			background: #333;
 		}
 		
 		#section5 {
@@ -120,6 +127,7 @@
 	<script src="app/app.js"></script>
 	<script src="app/controllers/navigationController.js"></script>
 	<script src="app/controllers/viewController.js"></script>
+	<script src="app/directives/backToTop.js"></script>
 	<script src="app/services/dataFactory.js"></script>
 	<script src="app/services/postFactory.js"></script>
 	<script src="app/services/fetchData.js"></script>

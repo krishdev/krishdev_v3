@@ -22,7 +22,7 @@
 				</div>
 			</div>
 		</div>-->
-		<section class="row">
+		<section class="row proj">
 			<div class="container">
 
 				<figure class="col-md-4">
@@ -40,12 +40,19 @@
 								<h4><span  class="label label-default angularjs hvr-bounce-to-right">AngularJs</span></h4>
 							</section>
 						</div>
+						<button href="" class="btn btn-txt">
+							View Website
+							<i class="fa fa-arrow-circle-o-right"></i>
+						</button>
 					</header>
 				</article>
 			</div>
 		</section>
-		<section class="row">
+		<section class="row proj">
 			<div class="container">
+				<figure class="col-md-4 mobile">
+					<img src="assets/images/responsive_andragogy.png" width="100%">
+				</figure>
 				<article class="col-md-8">
 					<header>
 						<h3>Andragogy</h3>
@@ -58,14 +65,18 @@
 								<h4><span class="label label-default angularjs hvr-bounce-to-right">#AngularJs</span></h4>
 							</section>
 						</div>
+						<button href="" class="btn btn-txt">
+							View Website
+							<i class="fa fa-arrow-circle-o-right"></i>
+						</button>
 					</header>
 				</article>
-				<figure class="col-md-4">
+				<figure class="col-md-4 desktop">
 					<img src="assets/images/responsive_andragogy.png" width="100%">
 				</figure>
 			</div>
 		</section>
-		<section class="row">
+		<section class="row proj">
 			<div class="container">
 
 				<figure class="col-md-4">
@@ -84,25 +95,39 @@
 								<h4><span class="label label-default requireJs hvr-bounce-to-right">RequireJs</span></h4>
 								<h4><span class="label label-default gulp hvr-bounce-to-right">Gulp</span></h4>
 							</section>
+
 						</div>
+						<button href="" class="btn btn-txt">
+							View Website
+							<i class="fa fa-arrow-circle-o-right"></i>
+						</button>
 					</header>
 				</article>
 			</div>
 		</section>
-		<h3 class="container gitTitle"><span>Git Repositories</span></h3>
-		<section class="row gitRepo" ng-repeat="repo in repos" ng-if="repo.id == '68334879' || repo.id == '67054041' || repo.id == '55940874' || repo.id == '51949722' ">
-			<div class="container">
-				<figure class="col-md-3 gitFig">
-					<img src="assets/images/github.png" width="100%">
-				</figure>
-				<article class="col-md-9">
-					<header>
-						<h3>{{repo.name}}</h3>
-						<p>AngularJS, custom directive.</p>
-						<a ng-href="{{repo.html_url}}">View this directive.</a>
-					</header>
-				</article>
+
+		<h3 class="gitTitle"><span>Git Repositories</span></h3>
+		<div class="container">
+			<div class="row">
+				<section class="col-md-6 gitRepo" ng-repeat="repo in repos" ng-if="repo.id == '68334879' || repo.id == '67054041' || repo.id == '46337480' || repo.id == '51949722' || repo.id == '46338864'">
+					<div class="">
+						<!--<figure class="col-md-3 gitFig">
+						<img src="assets/images/github.png" width="100%">
+					</figure>-->
+						<article class="">
+							<header>
+								<h3>{{repo.name}}</h3>
+								<p>AngularJS, custom directive.</p>
+								<a ng-href="{{repo.html_url}}" class="btn-txt" target="_blank">View this on github. 
+									<i class="fa fa-github"></i>
+								</a>
+								<article>{{repo.description | limitTo:288}} <span ng-if="repo.description.length > 288">...</span></article>
+							</header>
+						</article>
+					</div>
+				</section>
 			</div>
-		</section>
+		</div>
+
 	</div>
 </div>
