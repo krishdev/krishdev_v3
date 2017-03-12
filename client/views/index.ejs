@@ -147,6 +147,12 @@
 		ga('create', 'UA-81177703-1', 'auto');
 		ga('send', 'pageview');
 
+		$(document).ready(function() {
+			var pathName = window.location.herf;
+			$("nav .navbar-nav").removeClass("active");
+			$("nav li a[href='" + pathName + "']").closest("li").addClass("active");
+		});
+
 	</script>
 </body>
 
