@@ -75,7 +75,7 @@
 	</div>
 	<div ng-controller="navFooterCtrl" ng-include="footerTemplate"></div>
 	<!-- Modal -->
-	<div class="chat-box mobile-chat" ng-controller="chatController" ng-click="toggleChat($event)">
+	<div class="chat-box mobile-chat" style="display:none;" ng-controller="chatController" ng-click="toggleChat($event)">
 		<section>
 			<i class="chat-close fa fa-times" aria-hidden="true"></i>
 			<article class="chat-header">
@@ -146,12 +146,6 @@
 
 		ga('create', 'UA-81177703-1', 'auto');
 		ga('send', 'pageview');
-
-		$(document).ready(function() {
-			var pathName = window.location.herf;
-			$("nav .navbar-nav").removeClass("active");
-			$("nav li a[href='" + pathName + "']").closest("li").addClass("active");
-		});
 
 	</script>
 </body>
