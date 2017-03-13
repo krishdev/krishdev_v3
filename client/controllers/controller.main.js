@@ -43,8 +43,10 @@ var sendEmail = function (req, res) {
 	smtpTransport.sendMail(mailOptions, function (error, response) { //callback
 		if (error) {
 			console.log(error);
+			return res.send(error);
 		} else {
 			console.log("Message sent: " + response.message);
+			return res.send(response.message);
 		}
 
 		smtpTransport.close(); // shut down the connection pool, no more messages.  Comment this line out to continue sending emails.

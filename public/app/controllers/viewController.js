@@ -36,7 +36,7 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 			var data = {
 					"fromEmailId": $scope.emailContact,
 					"toEmailId": "krishnasinbox@outlook.com",
-					"subject": $scope.nameContact + " " + $scope.projectType,
+					"subject": $scope.nameContact + " " + $scope.projectType + " | " + $scope.emailContact,
 					"emailBody": "Hello, <br> " + $scope.contentContact + " <br> Budget" + $scope.budgetContact
 				}
 				/*'{"inputUsername":"' + $scope.nameContact + '","inputEmail": "' + $scope.emailContact + '","inputContent":"' + $scope.contentContact + '","inputPhone":"' + $scope.phoneContact + '","inputProjectType":"' + $scope.projectType + '","inputBudget":"' + $scope.budgetContact + '"}';
