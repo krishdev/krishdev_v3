@@ -650,6 +650,9 @@ a.back-to-top:hover i {
 	bottom: 0;
 	left: 0;
 }
+a.btn-txt {
+	font-size: 0.89em !important;
+}
 .btn-txt {
 	margin-top: 1em;
 	color: #fff;
