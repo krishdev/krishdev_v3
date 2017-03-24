@@ -35,7 +35,7 @@ mainModule.controller('loginCtrl', function ($scope, $rootScope, loginService, $
 				console.log(response);
 			});
 	};
-	//registerUser();
+	registerUser();
 });
 mainModule.factory('loginService', function ($http) {
 	return {
