@@ -2,15 +2,17 @@ var Account = require("../models/model.account");
 //var Universities = require("../models/model.univ");
 var passport = require("passport");
 var nodemailer = require("nodemailer");
+var ContentData = require("../models/model.myContent");
 
 var registerUser = function (req, res) {
+	console.log(req.body);
 	Account.register(new Account({
-			username: req.query.email
+			username: req.body.username
 		}),
-		req.query.password,
+		req.body.password,
 		function (err, account) {
 			if (err) {
-				console.log(err);
+				//console.log(err);
 				return res.status(500).json({
 					err: err
 				});
@@ -88,59 +90,51 @@ var loginUser = function (req, res, next) {
 	}
 	passport.authenticate("local", failedAuth)(req, res, next);
 };
-var getUserDetails = function (req, res) {
-	console.log(req.body);
-	Users.findOne({
-			username: req.body.username,
-			password: req.body.password
-		},
-		function (err, data) {
-			if (err) {
-				res.send("Something went wrong");
-			} else {
-				console.log(data);
-				if (data == null) {
-					res.send("user doesnot exist");
-				} else {
-					res.send(data);
-				}
 
-			}
-		});
-
-};
-var insertDataSet = function (req, res) {
-	var university = new Universities(req.query);
-	var dataSet = {
-		country: req.query.country,
-		university: req.query.university,
-		url: req.query.url
-	}
-	university.save(function (err) {
-		res.send('Inserted');
-	});
-	//console.log(req);
-};
-var checkStatus = function (req, res) {
-	if (!req.isAuthenticated()) {
-		return res.status(200).json({
-			status: false
-		});
-	}
-	res.status(200).json({
-		status: req.user
-	});
-};
 var logout = function (req, res) {
 	req.logout();
 	res.status(200).json({
 		status: false
 	});
+};
+
+var insertContent = function (req, res) {
+	var content = new ContentData(req.query);
+	content.save(function (err, data) {
+		if (err)
+			return res.send(err);
+		return res.send(data);
+	})
+};
+
+var getOneContent = function (req, res) {
+	console.log(new RegExp(["^", req.query.itemId, "$"].join(""), "i"));
+	ContentData.findOne({
+		itemId: new RegExp(["^", req.query.itemId, "$"].join(""), "i"),
+	}, function (err, data) {
+		if (err)
+			return res.send(err);
+		return res.send(data);
+	});
 }
-console.log("controller Initialized");
+
+var getAllData = function (req, res) {
+	ContentData.find(function (err, data) {
+		if (err)
+			return res.send(err);
+		return res.send(data);
+	})
+};
+
 exports.registerUser = registerUser;
 exports.loginUser = loginUser;
-exports.checkStatus = checkStatus;
 exports.logout = logout;
-exports.insertDataSet = insertDataSet;
 exports.sendEmail = sendEmail;
+
+exports.insertContent = insertContent;
+exports.getOneContent = getOneContent;
+exports.getAllData = getAllData;
+exports.getAllData = getAllData;
+
+
+console.log("controller Initialized");

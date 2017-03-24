@@ -12,6 +12,11 @@ var navHeaderTmpFn = function ($scope, CONSTANTS, $location, $timeout) {
 			angular.element("nav li a[href='#" + pathName + "']").closest("li").addClass("active");
 
 		}, 100);
+		if (pathName.split("/")[1] == "") {
+			$("body").addClass("homePage");
+		} else {
+			$("body").removeClass("homePage");
+		}
 	});
 };
 

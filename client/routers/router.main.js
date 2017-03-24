@@ -6,8 +6,11 @@ module.exports = function (app) {
 	app.post("/api/register", ctrl.registerUser);
 	app.post("/api/login", ctrl.loginUser);
 	app.post("/api/logout", ctrl.logout);
-	app.post("/api/insertDataSet", ctrl.insertDataSet);
-	app.get("/api/checkStatus", ctrl.checkStatus);
 	app.post("/api/sendEmail", ctrl.sendEmail);
+
+	app.get("/api/insertContent", ctrl.insertContent);
+	app.get("/api/getOneContent", ctrl.getOneContent);
+	app.get("/api/getAllData", ctrl.getAllData);
+
 	console.log('router Initialized');
 };

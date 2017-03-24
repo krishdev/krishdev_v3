@@ -1,0 +1,48 @@
+<div class="editorNavOverlay"></div>
+
+<section class="explorerPage">
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-7 content">
+			<article ng-if="explorer.heading">
+				<header>
+					<h2 ng-bind="explorer.heading"></h2>
+				</header>
+				<time>{{explorer.time | date:'MMMM dd yyyy'}}</time>
+				<p></p>
+				<div class="para mainContent" ng-bind-html="explorer.content"></div>
+				<footer>
+					<p>-Thanks, {{explorer.author}}</p>
+				</footer>
+			</article>
+			<article ng-if="!explorer.heading" class="text-center">
+				<header>
+					<h2>Sorry, the page you are looking for is not there..</h2>
+				</header>
+				<p></p>
+				<div class="para mainContent">Please visit the <a ng-href="#/">home</a> page.</div>
+				<footer>
+					<br>
+					<input class="form-control" type="text" ng-model="autofetch" placeholder="search for topics">
+				</footer>
+			</article>
+		</div>
+		<div class="col-md-3">
+			<section class="list-group" ng-if="contents.length">
+				<div href="" class="list-group-item active">
+					<h4 class="list-group-item-heading">Recent Posts</h4>
+				</div>
+				<article ng-href="#/explore/{{content.itemId}}" ng-repeat="content in contents" class="list-group-item">
+					<div class="list-group-item-text">
+						<header>
+							<h4>
+								<a ng-href="#/explore/{{content.itemId}}">{{content.heading}}</a>
+							</h4>
+						</header>
+						<a ng-href="#/explore/{{content.itemId}}">Read this</a>
+					</div>
+				</article>
+			</section>
+		</div>
+	</div>
+</section>

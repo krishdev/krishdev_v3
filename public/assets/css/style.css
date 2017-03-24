@@ -572,9 +572,6 @@ a:hover {
 .gulp {
 	background-color: rgba(232, 76, 80, 0.3);
 }
-.list-group-item {
-	width: 265px;
-}
 .requireJs {
 	background-color: rgba(255, 251, 2, 0.3);
 }
@@ -681,7 +678,7 @@ section.row.proj {
 	padding: 5em 0;
 }
 .gitRepo {
-	min-height: 285px;
+	min-height: 300px;
 	box-shadow: 2px 1px 0px 1px rgba(6, 6, 6, 0.3);
 	padding: 3em 2.5em;
 	overflow: hidden
@@ -701,6 +698,9 @@ section.row.proj {
 }
 .gitRepo .btn-txt + article {
 	margin-top: 1em;
+	font-family: 'Noto Sans', sans-serif;
+	font-size: 1.2em;
+	color: #6d6a6a;
 }
 .gitTitle {
 	margin-top: 2em;
@@ -787,4 +787,71 @@ section.row.proj {
 	.gitRepo {
 		box-shadow: 0px 1px 0px 0px rgba(6, 6, 6, 0.3);
 	}
+}
+body.homePage {
+	overflow: hidden;
+}
+.gitRepo:nth-child(2n) {
+	box-shadow: 0px 2px 0px 0px rgba(6, 6, 6, 0.3);
+}
+
+/* HTML EDITOR */
+
+.editorNavOverlay {
+	height: 1em;
+	background: linear-gradient(to left, #1e3c72, #2a5298) !important;
+	background-color: #1e3c72 !important;
+}
+.editorPage .container {
+	padding: 2em;
+}
+.editorPage .container .editorContainer #editor {
+	min-height: 500px;
+}
+.editorPage .container .editorContainer header,
+.editorPage .container .editorContainer footer,
+.editorPage .container .editorContainer header div {
+	margin: 0.5em 0;
+}
+.editorPage .banner {
+	color: #fff;
+	font-size: 16px;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, .1);
+	background-color: #6f5499;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#563d7c), to(#6f5499));
+	background-image: -webkit-linear-gradient(top, #563d7c 0, #6f5499 100%);
+}
+.editorPage .banner span {
+	color: #F7DC6F;
+}
+
+/* Explorer */
+
+pre {
+	background-color: #563737;
+	color: #e0dfdf;
+	font-family: 'Source Code Pro', monospace;
+}
+.explorerPage .row {
+	margin-top: 1em;
+	margin-right: 0;
+}
+.explorerPage .content {
+	padding: 2em;
+}
+.explorerPage .content h2 {
+	font-family: 'Ubuntu', sans-serif;
+	color: #444;
+}
+.explorerPage .content .para.mainContent {
+	font-family: 'Noto Sans', sans-serif;
+	color: #616161;
+	line-height: 1.75;
+	font-size: 18px;
+}
+.explorerPage .list-group-item header h4 a {
+	color: inherit;
+}
+.explorerPage .col-md-3 {
+	padding-left: 30px;
 }

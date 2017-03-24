@@ -1,0 +1,72 @@
+<div class="editorNavOverlay"></div>
+<section class="editorPage">
+	<div class="banner">
+		<div class="container">
+			<h2>Hi! Krish,</h2>
+			<h3><span>Heading:</span> {{content.title}}</h3>
+			<em><span>Tags:</span> {{content.tags}}</em>
+		</div>
+	</div>
+	<div class="container">
+		<div class="editorContainer">
+			<div class="alert alert-warning">{{error.missingElem}}</div>
+			<header>
+				<div class="input-group input-group-lg">
+					<span class="input-group-addon" id="sizing-addon1">Title: </span>
+					<input type="text" class="form-control" ng-model="content.title" placeholder="unique title">
+				</div>
+				<div class="input-group input-group-lg">
+					<span class="input-group-addon" id="sizing-addon1">Tags: </span>
+					<input type="text" class="form-control" ng-model="content.tags" placeholder="tags- eg: html,css">
+				</div>
+			</header>
+			<div id="editor">
+				<p>Welcome again!</p>
+				<p>Start typing <strong>anything</strong> here</p>
+				<p>
+					<br>
+				</p>
+			</div>
+			<footer>
+				<input class="btn btn-lg btn-primary btn-block" ng-click="submitForm()" type="button" value="Submit">
+			</footer>
+		</div>
+		<br>
+
+		<section class="recentPosts">
+			<h3>Recent Posts</h3>
+			<div class="row">
+				<div class="col-sm-6 col-md-4" ng-repeat="content in contents">
+					<div class="thumbnail">
+						<div class="caption">
+							<h3>{{content.heading}}</h3>
+							<div ng-bind-html="content.summary"></div>
+							<div ng-bind-html="content.tag"></div>
+							<p>
+								<a ng-href="#/explore/{{content.itemId}}" class="btn btn-primary" role="button">Button</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+</section>
+<script>
+	var options = {
+		modules: {
+			toolbar: [
+				[{
+					header: [1, 2, false]
+				}],
+				['bold', 'italic', 'underline', 'list'],
+				['image', 'code-block']
+			]
+		},
+		placeholder: 'Compose an epic...',
+		theme: 'snow' // or 'bubble'
+	};
+	var editor = new Quill('#editor', options);
+
+</script>

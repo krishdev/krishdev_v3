@@ -1,4 +1,4 @@
-var mainModule = angular.module('mainModule', ['navModule', 'navFooter', 'common', 'ngRoute', 'ui.bootstrap', 'backToTop']);
+var mainModule = angular.module('mainModule', ['ngSanitize', 'navModule', 'navFooter', 'common', 'ngRoute', 'ui.bootstrap', 'backToTop']);
 mainModule.config(['$routeProvider',
     function ($routeProvider) {
 		$routeProvider
@@ -27,8 +27,26 @@ mainModule.config(['$routeProvider',
 				controller: 'aboutMeCtrl',
 				controllerAs: 'abtMeCtrl'
 			})
+			.when('/editor', {
+				templateUrl: 'app/partials/editor.html',
+				controller: 'editorCtrl',
+				controllerAs: 'eCtrl'
+			})
+			.when('/explore/:id', {
+				templateUrl: 'app/partials/explorer.html',
+				controller: 'exploreCtrl',
+				controllerAs: 'exCtrl'
+			})
+			.when('/login', {
+				templateUrl: 'app/partials/login.html',
+				controller: 'loginCtrl',
+				controllerAs: 'lCtrl'
+			})
 			.otherwise({
 				redirectTo: '/'
 			});
     }
 ]);
+mainModule.run(function ($rootScope) {
+	$rootScope.setUserDetails = "";
+});
