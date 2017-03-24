@@ -28,6 +28,7 @@
 				</p>
 			</div>
 			<footer>
+				<input class="btn btn-lg btn-primary btn-block" ng-click="PreviewForm()" type="button" value="Preview" data-toggle="modal" data-target="#myModal">
 				<input class="btn btn-lg btn-primary btn-block" ng-click="submitForm()" type="button" value="Submit">
 			</footer>
 		</div>
@@ -43,7 +44,7 @@
 							<div ng-bind-html="content.summary"></div>
 							<div ng-bind-html="content.tag"></div>
 							<p>
-								<a ng-href="#/explore/{{content.itemId}}" class="btn btn-primary" role="button">Button</a>
+								<a ng-href="#/explore/{{content.itemId}}" class="btn btn-primary" role="button">view</a>
 							</p>
 						</div>
 					</div>
@@ -53,6 +54,35 @@
 	</div>
 
 </section>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content explorerPage">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Preview</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body content">
+				<article ng-if="explorer.heading">
+					<header>
+						<h2 ng-bind="explorer.heading"></h2>
+					</header>
+					<time>{{explorer.time | date:'MMMM dd yyyy'}}</time>
+					<p></p>
+					<div class="para mainContent" ng-bind-html="explorer.content"></div>
+					<footer>
+						<p>-Thanks, {{explorer.author}}</p>
+					</footer>
+				</article>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
 <script>
 	var options = {
 		modules: {

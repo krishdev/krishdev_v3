@@ -32,7 +32,7 @@ var ctrlFunction = function ($scope, $rootScope, $timeout, contentService, $loca
 				time: presentTime.getTime(),
 				author: 'Krish',
 				tag: $scope.content.tags,
-				itemId: heading.split(" ").join("-")
+				itemId: $scope.content.title.split(" ").join("-")
 			}
 			contentService.insertData('/api/insertContent', contentData).then(function (response) {
 				if (response.data._id) {
@@ -53,7 +53,22 @@ var ctrlFunction = function ($scope, $rootScope, $timeout, contentService, $loca
 			$scope.error.missingElem = "Please enter all the fields";
 		}
 
-	}
+	};
+	$scope.PreviewForm = function () {
+		var presentTime = new Date();
+		var qlEditorHtml = angular.element(".ql-editor").html();
+		var contentData;
+		if ($scope.content.title && $scope.content.tags && qlEditorHtml.length) {
+			$scope.explorer = {
+				heading: $scope.content.title,
+				content: qlEditorHtml,
+				time: presentTime.getTime(),
+				author: 'Krish',
+				tag: $scope.content.tags,
+				itemId: $scope.content.title.split(" ").join("-")
+			}
+		}
+	};
 };
 mainModule.controller('editorCtrl', ['$scope', '$rootScope', '$timeout', 'contentService', '$location', ctrlFunction]);
 

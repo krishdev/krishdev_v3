@@ -855,3 +855,13 @@ pre {
 .explorerPage .col-md-3 {
 	padding-left: 30px;
 }
+@media screen and (min-width:500px) and (max-width:991px) {
+	.loginPage form {
+		padding: 0px 10em !important;
+	}
+}
+@media screen and (max-width:499px) {
+	.loginPage form {
+		padding: 0px 1em !important;
+	}
+}
