@@ -10,6 +10,7 @@ var ctrlFunction = function ($scope, $rootScope, $timeout, contentService, $rout
 			if (response && response.data)
 				$scope.explorer = response.data;
 			$scope.explorer.time = new Date().getTime();
+			$scope.explorer.tag = $scope.explorer.tag.split(",");
 		}, function errorCallBack(response) {
 			console.log(response.data);
 		});

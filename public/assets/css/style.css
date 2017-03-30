@@ -476,7 +476,6 @@ a:hover {
 .chat-box.mobile-chat section {
 	display: none;
 }
-@media only screen and (max-width:767px) {}
 .chat-box section {
 	position: relative;
 	height: 100%;
@@ -854,6 +853,7 @@ pre {
 }
 .explorerPage .col-md-3 {
 	padding-left: 30px;
+	padding-top: 3em;
 }
 @media screen and (min-width:500px) and (max-width:991px) {
 	.loginPage form {
@@ -864,4 +864,42 @@ pre {
 	.loginPage form {
 		padding: 0px 1em !important;
 	}
+}
+@media only screen and (max-width:767px) {
+	.explorerPage p img {
+		width: 100%
+	}
+}
+.tags span {
+	background: #d98f44;
+	color: #fff;
+	padding: 1px 6px;
+	border-radius: 35px;
+}
+.tags {
+	margin: 1em 0;
+}
+
+/* Comments */
+
+@media (min-width: 768px) {
+	#idc-container-parent {
+		width: 750px;
+	}
+}
+@media (min-width: 992px) {
+	#idc-container-parent {
+		width: 970px;
+	}
+}
+@media (min-width: 1200px) {
+	#idc-container-parent {
+		width: 1170px;
+	}
+}
+#idc-container-parent {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
 }

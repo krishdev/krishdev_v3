@@ -126,6 +126,20 @@ var getAllData = function (req, res) {
 	})
 };
 
+var updateContent = function (req, res) {
+	console.log(req.body._id);
+	var query = {
+		_id: req.body._id
+	};
+	ContentData.update(query, req.body, {
+		multi: true
+	}, function (err, data) {
+		if (err)
+			return res.send(err);
+		return res.send(data);
+	});
+};
+
 exports.registerUser = registerUser;
 exports.loginUser = loginUser;
 exports.logout = logout;
@@ -134,7 +148,6 @@ exports.sendEmail = sendEmail;
 exports.insertContent = insertContent;
 exports.getOneContent = getOneContent;
 exports.getAllData = getAllData;
-exports.getAllData = getAllData;
-
+exports.updateContent = updateContent;
 
 console.log("controller Initialized");

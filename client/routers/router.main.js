@@ -8,9 +8,10 @@ module.exports = function (app) {
 	app.post("/api/logout", ctrl.logout);
 	app.post("/api/sendEmail", ctrl.sendEmail);
 
-	app.get("/api/insertContent", ctrl.insertContent);
+	app.post("/api/insertContent", ctrl.insertContent);
 	app.get("/api/getOneContent", ctrl.getOneContent);
 	app.get("/api/getAllData", ctrl.getAllData);
+	app.post("/api/updateContent", ctrl.updateContent);
 
 	console.log('router Initialized');
 };

@@ -8,7 +8,13 @@
 				<header>
 					<h2 ng-bind="explorer.heading"></h2>
 				</header>
-				<time>{{explorer.time | date:'MMMM dd yyyy'}}</time>
+				<div class="tags">
+					<a href="" ng-repeat="cTag in explorer.tag">
+						<span> # {{cTag}}</span>
+						<t ng-if="!$last">, </t>
+					</a>
+				</div>
+				<time>{{explorer.time | date:'MMMM dd, yyyy'}}</time>
 				<p></p>
 				<div class="para mainContent" ng-bind-html="explorer.content"></div>
 				<footer>
@@ -32,7 +38,7 @@
 				<div href="" class="list-group-item active">
 					<h4 class="list-group-item-heading">Recent Posts</h4>
 				</div>
-				<article ng-href="#/explore/{{content.itemId}}" ng-repeat="content in contents" class="list-group-item">
+				<article ng-href="#/explore/{{content.itemId}}" ng-repeat="content in contents" ng-if="explorer._id != content._id" class="list-group-item">
 					<div class="list-group-item-text">
 						<header>
 							<h4>
@@ -52,3 +58,14 @@
 	}
 
 </style>
+<div ng-if="explorer.heading">
+	<script>
+		var idcomments_acct = '48fc400ced0b9dc84541da36b0f414f7';
+		var idcomments_post_id;
+		var idcomments_post_url;
+
+	</script>
+	<span id="IDCommentsPostTitle" style="display:none"></span>
+	<script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+
+</div>
