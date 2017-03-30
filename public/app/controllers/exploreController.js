@@ -7,10 +7,12 @@ var ctrlFunction = function ($scope, $rootScope, $timeout, contentService, $rout
 		contentService.findOneData('/api/getOneContent', {
 			'itemId': id
 		}).then(function (response) {
-			if (response && response.data)
+			if (response && response.data) {
+
 				$scope.explorer = response.data;
-			$scope.explorer.time = new Date().getTime();
-			$scope.explorer.tag = $scope.explorer.tag.split(",");
+				$scope.explorer.time = new Date().getTime();
+				$scope.explorer.tag = $scope.explorer.tag.split(",");
+			}
 		}, function errorCallBack(response) {
 			console.log(response.data);
 		});

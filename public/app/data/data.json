@@ -12,6 +12,10 @@
 		"cssClass": ":",
 		"href": "#/myproject"
 	}, {
+		"menu": "Explore",
+		"cssClass": ":",
+		"href": "#/explore"
+	}, {
 		"menu": "Contact Me",
 		"cssClass": ":",
 		"href": "#/contact"

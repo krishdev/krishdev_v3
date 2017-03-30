@@ -1,0 +1,29 @@
+<div class="editorNavOverlay"></div>
+<section class="materialsPage">
+	<div class="jumbotron text-center">
+		<h1>Topics to cherish <span class="glyphicon glyphicon-heart-empty red"></span></h1>
+		<p></p>
+	</div>
+	<div class="container">
+		<div class="row">
+			<article class="col-sm-6 col-md-4 individualItems" ng-repeat="content in contents">
+				<div class="thumbnail">
+					<div class="caption">
+						<h3>{{content.heading}}</h3>
+						<hr>
+						<div ng-bind-html="content.summary"></div>
+						<div class="tags">
+							<a href="" ng-repeat="cTag in content.tag">
+								<span> # {{cTag}}</span>
+								<t ng-if="!$last">, </t>
+							</a>
+						</div>
+						<p>
+							<a ng-href="#/explore/{{content.itemId}}" class="" role="button">Read Article <span class="glyphicon glyphicon-chevron-right"></span></a>
+						</p>
+					</div>
+				</div>
+			</article>
+		</div>
+	</div>
+</section>

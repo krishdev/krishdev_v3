@@ -37,6 +37,11 @@ mainModule.config(['$routeProvider',
 				controller: 'exploreCtrl',
 				controllerAs: 'exCtrl'
 			})
+			.when('/explore', {
+				templateUrl: 'app/partials/exploreMaterials.html',
+				controller: 'materialCtrl',
+				controllerAs: 'mCtrl'
+			})
 			.when('/login', {
 				templateUrl: 'app/partials/login.html',
 				controller: 'loginCtrl',

@@ -63,7 +63,7 @@ body {
 ul.listStyle {
 	list-style-type: circle;
 }
-.jumbotron {
+#section1 .jumbotron {
 	padding-top: 0 !important;
 }
 .navbar-inverse {
@@ -147,7 +147,7 @@ ul.listStyle {
 .clr {
 	clear: both;
 }
-.jumbotron {
+#section1 .jumbotron {
 	background-color: transparent !important;
 }
 .quickLinkImage {
@@ -360,12 +360,12 @@ a:hover {
 	font-family: 'Nunito', sans-serif;
 	color: #492418;
 }
-.container .jumbotron,
-.container-fluid.jumbotron {
+#section1 .container .jumbotron,
+#section1 .container-fluid.jumbotron {
 	padding-right: 60px;
 	padding-left: 60px;
 }
-.container-fluid.jumbotron.row {
+#section1 .container-fluid.jumbotron.row {
 	margin-left: 0;
 	margin-right: 0;
 }
@@ -902,4 +902,13 @@ pre {
 	padding-left: 15px;
 	margin-right: auto;
 	margin-left: auto;
+}
+
+/* Material Page */
+
+.materialsPage span.glyphicon.glyphicon-chevron-right {
+	font-size: 0.76em;
+}
+.glyphicon.red {
+	color: red;
 }
