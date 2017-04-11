@@ -34,16 +34,16 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 		if (isValid) {
 
 			var data = {
-					"fromEmailId": $scope.emailContact,
-					"toEmailId": "krishnasinbox@outlook.com",
-					"subject": $scope.nameContact + " " + $scope.projectType + " | " + $scope.emailContact,
-					"emailBody": "Hello, <br> " + $scope.contentContact + " <br> Budget" + $scope.budgetContact
-				}
-				/*'{"inputUsername":"' + $scope.nameContact + '","inputEmail": "' + $scope.emailContact + '","inputContent":"' + $scope.contentContact + '","inputPhone":"' + $scope.phoneContact + '","inputProjectType":"' + $scope.projectType + '","inputBudget":"' + $scope.budgetContact + '"}';
-							data = JSON.parse(data)*/
-			;
+				"fromEmailId": $scope.emailContact,
+				"toEmailId": "krishnasinbox@outlook.com",
+				"subject": $scope.nameContact + " " + $scope.projectType + " | " + $scope.emailContact,
+				"emailBody": "Hello, <br> " + $scope.contentContact + " <br> Budget" + $scope.budgetContact
+			};
+			/*'{"inputUsername":"' + $scope.nameContact + '","inputEmail": "' + $scope.emailContact + '","inputContent":"' + $scope.contentContact + '","inputPhone":"' + $scope.phoneContact + '","inputProjectType":"' + $scope.projectType + '","inputBudget":"' + $scope.budgetContact + '"}';
+						data = JSON.parse(data)*/
 
-			postContact.postData(data).then(function (data) {
+
+			/*postContact.postData(data).then(function (data) {
 				console.log(data + ' Data');
 				var modalInstance = $uibModal.open({
 					backdrop: true,
@@ -58,7 +58,21 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 				modalInstance.result.then(function () {}, function () {
 
 				});
-			})
+			});*/
+			var thisDate = new Date();
+			$scope.messageData = {
+				subject: $scope.nameContact + " " + $scope.projectType + " | " + $scope.emailContact,
+				content: "Hello, <br> " + $scope.contentContact + " <br> Budget" + $scope.budgetContact,
+				time: thisDate.getTime(),
+				from: $scope.emailContact,
+				to: "krishnasinbox@outlook.com"
+			};
+
+			fetchData.getData("/api/contact", $scope.messageData).then(function (response) {
+
+			}, function errorCallBack() {
+
+			});
 			$scope.nameContact = '';
 			$scope.emailContact = '';
 			$scope.contentContact = '';

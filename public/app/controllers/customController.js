@@ -18,6 +18,10 @@ var ctrlFunction = function ($scope, $rootScope, $timeout, contentService, $loca
 			if (response && response.data)
 				$scope.contents = response.data;
 		});
+		contentService.getAllData('/api/getMessages').then(function (response) {
+			if (response && response.data)
+				$scope.messages = response.data;
+		})
 	};
 	init();
 	$scope.submitForm = function () {
@@ -113,6 +117,10 @@ var ctrlFunction = function ($scope, $rootScope, $timeout, contentService, $loca
 			$scope.error.missingElem = "Please enter all the fields";
 		}
 
+	};
+
+	$scope.viewMessage = function (message) {
+		$scope.contMessage = message;
 	};
 };
 mainModule.controller('editorCtrl', ['$scope', '$rootScope', '$timeout', 'contentService', '$location', ctrlFunction]);

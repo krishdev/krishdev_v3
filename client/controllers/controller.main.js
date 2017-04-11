@@ -3,6 +3,7 @@ var Account = require("../models/model.account");
 var passport = require("passport");
 var nodemailer = require("nodemailer");
 var ContentData = require("../models/model.myContent");
+var Contact = require("../models/model.contact");
 
 var registerUser = function (req, res) {
 	console.log(req.body);
@@ -107,6 +108,15 @@ var insertContent = function (req, res) {
 	})
 };
 
+var contact = function (req, res) {
+	var contact = new Contact(req.query);
+	contact.save(function (err, data) {
+		if (err)
+			return res.send(err);
+		return res.send(data);
+	})
+};
+
 var getOneContent = function (req, res) {
 	console.log(new RegExp(["^", req.query.itemId, "$"].join(""), "i"));
 	ContentData.findOne({
@@ -120,6 +130,13 @@ var getOneContent = function (req, res) {
 
 var getAllData = function (req, res) {
 	ContentData.find(function (err, data) {
+		if (err)
+			return res.send(err);
+		return res.send(data);
+	})
+};
+var getMessages = function (req, res) {
+	Contact.find(function (err, data) {
 		if (err)
 			return res.send(err);
 		return res.send(data);
@@ -149,5 +166,7 @@ exports.insertContent = insertContent;
 exports.getOneContent = getOneContent;
 exports.getAllData = getAllData;
 exports.updateContent = updateContent;
+exports.contact = contact;
+exports.getMessages = getMessages;
 
 console.log("controller Initialized");
