@@ -62,7 +62,7 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 			var thisDate = new Date();
 			$scope.messageData = {
 				subject: $scope.nameContact + " " + $scope.projectType + " | " + $scope.emailContact,
-				content: "Hello, <br> " + $scope.contentContact + " <br> Budget" + $scope.budgetContact,
+				content: "Hello, <br> " + $scope.contentContact + " <br> Budget" + $scope.budgetContact + "<br> Ph: " + $scope.phoneContact,
 				time: thisDate.getTime(),
 				from: $scope.emailContact,
 				to: "krishnasinbox@outlook.com"
