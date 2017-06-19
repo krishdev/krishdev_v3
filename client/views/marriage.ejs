@@ -2,193 +2,936 @@
 <html>
 
 <head>
-
-
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	<link href="assets/css/marriageStyles.css" rel="stylesheet">
 
+
+	<style type="text/css">
+		/*
+Navbar
+*/
+		
+		@media (min-width: 768px) {
+			.navbar-custom {
+				padding: 25px 0;
+				-webkit-transition: padding .3s;
+				-moz-transition: padding .3s;
+				transition: padding .3s;
+			}
+			header .container {
+				padding-top: 200px;
+				padding-bottom: 100px;
+			}
+		}
+		
+		.navbar-custom {
+			background: #2C3E50;
+			font-family: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+			text-transform: uppercase;
+			font-weight: 700;
+			border: none;
+		}
+		/*End Nav*/
+		
+		@media only screen and (max-width:768px) {
+			div#maincontent {
+				padding-top: 25%;
+			}
+		}
+		
+		div#maincontent {
+			height: 80vh;
+		}
+		/*Header*/
+		
+		header {
+			text-align: center;
+			background: rgba(42, 24, 188, 0.68);
+			color: #fff;
+		}
+		
+		.sub-quote {
+			text-transform: uppercase;
+		}
+		/*End Header*/
+		
+		section.item-container {
+			min-height: 80vh;
+			padding-top: 12%;
+			padding-bottom: 12%;
+		}
+		
+		.container-item {
+			margin: 0 0 15px;
+			right: 0;
+			height: 260px;
+		}
+		
+		@media (min-width: 767px) {
+			.container-item {
+				margin: 0 0.2em 30px;
+			}
+		}
+		
+		.container-item .portfolio-link .caption {
+			background: rgba(24, 188, 156, .9);
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			transition: all ease .5s;
+			-webkit-transition: all ease .5s;
+			-moz-transition: all ease .5s;
+		}
+		
+		.container-item .portfolio-link {
+			display: block;
+			position: absolute;
+			margin: 0 auto;
+			height: 100%;
+			left: 0;
+			top: 0;
+			width: 100%;
+		}
+		
+		.col-sm-4.container-item {
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: relative;
+		}
+		
+		.row .container-item:first-child:hover {
+			background-image: url('./assets/images/calendar.png');
+		}
+		
+		.row .container-item:last-child:hover {
+			background-image: url('./assets/images/reception.jpg');
+		}
+		
+		.row .container-item:nth-child(2):hover {
+			background-image: url('./assets/images/join_hands.jpg');
+		}
+		
+		@media (min-width: 768px) {
+			.col-sm-4 {
+				width: 32%;
+			}
+		}
+		
+		.two .col-sm-4.container-item a.portfolio-link[href*='#portfolioModal1'] {
+			background-color: rgba(127, 255, 0, 0.8);
+		}
+		
+		.two .col-sm-4.container-item a.portfolio-link[href*='#portfolioModal2'] {
+			background-color: rgba(0, 136, 255, 0.8);
+		}
+		
+		.two .col-sm-4.container-item a[href*='#portfolioModal3'] {
+			background-color: rgba(3, 155, 229, 0.8);
+		}
+		/*Section two */
+		
+		section.item-container.two span.arrow-icon {
+			font-size: 1.2em;
+			background: rgba(119, 48, 48, 0.49);
+			padding: 13px 18px;
+			border-radius: 66%;
+			color: antiquewhite;
+			position: absolute;
+			top: 50%;
+			cursor: pointer;
+		}
+		
+		section.item-container.two span.arrow-icon:first-child {
+			left: 0;
+		}
+		
+		section.item-container.two span.arrow-icon:nth-child(2) {
+			right: 0;
+		}
+		
+		.item-count-2 article::after {
+			clear: both;
+		}
+		
+		.three figure {
+			width: 115px;
+			height: 115px;
+			border-radius: 50%;
+			background: aliceblue;
+			margin: 0 auto;
+		}
+		
+		article.box-left,
+		.box-right {
+			text-align: center;
+			margin: 0 auto;
+			box-shadow: 1px 1px 1px 1px lightgray;
+			padding: 1em 2em;
+		}
+		
+		.three p {
+			text-align: left;
+			padding-top: 0.5em;
+			font-family: 'Noto Sans', sans-serif;
+		}
+		
+		.three h3 {
+			border-bottom: 1px solid lightgray;
+			padding-bottom: 0.51em;
+			font-family: 'Nunito', sans-serif;
+		}
+		
+		article.box-right {
+			float: left;
+		}
+		
+		@media only screen and (min-width:768px) {
+			article.box-left,
+			.box-right {
+				width: 49%;
+			}
+			article.box-left {
+				float: right;
+			}
+			.box-right {
+				float: left;
+			}
+		}
+		/*Timeline*/
+		
+		section.item-container.four .row .col-md-6 {
+			position: relative;
+			height: 230px;
+		}
+		
+		section.item-container.four .row .col-md-6 .timeline-left,
+		section.item-container.four .row .col-md-6 .timeline-right {
+			position: absolute;
+			box-shadow: 2px 1px 2px lightsalmon;
+		}
+		
+		section.item-container.four .row .col-md-6 .timeline-left {
+			left: 1%;
+			top: 2%;
+		}
+		
+		section.item-container.four .row .col-md-6 .timeline-right {
+			right: 1%;
+			bottom: 2%;
+		}
+		
+		section.item-container.four .row article.col-md-6 header {
+			font-size: 1.42em;
+			padding: 0.51em;
+			background: rgb(156, 85, 167);
+		}
+		
+		section.item-container.four .row article.col-md-6 p {
+			padding: 3% 4%;
+		}
+		
+		section.item-container.four .row .col-md-6:first-child {
+			border-right: 3px solid lightblue;
+		}
+		
+		section.item-container.four .row article.col-md-6:first-child .timeline-line {
+			width: 34%;
+			height: 3px;
+			background-color: rgba(229, 243, 152, 0.75);
+			position: absolute;
+			right: 0;
+			top: 5em;
+		}
+		
+		section.item-container.four .row article.col-md-6:last-child .timeline-line {
+			width: 34%;
+			height: 3px;
+			background-color: rgba(229, 243, 152, 0.75);
+			position: absolute;
+			left: 0px;
+			bottom: 5em;
+		}
+		
+		section.item-container.four .row article.col-md-6 .timeline-line::after {
+			width: 40px;
+			height: 40px;
+			background: rgb(241, 219, 255);
+			display: block;
+			content: "";
+			border-radius: 50%;
+			position: absolute;
+			top: -18px;
+		}
+		
+		section.item-container.four .row article.col-md-6:last-child .timeline-line::after {
+			right: -40px;
+		}
+		
+		section.item-container.four .row article.col-md-6:first-child .timeline-line::after {
+			left: -40px;
+		}
+		
+		section.item-container.two {
+			background: url(assets/images/jodi/01.jpg) 44% -29px no-repeat;
+			background-size: cover;
+			position: relative;
+			background-attachment: fixed;
+		}
+		/*overlay screen*/
+		
+		body {
+			position: relative;
+		}
+		
+		section.overlay-screen {
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			top: 0;
+			background: #565ebf;
+			color: #fff;
+			font-size: 45px;
+			overflow: hidden;
+		}
+		
+		.hide {
+			display: none !important;
+		}
+		
+		article.inner-text.text-center {
+			padding: 15%;
+		}
+		
+		section.overlay-screen .inner-text div span {
+			font-size: 2em;
+			vertical-align: sub;
+		}
+		
+		.heart:hover {
+			color: #FFB6C1;
+			font-size: 1.3em;
+		}
+		
+		span.heart {
+			transition: 0.5s;
+		}
+		
+		.overlay-close {
+			position: absolute;
+			right: 20px;
+			top: 0;
+			color: #fff;
+		}
+		
+		@media only screen and (max-width:768px) {
+			section.item-container.four .row article.col-md-6:first-child .timeline-line {
+				width: 20%;
+				left: 0;
+			}
+			section.item-container.four .row .col-md-6 .timeline-left {
+				left: 27%;
+				top: 11%;
+			}
+			section.item-container.four .row article.col-md-6:first-child .timeline-line::after {
+				left: 149px;
+			}
+			section.item-container.four .row .col-md-6 .timeline-right {
+				right: 30%;
+				bottom: 50%;
+			}
+			section.item-container.four .row .col-md-6 {
+				height: 170px;
+			}
+			section.item-container.four .row article.col-md-6:last-child .timeline-line {
+				width: 20%;
+				bottom: 75%;
+				left: 80%;
+			}
+			section.item-container.four .row .col-md-6:first-child {
+				/* border-right:none; */
+			}
+			section.item-container.four .row .col-md-6 {
+				border-left: 3px solid lightblue;
+				border-right: 3px solid lightblue;
+			}
+			section.item-container.four .row article.col-md-6:last-child .timeline-line::after {
+				right: 149px;
+			}
+		}
+		
+		@media only screen and (max-width:465px) {
+			section.item-container.four .row article.col-md-6:first-child .timeline-line::after {
+				left: 40px;
+			}
+			section.item-container.four .row article.col-md-6:last-child .timeline-line::after {
+				right: 50px;
+			}
+		}
+		/*Friends*/
+		
+		.five .col-md-4 {
+			padding: 7%;
+		}
+		
+		.five .row article {
+			overflow: hidden;
+		}
+		
+		.five .row article figure img {
+			width: 155px;
+			height: 155px;
+		}
+		/*Contact*/
+		
+		section.invite {
+			padding: 1% 5%;
+		}
+		
+		.five .col-md-6:last-child {
+			border-left: 2px solid lightcyan;
+		}
+		
+		.five .col-md-6:first-child {
+			padding-right: 5%;
+		}
+		/*footer*/
+		
+		footer .parent {
+			position: relative;
+			height: 46px;
+			overflow: hidden;
+		}
+		
+		.small.kLeft {
+			border-bottom: 20px solid #b7b924;
+		}
+		
+		#kLeft,
+		.kLeft {
+			width: 0;
+			height: 0;
+			border-top: 5px solid #b7b924;
+			border-right: 1px solid #b7b924;
+			border-bottom: 40px solid #b7b924;
+			border-left: 5px solid #b7b924;
+			z-index: 2;
+			-webkit-1transition: all 0.5s ease-in-out;
+			-moz-transition: all 0.5s ease-in-out;
+			-o-transition: all 0.5s ease-in-out;
+			transition: all 0.5s ease-in-out;
+		}
+		
+		.small.kTop {
+			border-bottom: 10px solid rgb(195, 250, 135);
+			left: 1px;
+			transform: translate(96px) rotate(20deg);
+		}
+		
+		#kTop,
+		.kTop {
+			position: absolute;
+			left: 1px;
+			top: 15px;
+			width: 0;
+			height: 0;
+			border-top: 5px solid #b7b924;
+			border-right: 1px solid #b7b924;
+			border-bottom: 20px solid #c3fa87;
+			border-left: 5px solid #b7b924;
+			-webkit-transform: translate(100px) rotate(20deg);
+			-webkit-transform-origin: 0 -250px;
+			transform: translate(100px) rotate(20deg);
+			transform-origin: 0 -250px;
+		}
+		
+		.small.kBottom {
+			border-bottom: 10px solid rgb(195, 250, 135);
+			left: 9px;
+			top: 11px;
+		}
+		
+		.small.kBottom {
+			border-bottom: 10px solid rgb(195, 250, 135);
+			left: 9px;
+			top: 11px;
+		}
+		
+		.kBottom.rotated {
+			-webkit-transform: rotate(170deg);
+			-moz-transform: rotate(170deg);
+			-ms-transform: rotate(170deg);
+			-o-transform: rotate(170deg);
+			transform: rotate(320deg);
+		}
+		
+		#kBottom,
+		.kBottom {
+			position: absolute;
+			/*top: 23px;
+       left: 11px;*/
+			left: 12px;
+			top: 20px;
+			width: 0;
+			height: 0;
+			border-top: 5px solid #b7b924;
+			border-right: 1px solid #c3fa87;
+			border-bottom: 20px solid #c3fa87;
+			border-left: 5px solid #b7b924;
+			transform: rotate(-40deg);
+			-webkit-1transition: all 0.5s ease-in-out;
+			-moz-transition: all 0.5s ease-in-out;
+			-o-transition: all 0.5s ease-in-out;
+			transition: all 0.5s ease-in-out;
+		}
+		
+		footer hr {
+			border-top: 2px solid #eee;
+		}
+		
+		.footer-logo {
+			position: absolute;
+			width: 70px;
+			height: 70px;
+			text-align: center;
+			margin: 0 auto;
+			background: rgba(74, 74, 74, 0.95);
+			border-radius: 50%;
+			top: 0;
+			left: 45%;
+			padding: 23px 25px;
+			box-shadow: 1px 0px 4px #c5c5c5;
+		}
+		
+		footer.container {
+			position: relative;
+		}
+		
+		.footer-line {
+			padding-top: 1%;
+		}
+
+	</style>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="//scrollmagic.io/js/lib/greensock/TweenMax.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-	<script src="//scrollmagic.io/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
 
 </head>
 
 <body>
-	<!--<nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <a class="navbar-brand" href="#">
-                Welcome
-              </a>
-            </div>
-          </div>
-        </nav>-->
-	<div id="outterWrap">
-		<header class="logo">
-			<div class="container">Lorem & Ipsum</div>
-		</header>
-		<div class="pannel pageHome">
-			<section class="container">
-				<h1 class="spotlight col-md-10 col-md-push-1">Lorem Ipsum dolor sit amet</h1>
+	<script src="https://use.fontawesome.com/1d1822d5d1.js"></script>
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId: '255876994890282',
+				autoLogAppEvents: true,
+				xfbml: true,
+				version: 'v2.9'
+			});
+			FB.AppEvents.logPageView();
+			loadedFB();
+		};
 
-			</section>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {
+				return;
+			}
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
 
+		}(document, 'script', 'facebook-jssdk'));
 
-		</div>
-		<section class="pannel pannelTwo">
-			<div class="container">
-				<article class="row">
-					<div class="col-md-6">
-						<div class="row">
-							<p class="col-md-6">
-								Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa.
-							</p>
-							<figure class="figure col-md-6">
-								<img data-src="holder.js/400x300" class="figure-img img-fluid rounded" alt="400x300" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22400%22%20height%3D%22300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15b26efc8d1%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A20pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15b26efc8d1%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22149%22%20y%3D%22159.6%22%3E400x300%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-								<figcaption class="figure-caption">A caption for the above image.</figcaption>
-							</figure>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<div class="row">
-							<figure class="figure col-md-6">
-								<img data-src="holder.js/400x300" class="figure-img img-fluid rounded" alt="400x300" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22400%22%20height%3D%22300%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20300%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_15b26efc8d1%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A20pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_15b26efc8d1%22%3E%3Crect%20width%3D%22400%22%20height%3D%22300%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22149%22%20y%3D%22159.6%22%3E400x300%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-								<figcaption class="figure-caption">A caption for the above image.</figcaption>
-							</figure>
-							<p class="col-md-6">
-								Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet. Curabitur adipiscing luctus massa.
-							</p>
-						</div>
-					</div>
+		function loadedFB() {
+			var accessToken;
+			/*FB.api('oauth/access_token', {
+			    client_id: '255876994890282',
+			    client_secret: 'af0c77957fdcfe58e619f4a4185d0764',
+			    grant_type: 'client_credentials'
+			}, function (res) {
+			    if (!res || res.error) {
+			        console.log(!res ? 'error occurred' : res.error);
+			        return;
+			    }
 
-				</article>
+			    accessToken = res.access_token;
+			});*/
+
+			/*$.ajax({
+				type: "GET",
+				url: "https://graph.facebook.com/oauth/access_token",
+				data: JSON.stringify({
+					client_id: '255876994890282',
+					client_secret: 'af0c77957fdcfe58e619f4a4185d0764',
+					grant_type: 'client_credentials'
+				}),
+				error: function(data) {
+					console.log(data);
+				},
+				success: function(data) {
+					console.log("success");
+					console.log(data);
+				}
+
+			});*/
+			FB.options({
+				accessToken: accessToken
+			});
+			/*FB.login(function () { // Note: The call will only work if you accept the permission request 
+			    FB.api('/me/feed', 'post', {
+			        message: 'Hello, world!'
+			    });
+
+			}, {
+			    scope: 'publish_actions'
+			});*/
+			FB.api('me', 'GET', {
+				"fields": "picture"
+			}, Loadpicture)
+
+		};
+
+		function Loadpicture(response) {
+			console.log(response);
+		}
+
+	</script>
+	<nav id="mainNav" style="display:none;" class="navbar navbar-default navbar-fixed-top navbar-custom affix-top">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header page-scroll">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+				</button>
+				<a class="navbar-brand" href="#page-top">Start Bootstrap</a>
 			</div>
-		</section>
-		<section class="pannel pannelThree">
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right">
+					<li class="hidden active">
+						<a href="#page-top"></a>
+					</li>
+					<li class="page-scroll">
+						<a href="#portfolio">Portfolio</a>
+					</li>
+					<li class="page-scroll">
+						<a href="#about">About</a>
+					</li>
+					<li class="page-scroll">
+						<a href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+
+	<header>
+		<div class="container" id="maincontent" tabindex="-1">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="intro-text">
+						<h1 class="name">Text Goes Here</h1>
+						<hr class="star-light">
+						<span class="sub-quote">A celebration of love and friendship</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="item-container three">
+		<div class="item-count-2">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-4">
-						<div class="shadowBox">
-							<header>
-								<h3>Lorem ipsum</h3>
-							</header>
-							<hr/>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet.</p>
-							<p>
-								<button type="button" class="btn btn-primary">MORE</button>
+					<div class="col-md-6">
+						<article class="box-left">
+							<figure></figure>
+							<h3>Name</h3>
+							<p style="text-align: left;">
+								Details about this left pannel goes here. Details about this left pannel goes here.
 							</p>
-						</div>
+						</article>
 					</div>
-					<div class="col-md-4">
-						<div class="shadowBox">
-							<header>
-								<h3>Lorem ipsum</h3>
-							</header>
-							<hr/>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet.</p>
+					<div class="col-md-6">
+						<article class="box-right">
+							<figure></figure>
+							<h3>Name</h3>
 							<p>
-								<button type="button" class="btn btn-primary">MORE</button>
+								Details about this left pannel goes here. Details about this left pannel goes here.
 							</p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="shadowBox">
-							<header>
-								<h3>Lorem ipsum</h3>
-							</header>
-							<hr/>
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nam nibh. Nunc varius facilisis eros. Sed erat. In in velit quis arcu ornare laoreet.</p>
-							<p>
-								<button type="button" class="btn btn-primary">MORE</button>
-							</p>
-						</div>
+						</article>
 					</div>
 				</div>
 			</div>
-		</section>
-		<section class="pannel pannelFour">
-			<div class="container">
-				<!--<form novalidate>-->
-				<div class="form-group">
-					<label for="Email">EMAIL</label>
-					<div class="col-sm-10">
-						<input type="email" class="form-control form-control-success" id="Email" placeholder="name@example.com">
-						<div class="form-control-feedback">Success! You've done it.</div>
-						<small class="form-text text-muted">Example help text that remains unchanged.</small>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="name">NAME</label>
-					<input type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter email">
-				</div>
-				<div class="form-group">
-					<label for="exampleSelect2">*I WILL ATTEND TO</label>
-					<select multiple class="form-control" id="exampleSelect2">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-					</select>
-				</div>
-				<!--</form>-->
+		</div>
+	</section>
+	<section class="item-container two">
+		<span href="#" class="arrow-icon left"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+		<span href="#" class="arrow-icon right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+		<div class="container">
+			<div class="text-center">
+				<h2>Events</h2>
+				<hr class="star-primary">
 			</div>
-		</section>
-	</div>
+			<div class="row">
+				<div class="col-sm-4 container-item">
+					<a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+						<div class="caption">
+							<div class="caption-content">
+								<i class="fa fa-search-plus fa-3x"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4 container-item">
+					<a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+						<div class="caption">
+							<div class="caption-content">
+								<i class="fa fa-search-plus fa-3x"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+				<div class="col-sm-4 container-item">
+					<a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+						<div class="caption">
+							<div class="caption-content">
+								<i class="fa fa-search-plus fa-3x"></i>
+							</div>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="item-container four">
+		<div class="container">
+			<div class="text-center">
+				<h2>STORYLINE</h2>
+				<hr class="star-primary">
+			</div>
+			<div class="row">
+				<article class="col-md-6">
+					<div class="timeline-left">
+						<header>Heading</header>
+						<p>Some description about the timeline goes here</p>
+					</div>
+					<div class="timeline-line"></div>
+				</article>
+				<article class="col-md-6">
+					<div class="timeline-right">
+						<header>Heading</header>
+						<p>Some description about the timeline goes here</p>
+					</div>
+					<div class="timeline-line"></div>
+				</article>
+			</div>
+			<div class="row">
+				<article class="col-md-6">
+					<div class="timeline-left">
+						<header>Heading</header>
+						<p>Some description about the timeline goes here</p>
+					</div>
+					<div class="timeline-line"></div>
+				</article>
+				<article class="col-md-6">
+					<div class="timeline-right">
+						<header>Heading</header>
+						<p>Some description about the timeline goes here</p>
+					</div>
+					<div class="timeline-line"></div>
+				</article>
+			</div>
+			<div class="row">
+				<article class="col-md-6">
+					<div class="timeline-left">
+						<header>Heading</header>
+						<p>Some description about the timeline goes here</p>
+					</div>
+					<div class="timeline-line"></div>
+				</article>
+				<article class="col-md-6">
+					<div class="timeline-right">
+						<header>Heading</header>
+						<p>Some description about the timeline goes here</p>
+					</div>
+					<div class="timeline-line"></div>
+				</article>
+			</div>
+		</div>
+	</section>
+	<section class="item-container five">
+		<div class="container">
+			<div class="text-center">
+				<h2>FRIENDS</h2>
+				<hr class="star-primary">
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<article class="text-center">
+						<figure>
+							<img src="http://visualoop.com/wp-content/themes/visualoop/img/there-is-no-picture-for-this-user2.png" alt="grooms-man">
+						</figure>
+						<header>
+							<h3>Name of the men</h3>
+						</header>
+						<div>Relationship</div>
+					</article>
+				</div>
+				<div class="col-md-4">
+					<article class="text-center">
+						<figure>
+							<img src="http://visualoop.com/wp-content/themes/visualoop/img/there-is-no-picture-for-this-user2.png" alt="grooms-man">
+						</figure>
+						<header>
+							<h3>Name of the men</h3>
+						</header>
+						<div>Relationship</div>
+					</article>
+				</div>
+				<div class="col-md-4">
+					<article class="text-center">
+						<figure>
+							<img src="http://visualoop.com/wp-content/themes/visualoop/img/there-is-no-picture-for-this-user2.png" alt="grooms-man">
+						</figure>
+						<header>
+							<h3>Name of the men</h3>
+						</header>
+						<div>Relationship</div>
+					</article>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<article class="text-center">
+						<figure>
+							<img src="http://visualoop.com/wp-content/themes/visualoop/img/there-is-no-picture-for-this-user2.png" alt="grooms-man">
+						</figure>
+						<header>
+							<h3>Name of the men</h3>
+						</header>
+						<div>Relationship</div>
+					</article>
+				</div>
+				<div class="col-md-4">
+					<article class="text-center">
+						<figure>
+							<img src="http://visualoop.com/wp-content/themes/visualoop/img/there-is-no-picture-for-this-user2.png" alt="grooms-man">
+						</figure>
+						<header>
+							<h3>Name of the men</h3>
+						</header>
+						<div>Relationship</div>
+					</article>
+				</div>
+				<div class="col-md-4">
+					<article class="text-center">
+						<figure>
+							<img src="http://visualoop.com/wp-content/themes/visualoop/img/there-is-no-picture-for-this-user2.png" alt="grooms-man">
+						</figure>
+						<header>
+							<h3>Name of the men</h3>
+						</header>
+						<div>Relationship</div>
+					</article>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="item-container five">
+		<div class="container">
+			<div class="text-center">
+				<h2>Guest Book</h2>
+				<hr class="star-primary">
+			</div>
 
+			<div class="row">
+				<form class="form-horizontal col-md-6">
+					<div class="form-group">
+						<label for="exampleInputName2">Name</label>
+						<input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail2">Email</label>
+						<input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+					</div>
+					<div class="form-group">
+						<label for="message">Message</label>
+						<textarea id="message" class="form-control" placeholder="Please type your message here.."></textarea>
+					</div>
+					<div class="form-group">
+						<button type="button" class="btn btn-default">Send invitation</button>
+					</div>
+				</form>
+				<div class="col-md-6">
+					<section class="invite">
+						<article>
+							<p>Some text or quotes goes here from my side. Inviting ppl.</p>
 
-	<!-- Scripts -->
+							<span>-Krishna</span>
+						</article>
+						<hr>
+						<article>
+							<p>Some text or quotes goes here from my side. Inviting ppl.</p>
 
+							<span>-Sabha</span>
+						</article>
+					</section>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="container">
+		<div class="footer-line">
+			<hr>
+		</div>
+		<div class="footer-logo">
+			<div>
+				<a href="http://www.krishdev.com" target="_blank" title="webpage">
+					<div class="parent" style="width: 21px;">
+						<div class="small kLeft"></div>
+						<div class="small kTop"></div>
+						<div id="rotateThis" class="small kBottom rotated"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</footer>
+
+	<section class="overlay-screen">
+		<article class="inner-text text-center">
+			<div>Guess What <span><i class="fa fa-question" aria-hidden="true"></i></span></div>
+			<p><span class="heart"><i class="fa fa-heart" aria-hidden="true"></i></span></p>
+		</article>
+		<a href="#" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></a>
+	</section>
 	<script>
-		$(function() { // wait for document ready
-			// init
-			var controller = new ScrollMagic.Controller();
-
-			// define movement of panels
-			var wipeAnimation = new TimelineMax()
-				.fromTo("section.pannelTwo", 1, {
-					x: "-100%"
-				}, {
-					x: "0%",
-					ease: Linear.easeNone
-				}) // in from left
-				.fromTo("section.pannelThree", 1, {
-					x: "100%"
-				}, {
-					x: "0%",
-					ease: Linear.easeNone
-				}) // in from right
-				.fromTo("section.pannelFour", 1, {
-					y: "-100%"
-				}, {
-					y: "0%",
-					ease: Linear.easeNone
-				}); // in from top
-
-			// create scene to pin and link animation
-			new ScrollMagic.Scene({
-					triggerElement: "#outterWrap",
-					triggerHook: "onLeave",
-					duration: "300%"
-				})
-				.setPin("#outterWrap")
-				.setTween(wipeAnimation)
-				.addIndicators() // add indicators (requires plugin)
-				.addTo(controller);
-		});
 		$(document).ready(function() {
-			setTimeout(function() {
-				//$($("div")[19]).html("");
-				//$($("div")[23]).html("");
-			}, 500);
+			var i = 1;
+			$(".arrow-icon").on("click", function(e) {
+				var target = $(e.target);
+				if (target.hasClass("right") || target.parent().hasClass("right")) {
+
+					(i == 6) ? i = 1: i++;
+					$(".two").css("background-image", "url(assets/images/jodi/0" + i + ".jpg )");
+
+				} else {
+					(i == 1) ? i = 6: i--;
+					$(".two").css("background-image", "url(assets/images/jodi/0" + i + ".jpg )");
+				}
+
+			});
+			$("a.overlay-close").on("click", function() {
+				$("section.overlay-screen").addClass("hide");
+			});
 		});
 
 	</script>

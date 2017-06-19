@@ -5,6 +5,16 @@
 	background-image: linear-gradient(to bottom, #fff 0, #f8f8f8 100%);
 	background: url('../../assets/images/pannelHome.jpg') no-repeat center top fixed;
 }
+.pageHome .container {
+	margin-top: 0 !important;
+}
+header,
+h2,
+h3,
+h4,
+h5 {
+	font-family: 'Reem Kufi', sans-serif;
+}
 .logo {
 	position: absolute;
 	top: 50px;
@@ -20,8 +30,7 @@
 	padding-left: 4em;
 }
 .pannel {
-	height: 920px;
-	display: table-cell;
+	height: 130vh;
 	vertical-align: middle;
 }
 .spotlight {
@@ -34,28 +43,47 @@
 	text-transform: uppercase;
 }
 .pannelTwo {
-	background: linear-gradient(rgba(37, 144, 0, 0.6), rgba(144, 104, 190, 0.7)), url(../../assets/images/pannelTwo.jpg);
-	height: 100%;
+	/*background: linear-gradient(rgba(37, 144, 0, 0.6), rgba(144, 104, 190, 0.7)), url(../../assets/images/pannelTwo.jpg);*/
+	background-image: url(http://www.sasina.info/wp-content/uploads/2014/10/I3.jpg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
-.pannelTwo .cloud {}
+.pannelTwo .container {
+	color: #fff;
+	font-size: 1.4em;
+}
+.pannel .container {
+	display: none;
+}
+.visible {
+	display: block !important;
+}
+.hidden {
+	display: none;
+}
 .pannelThree {
 	background-color: #ffefef;
-	height: 100%;
+	background-image: url(http://wallpapercave.com/wp/ntDJVF7.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .pannelFour {
 	background-color: #ffefef;
-	height: 100%;
+	background-image: url(http://www.wallhd4.com/wp-content/uploads/2015/03/i-love-u-25.jpeg);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: contain;
 }
 #outterWrap {
 	width: 100%;
 	height: 100% !important;
 	overflow: hidden;
+	position: relative;
 }
 .pannel {
-	height: 100%;
 	width: 100%;
-	position: absolute;
-	padding: 10em 7em;
+	padding: 14em 7em;
 }
 figure img {
 	width: 250px;
@@ -64,6 +92,14 @@ figure img {
 }
 p.col-md-6 {
 	margin: 6em 0;
+	font-family: 'Berkshire Swash', cursive;
+	color: #2c7603;
+	text-shadow: 1px 2px 1px #ffffff;
+}
+.shadowBox p {
+	font-family: 'Berkshire Swash', cursive;
+	font-size: 1.3em;
+	color: #8199ce;
 }
 figure.figure.col-md-6 {
 	text-align: center;
@@ -79,6 +115,7 @@ figcaption {
 	box-shadow: 5px 6px 5px -4px rgba(0, 0, 0, 0.8);
 	text-align: center;
 	padding: 2em 1em;
+	margin-bottom: 1em;
 }
 hr {
 	border-top: 2px solid #f5dcff;
@@ -92,4 +129,54 @@ p button {
 		box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.4);
 		border: 0;
 	}
+}
+@media only screen and (max-width:768px) {
+	.shadowBox {
+		width: 100%;
+	}
+	.pannel {
+		padding: 8em 2em;
+	}
+	.spotlight {
+		font-size: 5em;
+	}
+	.pannel .container {
+		margin-top: 0em;
+	}
+	p.col-md-6 {
+		margin: 0;
+	}
+	figure img {
+		width: 200px;
+		height: 200px;
+	}
+	.pannel {
+		padding: 1em 2em;
+	}
+}
+
+/* navigation icons */
+
+.navigation.icons {
+	position: fixed;
+	top: 20em;
+	right: 7em;
+	z-index: 99;
+}
+.navigation.icons div {
+	color: rgb(0, 117, 77);
+	font-size: 5em;
+	cursor: pointer;
+}
+.navigation.icons div:hover {
+	color: #e637fb;
+	opacity: 0.8;
+}
+button {
+	font-family: sans-serif;
+}
+figcaption.figure-caption {
+	font-family: 'Reem Kufi', sans-serif;
+	font-size: 1.2em;
+	text-shadow: 1px 2px 1px #297000;
 }

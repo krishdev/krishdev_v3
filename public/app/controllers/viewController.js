@@ -1,4 +1,4 @@
-var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetchData) {
+var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetchData, $timeout) {
 	dataFactoryFn.then(function (response) {
 		$scope.abtMe = response.data.aboutMe;
 		$scope.quickLinks = response.data.aboutMe.quickLinks;
@@ -8,6 +8,8 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 		$scope.contactMeProd = response.data.contactMe.projectType;
 		$scope.contactMeBudget = response.data.contactMe.budget;
 		$scope.emailSuccessMessage = "Your message has been successfully emailed. You would get a reply in less than 24hrs";
+		var successMessageDefault = "I reply in less than 24 hrs.";
+		$scope.successMessage = successMessageDefault;
 		var currentYear = new Date();
 		var currentDate = currentYear.getDate();
 		if (currentDate < 10) {
@@ -68,10 +70,16 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 				to: "krishnasinbox@outlook.com"
 			};
 
-			fetchData.getData("/api/contact", $scope.messageData).then(function (response) {
-
+			fetchData.getData("/api/contacts", $scope.messageData).then(function (response) {
+				$scope.successMessage = $scope.emailSuccessMessage;
+				$timeout(function () {
+					$scope.successMessage = successMessageDefault;
+				}, 1000);
 			}, function errorCallBack() {
-
+				$scope.successMessage = $scope.emailSuccessMessage;
+				$timeout(function () {
+					$scope.successMessage = successMessageDefault;
+				}, 1000);
 			});
 			$scope.nameContact = '';
 			$scope.emailContact = '';
@@ -83,7 +91,7 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 	};
 };
 
-mainModule.controller('aboutMeCtrl', ['$scope', 'dataFactory', 'postContact', '$uibModal', 'fetchData', aboutMeCtrl]);
+mainModule.controller('aboutMeCtrl', ['$scope', 'dataFactory', 'postContact', '$uibModal', 'fetchData', '$timeout', aboutMeCtrl]);
 
 mainModule.controller('ModalInstanceCtrl', function ($scope, $uibModalInstance) {
 

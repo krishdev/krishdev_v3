@@ -2,7 +2,7 @@ module.exports = function (app) {
 	var index = require('../controllers/controller.index');
 	var ctrl = require('../controllers/controller.main');
 	app.get("/", index.getUserDetails);
-	app.get("/wedding", index.renderMarriagePage);
+	app.get("/guesswhat", index.renderMarriagePage);
 	//app.get("/api/register", ctrl.registerGetUser);
 	app.post("/api/register", ctrl.registerUser);
 	app.post("/api/login", ctrl.loginUser);
