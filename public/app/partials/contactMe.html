@@ -12,7 +12,7 @@
 			<ul>
 				<li>You have a project or an idea that I can help you with.</li>
 				<li>You want you or your business to be a vivid individuality.</li>
-				<li>There is a wish to get me involved in some creative work or co-work.</li>
+				<li>Do you wish to get me involved in some creative work or co-work.</li>
 				<li>You just want to say “Hi”.</li>
 			</ul>
 		</pre>
@@ -37,28 +37,28 @@
 					</div>
 				</div>
 				<div class="col-md-6">
+					<input type="number" id="inputPhoneNumber" name="inputPhoneNumber" ng-model="phoneContact" class="form-control" placeholder="Phone Number" style="margin-bottom:1%" required>
+					<div class="errorMessage" ng-show="index.$submitted || index.inputPhoneNumber.$touched">
+						<span ng-show="index.inputPhoneNumber.$error.required">This field is required</span>
+					</div>
+				</div>
+				<div class="col-md-12">
 					<input type="email" id="inputEmail" name="inputEmail" class="form-control" ng-model="emailContact" placeholder="Email address" style="margin-bottom:1%" required>
 					<div class="errorMessage" ng-show="index.$submitted || index.inputEmail.$touched">
 						<span ng-show="index.inputEmail.$error.required">This field is required</span>
 						<span ng-show="index.inputEmail.$error.email">This is not a valid email.</span>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<input type="number" id="inputPhoneNumber" name="inputPhoneNumber" ng-model="phoneContact" class="form-control" placeholder="Phone Number" style="margin-bottom:1%" required>
-					<div class="errorMessage" ng-show="index.$submitted || index.inputPhoneNumber.$touched">
-						<span ng-show="index.inputPhoneNumber.$error.required">This field is required</span>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<select class="form-control" ng-model="projectType" ng-options="contact.id as contact.typeName for contact in contactMeProd">
-						<option value="">--Choose type--</option>
-					</select>
-				</div>
-				<div class="col-md-4">
-					<select class="form-control" ng-model="budgetContact" ng-options="contact.id as contact.amt for contact in contactMeBudget">
-						<option value="">--Choose Budget--</option>
-					</select>
-				</div>
+				<!--<div class="col-md-4">
+	<select class="form-control" ng-model="projectType" ng-options="contact.id as contact.typeName for contact in contactMeProd">
+		<option value="">--Choose type--</option>
+	</select>
+</div>
+<div class="col-md-4">
+	<select class="form-control" ng-model="budgetContact" ng-options="contact.id as contact.amt for contact in contactMeBudget">
+		<option value="">--Choose Budget--</option>
+	</select>
+</div>-->
 				<div class="col-md-12">
 					<textarea name="inputContent" ng-model="contentContact" id="inputContent" class="form-control" placeholder="Content" style="height:170px;margin-bottom:1%" required></textarea>
 					<div class="errorMessage" ng-show="index.$submitted || index.inputContent.$touched">

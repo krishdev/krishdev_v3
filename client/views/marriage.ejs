@@ -144,6 +144,7 @@ Navbar
 			position: absolute;
 			top: 50%;
 			cursor: pointer;
+			z-index: 100;
 		}
 		
 		section.item-container.two span.arrow-icon:first-child {
@@ -281,6 +282,13 @@ Navbar
 			background-size: cover;
 			position: relative;
 			background-attachment: fixed;
+			transition: 0.5s;
+		}
+		
+		@media only screen and (max-width:414px) {
+			section.item-container.two {
+				background-attachment: scroll;
+			}
 		}
 		/*overlay screen*/
 		
@@ -297,6 +305,7 @@ Navbar
 			color: #fff;
 			font-size: 45px;
 			overflow: hidden;
+			z-index: 110;
 		}
 		
 		.hide {
@@ -326,6 +335,7 @@ Navbar
 			right: 20px;
 			top: 0;
 			color: #fff;
+			overflow: hidden;
 		}
 		
 		@media only screen and (max-width:768px) {
@@ -338,7 +348,7 @@ Navbar
 				top: 11%;
 			}
 			section.item-container.four .row article.col-md-6:first-child .timeline-line::after {
-				left: 149px;
+				left: 124px;
 			}
 			section.item-container.four .row .col-md-6 .timeline-right {
 				right: 30%;
@@ -360,7 +370,7 @@ Navbar
 				border-right: 3px solid lightblue;
 			}
 			section.item-container.four .row article.col-md-6:last-child .timeline-line::after {
-				right: 149px;
+				right: 124px;
 			}
 		}
 		
