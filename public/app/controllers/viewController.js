@@ -70,7 +70,7 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 				to: "krishnasinbox@outlook.com"
 			};
 
-			fetchData.getData("/api/contacts", $scope.messageData).then(function (response) {
+			fetchData.getData("/api/contact", $scope.messageData).then(function (response) {
 				$scope.successMessage = $scope.emailSuccessMessage;
 				$timeout(function () {
 					$scope.successMessage = successMessageDefault;
