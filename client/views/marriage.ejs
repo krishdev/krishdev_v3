@@ -218,6 +218,13 @@ Navbar
 				float: left;
 			}
 		}
+		
+		@media only screen and (min-width: 1024px) {
+			article.box-left,
+			.box-right {
+				width: 65%;
+			}
+		}
 		/*Timeline*/
 		
 		section.item-container.four .row .col-md-6 {
@@ -282,6 +289,22 @@ Navbar
 			border-radius: 50%;
 			position: absolute;
 			top: -18px;
+		}
+		
+		section.item-container.four .row .col-md-6 > div {
+			width: 225px;
+		}
+		
+		@media only screen and (min-width:768px) {
+			section.item-container.four .row .col-md-6 > div {
+				width: 315px;
+			}
+		}
+		
+		@media only screen and (min-width:1024px) {
+			section.item-container.four .row .col-md-6 > div {
+				width: 321px;
+			}
 		}
 		
 		section.item-container.four .row article.col-md-6:last-child .timeline-line::after {
@@ -674,6 +697,17 @@ Navbar
 			font-family: 'Italianno', cursive;
 			font-size: 38px;
 		}
+		
+		@media only screen and (max-width:1023px) {
+			.truncate {
+				display: none;
+			}
+			.truncate+.text.hide {
+				display: inline !important;
+				visibility: visible;
+				opacity: 1;
+			}
+		}
 
 	</style>
 	<!-- Latest compiled and minified JavaScript -->
@@ -822,7 +856,7 @@ Navbar
 							</figure>
 							<h3>Krishnakumar Rajendran</h3>
 							<p style="text-align: left;">
-								Details about this left pannel goes here. Details about this left pannel goes here.
+								Seriously, I have no idea that how things are wrapping up so quick. It was like yesterday. This is really a crazy journey. She is loving, kind, patient, funny and beautiful. Yes, I did make fun of her tone every time. There is no more lovely and friendlier thing than getting married.
 							</p>
 						</article>
 					</div>
@@ -832,7 +866,7 @@ Navbar
 								<img src="assets/images/sabha.jpeg" alt="profile pic"> </figure>
 							<h3>Sabhadhini Thangavel</h3>
 							<p>
-								Details about this left pannel goes here. Details about this left pannel goes here.
+								The moment has come. I am going to marry my best friend whom I know for the past 7 years. As 'Absence sharpens love, presence strengthens it' the time gave us a chance to understand each a lot in our long distance relationship. We had missed many<span class="truncate">...</span><span class="text hide"> beautiful moments together. Will be sharing our life with officially announced characters as husband and wife and as best friends as always.</span>
 							</p>
 						</article>
 					</div>
@@ -888,15 +922,15 @@ Navbar
 			<div class="row">
 				<article class="col-md-6">
 					<div class="timeline-left">
-						<header>Heading</header>
-						<p>Some description about the timeline goes here</p>
+						<header>He saw her</header>
+						<p>We met during our Under Graduation. Basically we went to the same college.</p>
 					</div>
 					<div class="timeline-line"></div>
 				</article>
 				<article class="col-md-6">
 					<div class="timeline-right">
-						<header>Heading</header>
-						<p>Some description about the timeline goes here</p>
+						<header>Friends</header>
+						<p>Orkut brought us together as friends.</p>
 					</div>
 					<div class="timeline-line"></div>
 				</article>
@@ -904,15 +938,15 @@ Navbar
 			<div class="row">
 				<article class="col-md-6">
 					<div class="timeline-left">
-						<header>Heading</header>
-						<p>Some description about the timeline goes here</p>
+						<header>Proposal</header>
+						<p>It was mutual.</p>
 					</div>
 					<div class="timeline-line"></div>
 				</article>
 				<article class="col-md-6">
 					<div class="timeline-right">
-						<header>Heading</header>
-						<p>Some description about the timeline goes here</p>
+						<header>I flew</header>
+						<p>I went for my higher studies. Long distance didn't stop us. It gave us time to understand a lot better.</p>
 					</div>
 					<div class="timeline-line"></div>
 				</article>
@@ -920,15 +954,15 @@ Navbar
 			<div class="row">
 				<article class="col-md-6">
 					<div class="timeline-left">
-						<header>Heading</header>
-						<p>Some description about the timeline goes here</p>
+						<header>The go signal</header>
+						<p>We are really gifted to have such a wonderful parents.</p>
 					</div>
 					<div class="timeline-line"></div>
 				</article>
 				<article class="col-md-6">
 					<div class="timeline-right">
-						<header>Heading</header>
-						<p>Some description about the timeline goes here</p>
+						<header>Oct 30</header>
+						<p>We are getting married.</p>
 					</div>
 					<div class="timeline-line"></div>
 				</article>
@@ -1123,6 +1157,10 @@ Navbar
 					$(".nav-fixed").removeClass("show");
 
 				}
+			});
+			$(".truncate").click(function() {
+				$(".truncate").hide();
+				$(".box-right .hide").removeClass("hide");
 			});
 		});
 
