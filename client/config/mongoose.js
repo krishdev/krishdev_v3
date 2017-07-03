@@ -1,7 +1,5 @@
 var mongoose = require('mongoose');
 var config = require('./config');;
 module.exports = function () {
-	mongoose.connect(config.dbconnection, {
-		useMongoClient: true
-	});
+	mongoose.connect(config.dbconnection);
 };
