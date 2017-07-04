@@ -81,16 +81,6 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 					$scope.successMessage = successMessageDefault;
 				}, 1000);
 			});
-			var registerUser = function () {
-				loginService.loginUser("/api/register", JSON.parse('{"username": "krishnarajen7","password": "coFFeemug/1"}'))
-					.then(function (response) {
-						if (response && response.data)
-							console.log(response);
-					}, function errorCallBack(response) {
-						console.log(response);
-					});
-			};
-			registerUser();
 			$scope.nameContact = '';
 			$scope.emailContact = '';
 			$scope.contentContact = '';
