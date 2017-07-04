@@ -26,16 +26,7 @@ mainModule.controller('loginCtrl', function ($scope, $rootScope, loginService, $
 				});
 		}
 	};
-	var registerUser = function () {
-		loginService.loginUser("/api/register", JSON.parse('{"username": "krishnarajen7","password": "coFFeemug/1"}'))
-			.then(function (response) {
-				if (response && response.data)
-					console.log(response);
-			}, function errorCallBack(response) {
-				console.log(response);
-			});
-	};
-	registerUser();
+
 });
 mainModule.factory('loginService', function ($http) {
 	return {
