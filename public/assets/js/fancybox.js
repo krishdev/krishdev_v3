@@ -10,7 +10,7 @@ $(document).ready(function(){
         var span = $(".fn-close");
 
         // When the user clicks the button, open the modal 
-        btn.bind("click",function(e) {
+        $('body').on('click', ".gallery-item" ,function(e) {
             e.preventDefault();
             var src = $(e.target).attr("src");
             $(".modal-body img").attr("src",src);
