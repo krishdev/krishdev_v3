@@ -16,6 +16,7 @@ module.exports = function (app) {
 	app.post("/api/updateContent", ctrl.updateContent);
 	app.get("/api/contact", ctrl.contact);
 	app.get("/api/getMessages", ctrl.getMessages);
+	app.get("/api/getGallery", ctrl.getGallery);
 
 	console.log('router Initialized');
 };
