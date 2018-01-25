@@ -75,3 +75,11 @@
     background-color: #5cb85c;
     color: white;
 }
+@media screen and (max-width:768px){
+    div.modal-content{
+        width: 100% !important;
+    }
+    div.modal-content img{
+        width: 100% !important;
+    }
+}
