@@ -921,3 +921,8 @@ pre {
 	padding: 1em;
 	border-radius: 9px;
 }
+button.loadImages{
+    background-image: url("assets/images/load.gif");
+    background-size: cover;
+    background-position-y: -23px;
+}
