@@ -284,8 +284,10 @@ url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.svg#fontawe
 				<div class="modal-content">
 				   <div class="modal-body">
 					<span class="fn-close">&times;</span>
+					<span class="fn-next">></span>
+					<span class="fn-prev"><</span>
 					<figure>
-						<img src="">
+						<img data-image="" src="">
 					</figure>
 				  </div>
 				</div>
@@ -468,12 +470,13 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 			$(".loadMore").bind("click",function(){
 				loadMore();
 			});
-
+			var imagesCount = 0;
 			function bindGallery(images){
 				var $elementParent = $(".gallery-container"),
 					$elementChild;
 				for(var i = 0, imagesLength = images.photos.photo.length ; i < imagesLength ; i++){
-					$elementChild = $("<a href='" + images.photos.photo[i].url_z + "' class='gallery-item'><img src='" + images.photos.photo[i].url_z + "'></a>");
+					imagesCount +=1;
+					$elementChild = $("<a href='" + images.photos.photo[i].url_z + "' data-image='" + imagesCount +  "' class='gallery-item'><img src='" + images.photos.photo[i].url_z + "'></a>");
 					$elementParent.append($elementChild);
 				}
 				setMacy(100);

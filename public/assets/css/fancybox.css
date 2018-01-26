@@ -41,23 +41,38 @@
 }
 
 /* The fn-close Button */
-.fn-close {
-    color: #c8c8c8;
-    font-size: 28px;
+.fn-close {    
+    color: #fff;
+    font-size: 21px;
     font-weight: bold;
     position: absolute;
-    right: -14px;
+    right: -15px;
     top: -15px;
-    background: #999;
+    background: #6b60df;
     z-index: 100;
-    border: 1px solid #000;
+    border: 1px solid #727272;
     border-radius: 50%;
-    padding:0px 12px;
+    padding: 0px 10px;
 }
-
+.fn-next,.fn-prev{
+    position: absolute;
+    top: 50%;
+    background: #000;
+    color: #fff;
+    font-size: 15px;
+    padding: 0px 7px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+span.fn-next {
+    right: 20px;
+}
+span.fn-prev {
+    left: 20px;
+}
 .fn-close:hover,
 .fn-close:focus {
-    color: #000;
+    color: #d5daf9;
     text-decoration: none;
     cursor: pointer;
 }
