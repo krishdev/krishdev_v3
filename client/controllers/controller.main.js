@@ -136,7 +136,7 @@ var getAllData = function (req, res) {
 	})
 };
 var getMessages = function (req, res) {
-	
+
 	Contact.find(function (err, data) {
 		if (err)
 			return res.send(err);
@@ -161,32 +161,66 @@ var updateContent = function (req, res) {
 //flicker api
 
 var Flickr = require("flickrapi"),
-    flickrOptions = {
-      api_key: "503edfddece76bfac94f1e6fd79fd230",
-      secret: "587787127d6a0fdb"
-	},	
-    flickrData = Flickr.loadLocally("./userdata", {
+	flickrOptions = {
+		api_key: "503edfddece76bfac94f1e6fd79fd230",
+		secret: "587787127d6a0fdb"
+	},
+	flickrData = Flickr.loadLocally("./userdata", {
 		loadPrivate: false
-	  });
+	});
 
 
 
-var getGallery = function(req, res){
+var getGallery = function (req, res) {
 
-	Flickr.tokenOnly(flickrOptions, function(error, flickr) {
+	Flickr.tokenOnly(flickrOptions, function (error, flickr) {
 		flickr.people.getPhotos({
 			api_key: flickrOptions.api_key,
 			user_id: '151533033@N04',
 			page: req.query.page,
 			per_page: 12,
-			extras:"url_z"
-		  }, function(err, result) {
+			extras: "url_z"
+		}, function (err, result) {
 			return res.send(result);
-		  });
+		});
 		//Flickr.result = flickr;
 	});
 
-	
+
+};
+
+
+//flickr cke api
+//flicker api
+
+var FlickrCKE = require("flickrapi"),
+	flickrOptions = {
+		api_key: "6a96b233ca559e1d013917026213bed6",
+		secret: "7839fcdbff109cfc"
+	},
+	flickrData = Flickr.loadLocally("./userdata", {
+		loadPrivate: false
+	});
+
+
+
+var getGalleryCKE = function (req, res) {
+
+	Flickr.tokenOnly(flickrOptions, function (error, flickr) {
+		flickr.people.getPhotos({
+			api_key: flickrOptions.api_key,
+			user_id: '141675670@N06',
+
+			page: req.query.page,
+			per_page: 20,
+			extras: "url_z"
+		}, function (err, result) {
+			return res.send(result);
+		});
+		//Flickr.result = flickr;
+	});
+
+
 };
 
 exports.registerUser = registerUser;
@@ -201,5 +235,6 @@ exports.updateContent = updateContent;
 exports.contact = contact;
 exports.getMessages = getMessages;
 exports.getGallery = getGallery;
+exports.getGalleryCKE = getGalleryCKE;
 
 console.log("controller Initialized");
