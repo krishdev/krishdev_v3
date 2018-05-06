@@ -210,10 +210,9 @@ var getGalleryCKE = function (req, res) {
 		flickr.people.getPhotos({
 			api_key: flickrOptions.api_key,
 			user_id: '141675670@N06',
-
 			page: req.query.page,
 			per_page: 20,
-			extras: "url_z"
+			extras: "date_upload,url_z"
 		}, function (err, result) {
 			return res.send(result);
 		});
