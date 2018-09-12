@@ -8,7 +8,7 @@ var xoauth2 = require('xoauth2');
 
 const fs = require('fs');
 const readline = require('readline');
-const {google} = require('googleapis');
+//const {google} = require('googleapis');
 
 var ContentData = require("../models/model.myContent");
 var Contact = require("../models/model.contact");
