@@ -10,4 +10,14 @@ exports.renderMarriagePage = function (req, res) {
 		title: "Krishna Weds Sabha"
 	}));
 }
+exports.renderbabyshowerPage = function (req, res) {
+	res.render("babyshower", ({
+		title: "Krishna and Sabha's Baby Shower"
+	}))
+}
+exports.renderAdminBabyshowerPage = function (req, res) {
+	res.render("adminBabyShower", ({
+		title: "Krishna and Sabha's Baby Shower"
+	}))
+}
 console.log("index - ended");

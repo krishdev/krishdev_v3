@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Krishna and Sabha's Baby shower invitation.">
+		<meta name="keywords" content="baby shower, krishnakumar weds sabhadhini, sabhadhini, krishnakumar,krishna, oct 14,october 14,sabhadhini baby shower,sabha baby shower">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Font CSS -->
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Italianno|Poppins|Courgette|Kaushan+Script" rel="stylesheet">
+		<link href="assets/css/fancybox.css" rel="stylesheet">
+
+
+		<style type="text/css">
+			@import url('//use.fontawesome.com/releases/v4.7.0/css/font-awesome-css.min.css');@font-face{font-family:'FontAwesome';src:url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot');src:url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+			url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2') format('woff2'),
+			url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff') format('woff'),
+			url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.ttf') format('truetype'),
+			url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+		</style>	
+		<style>
+			[v-cloak],.v-cloak{
+				display: none;
+			}
+			body {
+				background-attachment: fixed;
+				background-image: url("/assets/images/cloudB.png") ;
+			    background-repeat: repeat-y;
+			    background-position: top center;
+			    background-color: #c8e9f0;
+			}
+			#timeline .row .col-md-6:first-child {
+			    border-right: 3px solid #add8e6;
+			}
+			#timeline .row .col-md-6 {
+			    position: relative;
+			    height: 230px;
+			}
+			#timeline .row .col-md-6 .timeline-left {
+			    left: 1%;
+			    top: 2%;
+			}
+
+			#timeline .row .col-md-6 .timeline-left, 
+			#timeline .row .col-md-6 .timeline-right {
+			    position: absolute;
+			    box-shadow: 2px 1px 2px #ffa07a;
+			    background: #f4faff;
+			}
+			#timeline .row .col-md-6>div {
+			    width: 225px;
+			}
+			#timeline .row article.col-md-6 header {
+			    font-size: 1.42em;
+			    padding: .51em;
+			    background: #9c55a7;
+			    color:#fff;
+		        font-family: Great Vibes;
+			}
+			#timeline .row article.col-md-6 p {
+			    padding: 3% 4%;
+			    text-align: center;
+			    background: #f0f8ffb5;
+		        font-family: 'Poppins', sans-serif;
+			}
+			#timeline .row article.col-md-6:first-child .timeline-line {
+			    width: 20%;
+			    height: 3px;
+			    background-color: rgba(229,243,152,.75);
+			    position: absolute;
+			    right: 0;
+			    top: 5em;
+			}
+			#timeline .row article.col-md-6:first-child .timeline-line {
+			    width: 20%;
+			    height: 3px;
+			    background-color: rgba(229,243,152,.75);
+			    position: absolute;
+			    right: 0;
+			    top: 5em;
+			}
+			#timeline .row article.col-md-6:last-child .timeline-line {
+			    width: 20%;
+			    height: 3px;
+			    background-color: rgba(229,243,152,.75);
+			    position: absolute;
+			    left: 0;
+			    bottom: 5em;
+			}
+			.emoji {
+			    position: absolute;
+			    z-index: 10;
+			    opacity: 0.7;
+			    top: -14px;
+			}
+			.emoji-left {
+			    left: -37px;
+			}
+			.emoji-right {
+			    right: -35px;
+			}
+			#timeline .row article.col-md-6 .timeline-line::after {
+			    width: 40px;
+			    height: 40px;
+			    background: #f1dbff;
+			    display: block;
+			    content: "";
+			    border-radius: 50%;
+			    position: absolute;
+			    top: -18px;
+			}
+			#timeline .row article.col-md-6:first-child .timeline-line::after {
+			    left: -40px;
+			}
+			#timeline .row .col-md-6 .timeline-right {
+			    right: 1%;
+			    bottom: 2%;
+			}
+			#timeline .row article.col-md-6:last-child .timeline-line::after {
+			    right: -40px;
+			}
+			#timeline .row article.col-md-6 .timeline-line::after {
+			    width: 40px;
+			    height: 40px;
+			    background: #f1dbff;
+			    display: block;
+			    content: "";
+			    border-radius: 50%;
+			    position: absolute;
+			    top: -18px;
+			}
+
+
+			@media only screen and (min-width: 768px) {
+			    #timeline .row .col-md-6>div {
+			        width: 315px;
+			    }
+			}
+
+			@media only screen and (min-width: 1024px){
+			    #timeline .row .col-md-6>div {
+			        width: 321px;
+			    }        
+			}
+			@media only screen and (max-width: 768px){
+			    #timeline .row .col-md-6 {
+			        border-left: 3px solid #add8e6;
+			        border-right: 3px solid #add8e6;
+			    } 
+			    #timeline .row .col-md-6 .timeline-left {
+			        left: 27%;
+			        top: 11%;
+			    }  
+			    #timeline .row article.col-md-6:first-child .timeline-line {
+			        width: 20%;
+			        left: 0;
+			    }
+			    .emoji-left {
+			        left: 127px;
+			    }
+			    .emoji-right {
+			        right: 128px;
+			    }
+			    #timeline .row article.col-md-6:first-child .timeline-line::after {
+			        left: 124px;
+			    }
+			    #timeline .row .col-md-6 .timeline-right {
+			        right: 30%;
+			        bottom: 50%;
+			    }
+			    #timeline .row article.col-md-6:last-child .timeline-line {
+			        width: 20%;
+			        bottom: 75%;
+			        left: 80%;
+			    }
+			    #timeline .row article.col-md-6:last-child .timeline-line::after {
+			        right: 124px;
+			    }
+			}
+			@media only screen and (max-width: 465px){
+			    .emoji-left {
+			        left: 43px;
+			    }  
+			    .emoji-right {
+			        right: 55px;
+			    } 
+			    #timeline .row article.col-md-6:first-child .timeline-line::after {
+			        left: 40px;
+			    }
+			    #timeline .row article.col-md-6:last-child .timeline-line::after {
+			        right: 50px;
+			    }
+			}
+		</style>	
+		<style>
+			#venu iframe {
+			    width: 100%;
+			}
+
+			section#welcome {
+			    text-align: center;
+			    padding: 15em 0;
+			    background: #6cc2d4;
+			}
+
+			#welcome .btn-grp {
+			    padding: 2em 0;
+			}
+
+			.btn-grp button.btn {			    
+			    background: transparent;
+			    border: 2px solid #fff;
+			    padding: 10px 30px;
+			    border-radius: 50px;
+			    color: #fff;
+			}
+			.btn-grp #maybe {
+				margin: 0 1em;
+			}
+
+			#welcome h1 {
+			    color: #fff;
+			    font-family: 'Poppins', sans-serif;
+			    font-size: 4em;
+			}
+			.align-left {
+			    text-align: left;    
+			    padding: 0 2%
+			}
+			@media (max-width:360px) {
+			    #welcome .btn-grp {
+			        width:60%;
+			        margin:0 auto; 
+			    }
+			    #welcome .btn-grp .btn {
+			        display: block;
+			        margin:1em 0;
+			        width:100%;
+			    }
+			}
+			#app h1 {
+			    font-family: 'Poppins', sans-serif;
+			    font-size: 2.5em;
+			}
+			@media (min-width: 1200px) {
+			    .container {
+			        width: 80%;
+			        padding: 1em;
+			    }
+			}
+			@media (min-width: 760px){
+			    .align-left {
+			        padding: 0 18%;
+			    }
+			    #app h1 {
+			    	font-size: 3em;
+			    }
+			}
+			section#date {
+			    text-align: center;
+			    background: white;
+			    padding: 5em 1em;
+			}
+
+
+			section#timeline {
+		        padding: 1em 0;
+			    background: linear-gradient(0deg, rgba(2,173,231,0.5), rgba(2,173,231,0.5)), url(assets/images/jodi/babyShower/sabha2.jpg);
+			    background-size: cover;
+			    background-repeat: no-repeat;
+			    background-color: green;
+			    background-position: center;
+			}
+			section#timeline .text-center h2{
+			    color: #fff;
+			    font-family: 'Poppins', sans-serif;
+			    font-size: 3em;
+			}
+			section#venu {
+			    height: auto;
+			}
+			section#registery h2 {
+			    text-align: center;
+			    font-family: 'Poppins', sans-serif;
+			}
+
+			section#registery {
+			    background: #fff;
+			    padding: 6em 0;
+			    text-align: center;
+			}
+
+			#registery .btn {
+			    color: blueviolet;
+			    background: #fff;
+			    border: 2px solid blueviolet;
+			    margin: 2em 0 0;
+			    border-radius: 25px;
+			    padding: 0.7em 2em;
+			}
+			section#rsvp {
+			    background-color: #ff88c5;
+			    padding: 5em 0;
+			    text-align: center;
+			    font-family: 'Poppins', sans-serif;
+			}
+
+			#rsvp h2 {
+			    color: #fff;
+			    font-size: 3em;
+			    font-family: 'Poppins', sans-serif;
+			}
+
+			#rsvp p {
+			    font-size: 1.4em;
+			    margin: 1.2em 0;
+			}
+			section#copyright {
+			    padding: 2em 0;
+			    background: #6cc2d4;
+			    text-align: center;
+			    font-size: 16px;
+			    font-family: 'Poppins', sans-serif;
+			    border-bottom-right-radius: 20px;
+			    border-bottom-left-radius: 20px;
+			    color: #001b80;
+			    margin-bottom: 1em;
+			}
+
+			#copyright a {
+			    color: azure;
+			}
+			section#date .col-md-6 div {
+			    font-size: 1.1em;
+			    text-align: justify;
+			}
+			section#welcome {
+			    border-top-left-radius: 20px;
+			    border-top-right-radius: 20px;
+			}
+			.noOfparticipants.btn-grp input {
+			    width: 173px;
+			    display: inline-block;
+			    border: 2px solid #ffccef;
+			    height: 44px;
+			    border-radius: 20px;
+			}
+			.participants-container {
+			    width:100%;
+			    margin:0 auto;
+			    margin-top:2em;
+		        color: #fdfdfd;
+			}
+			.participants-container table th{
+			    text-align: center;
+			    color:#445182;
+			}
+			@media (min-width:769px) {
+			    .participants-container {
+			        width:50%;
+			    }   
+			}
+			.btn-blue {
+			    color: #c438ff !important;
+			    background: #fff !important;
+			}
+		</style>	
+		<style>
+			#snackbar {
+			    visibility: hidden;
+			    min-width: 250px;
+			    margin-left: -125px;
+			    background-color: #333;
+			    color: #fff;
+			    text-align: center;
+			    border-radius: 2px;
+			    padding: 16px;
+			    position: fixed;
+			    z-index: 1;
+			    left: 50%;
+			    bottom: 30px;
+			    font-size: 17px;
+			}
+
+			#snackbar.show {
+			    visibility: visible;
+			    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+			    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+			}
+
+			@-webkit-keyframes fadein {
+			    from {bottom: 0; opacity: 0;} 
+			    to {bottom: 30px; opacity: 1;}
+			}
+
+			@keyframes fadein {
+			    from {bottom: 0; opacity: 0;}
+			    to {bottom: 30px; opacity: 1;}
+			}
+
+			@-webkit-keyframes fadeout {
+			    from {bottom: 30px; opacity: 1;} 
+			    to {bottom: 0; opacity: 0;}
+			}
+
+			@keyframes fadeout {
+			    from {bottom: 30px; opacity: 1;}
+			    to {bottom: 0; opacity: 0;}
+			}
+		</style>	
+	</head>
+	<body>		
+		<section id="app">
+			<button style="display:none;" @click="sendEmail" type="button"> Send Email </button>
+			<div style="height:10px;"></div>
+			<div class="container">
+				<section id="welcome">
+					<article>    
+					    <div class="">
+							<img src="assets/images/jodi/babyshower/babyshower.png" alt="BabyShower">
+						</div>
+						<h1>Krishna and Sabha's</h1>				    
+					    <div v-cloak class="btn-grp">
+						    <button v-if="showRsvpBtns" id="yes" @click="rsvp('yes', $event)" class="btn">Yes</button>
+							<button v-if="showRsvpBtns" id="maybe" @click="rsvp('maybe', $event)" class="btn">May be</button>
+							<button v-if="showRsvpBtns" id="no" @click="rsvp('no', $event)" class="btn">No</button>
+							<button v-if="!showRsvpBtns" @click="navigate('rsvp')" class="btn view">View Participants</button>
+						</div>
+						<div v-cloak v-if="showNumbOfPartiColum" class="noOfparticipants btn-grp">
+							<input type="tel" class="form-control" v-model="affiliate.participants" placeholder="Number of participants"> 
+							<button class="btn" @click="addParticipant(affiliate.participants)">Add</button>
+						</div>
+					</article>
+				</section>
+			    <section id="date">
+				    <article>
+				        <h1>Please join us for a</h1>
+				        <h1>Celebration</h1>
+				        <div class="row align-left">
+				            <div class="col-md-6">
+				                <div>
+				                    <h3>Date &amp; Time</h3>
+				                    <span>Oct 14, 2018 from 9am to 12pm</span>
+				            	</div>
+								<div>
+				                    <h3>Location</h3>
+				                    <div>Club House @ Legacy Village</div>
+				                    <div>7001 Hansell Rd,</div>
+				                    <div>Plano, TX 75024</div>
+				                </div>
+				            </div>
+				            <div class="col-md-6">
+				            	<div>
+									<h3>Tag</h3>
+									<div>A baby boy is on his way.</div>
+									<div>So let's celebrate before the big day over friends, food and sweets.</div>					
+				            	</div>
+				            </div>
+				        </div>
+				    </article>
+				</section>
+			    <section id="venu" style="background: #f2f2f2;">
+				    <article>
+				    	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d835.846716837547!2d-96.81982077075962!3d33.072605322623886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c3cb3516ab63f%3A0x3e2dcf08ae77e98b!2sMaxima+Interactive!5e0!3m2!1sen!2sus!4v1536445097929" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+				    </article>
+				</section>
+				<section id="registery">
+				    <article>
+				        <h2>Baby Shower Registery</h2>
+						<div class="btn-grp">
+						    <a href="https://www.babylist.com/baby-krishnakumar" class="btn" target="_blank">BABY LIST</a>
+						</div>
+				    </article>					
+				</section>
+			    <section id="timeline">
+			    	<div class="container">
+						<div class="text-center">
+							<h2>STORYLINE</h2>
+							<hr class="star-primary">
+						</div>
+						<div class="row">
+							<article class="col-md-6">
+								<div class="timeline-left">
+									<header>He saw her</header>
+									<p>We met during our Under Graduation. Basically we went to the same college.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/exicted.png" class=" emoji emoji-left"></div>
+							</article>
+							<article class="col-md-6">
+								<div class="timeline-right">
+									<header>Friends</header>
+									<p>Orkut brought us together as friends.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/guess.png" class=" emoji emoji-right"></div>
+							</article>
+						</div>
+						<div class="row">
+							<article class="col-md-6">
+								<div class="timeline-left">
+									<header>Proposal</header>
+									<p>It was mutual.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/love.png" class=" emoji emoji-left"></div>
+							</article>
+							<article class="col-md-6">
+								<div class="timeline-right">
+									<header>I flew</header>
+									<p>I went for my higher studies. Long distance didn't stop us. It gave us time to understand a lot better.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/airplane.png" class=" emoji emoji-right"></div>
+							</article>
+						</div>
+						<div class="row">
+							<article class="col-md-6">
+								<div class="timeline-left">
+									<header>The go signal</header>
+									<p>We are really gifted to have such a wonderful parents.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/blessed.png" class=" emoji emoji-left"></div>
+							</article>
+							<article class="col-md-6">
+								<div class="timeline-right">
+									<header>Oct 30, 2017</header>
+									<p>We got married.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/cool.png" class=" emoji emoji-right"></div>
+							</article>
+						</div>
+						<div class="row">
+							<article class="col-md-6">
+								<div class="timeline-left">
+									<header>Honeymoon</header>
+									<p>Landed and enjoyed at the Indonesian Paradise @Bali Nov 8 - 12, 2017.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/blush.png" class=" emoji emoji-left"></div>
+							</article>
+							<article class="col-md-6">
+								<div class="timeline-right">
+									<header>Dec 20</header>
+									<p>Returned together to Newport Beach, California.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/return.png" class=" emoji emoji-right"></div>
+							</article>
+						</div>
+						<div class="row">
+							<article class="col-md-6">
+								<div class="timeline-left">
+									<header>Baby Shower</header>
+									<p>Oct 14, 2018. It is a boy.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/baby.png" class=" emoji emoji-left"></div>
+							</article>
+							<article class="col-md-6" style="display: none;">
+								<div class="timeline-right">
+									<header>Dec 20</header>
+									<p>Returned together to Newport Beach, California.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/return.png" class=" emoji emoji-right"></div>
+							</article>
+						</div>
+					</div>
+				</section>
+				<section id="rsvp">
+					<article>
+					    <h2>RSVP</h2>
+					    <p>View who else is attending the function.</p>
+					    <div class="btn-grp">
+					        <button @click="showParticipants = !showParticipants" class="btn"><span v-if="!showParticipants">View</span><span v-if="showParticipants">Hide</span></button>
+					    </div>
+					    <div class="participants-container" v-if="showParticipants">
+					    	<table class="table">
+							  <thead>
+							    <tr>
+							      <th scope="col">#</th>
+							      <th scope="col">Name</th>
+							      <th scope="col">Rsvp</th>							      
+							      <th scope="col">Participants</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr v-for="(part,index) in participants">
+							      <th scope="row">{{index+1}}</th>
+							      <td>{{part.name}}</td>
+							      <td>
+							      	<span v-if="part.rsvp == 'yes'">Yes</span>
+									<span v-if="part.rsvp == 'no'">No</span>
+									<span v-if="part.rsvp == 'maybe'">May be</span>
+							      </td>
+							      <td>{{part.participants}}</td>
+							    </tr>
+							  </tbody>
+							</table>
+					    </div>
+						<p>If you have to modify your RSVP please text or email me.</p>
+						<p><a href="tel:+16147875430">+1(614) 787-5430</a> | <a href="mailto:mailkrsihna2@gmail.com"> mailkrishna2@gmail.com</a></p>
+					</article>
+				</section>
+				<section id="copyright">
+				    <p>Created by <a href="http://www.krishdev.com">krishdev.com</a></p>
+				</section>
+			</div>
+			<div id="snackbar">Added your info..</div>
+		</section>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+		<script>
+			var app = new Vue({
+				el: "#app",
+				data: {
+					affiliate: {
+						name: "",
+						email: "",
+						rsvp: "",
+						participants: ""
+					},
+					participants:[],
+					showParticipants: false,
+					showNumbOfPartiColum: false,
+					showRsvpBtns: true,
+					thisParticipant:{},
+					rsvpSelected: false
+				},
+				created: function() {
+					var urlParam = this.getQueryParams(document.location.search);
+					var _this = this;
+					this.affiliate.name = urlParam.name;
+					this.affiliate.email = urlParam.email;
+					var isRegistered = false;
+					if(!this.affiliate.email) {
+						this.showRsvpBtns = false;
+					}
+					this.$http.get('/api/babyshowerGetAllData').then(response => {		
+						_this.participants = response.body;
+						for(var i = 0 ; i < _this.participants.length ; i++) {
+							if(_this.participants[i].email == _this.affiliate.email){
+								isRegistered = true;
+								break;
+							}
+						}
+						if(isRegistered) {
+							_this.showRsvpBtns = false;
+						}
+					}, response => {
+						console.log("error");
+						console.log(response.body);
+					});					
+				},
+				methods: {
+					sendEmail: function() {
+						/*{"id":"nithu.ragu@gmail.com","name":"Nithya Ragupathy","family":"true","friends":"false","married":"true"},{"id":"divyapriya.r@gmail.com","name":"Divyapriya Ragupathy","family":"true","friends":"false","married":"true"},{"id":"karthik.pichai@gmail.com","name":"Karthik Pitchai","family":"true","friends":"false","married":"true"},{"id":"saravana.rene@gmail.com","name":"Saravana Nanjapan","family":"true","friends":"false","married":"true"},{"id":"none@gmail.com","name":"Jeyakar","family":"false","friends":"true","married":"true"}*/
+						var friendsFamilyList = [{"id":"mailkrishna2@gmail.com","name":"Krishnakumar Rajendran"},{"id":"krishnasinbox@outlook.com","name":"Krishnakumar Rajendran"}];
+						var data;
+						for(var i = 0; i < friendsFamilyList.length ; i++) {
+							data = {
+								fromEmailId: "krishnakumar4315@gmail.com",
+								toEmailId: friendsFamilyList[i].id,
+								subject:"Baby Shower Invitaion | OCT 14 | Krishnakumar Rajendran & Sabhadhini Thangavel",
+								emailBody:'<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head><!--[if gte mso 9]><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]--><meta http-equiv="Content-type" content="text/html; charset=utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/> <meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="format-detection" content="date=no"/><meta name="format-detection" content="address=no"/><meta name="format-detection" content="telephone=no"/><title>Email Template</title><link href="https://fonts.googleapis.com/css?family=M+PLUS+1p|Great+Vibes" rel="stylesheet"><style type="text/css" media="screen">/* Linked Styles */body{padding:0 !important; margin:0 !important; display:block !important; background:#1e1e1e; -webkit-text-size-adjust:none}a{color:#a88123; text-decoration:none}p{padding:0 !important; margin:0 !important}.toggleViewLarge{display:table;}.showOnMobile{display:none;}@media only screen and (max-width:480px){.toggleViewLarge{display:none;}.showOnMobile{display:table;}}.name{font-family: "Great Vibes", cursive;}/* Mobile styles */</style><style media="only screen and (max-device-width: 480px), only screen and (max-width: 480px)" type="text/css">@media only screen and (max-device-width: 480px), only screen and (max-width: 480px){div[class="mobile-br-5"]{height: 5px !important;}div[class="mobile-br-10"]{height: 10px !important;}div[class="mobile-br-15"]{height: 15px !important;}div[class="mobile-br-20"]{height: 20px !important;}div[class="mobile-br-25"]{height: 25px !important;}div[class="mobile-br-30"]{height: 30px !important;}th[class="m-td"], td[class="m-td"], div[class="hide-for-mobile"], span[class="hide-for-mobile"]{display: none !important; width: 0 !important; height: 0 !important; font-size: 0 !important; line-height: 0 !important; min-height: 0 !important;}span[class="mobile-block"]{display: block !important;}div[class="wgmail"] img{min-width: 320px !important; width: 320px !important;}div[class="img-m-center"]{text-align: center !important;}div[class="fluid-img"] img,td[class="fluid-img"] img{width: 100% !important; max-width: 100% !important; height: auto !important;}table[class="mobile-shell"]{width: 100% !important; min-width: 100% !important;}td[class="td"]{width: 100% !important; min-width: 100% !important;}table[class="center"]{margin: 0 auto;}td[class="column-top"],th[class="column-top"],td[class="column"],th[class="column"]{float: left !important; width: 100% !important; display: block !important;}td[class="content-spacing"]{width: 15px !important;}div[class="h2"]{font-size: 44px !important; line-height: 48px !important;}}</style></head><body class="body" style="padding:0 !important;margin:0 !important;display:block !important;background: #ff7373 !important;"><table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#1e1e1e"><tbody><tr style=" background: #ffffff !important;"><td align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#161616"><tbody><tr></tr></tbody></table><table width="600" border="0" cellspacing="0" cellpadding="0" class="mobile-shell"><tbody><tr><td class="td" style="font-size:0pt; line-height:0pt; padding:0; margin:0; font-weight:normal; width:600px; min-width:600px; Margin:0" width="600"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="20"></td><td><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="30" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><div class=""><div class="text-nav" style="color:#ffffff; font-family:Arial, sans-serif; min-width:auto !important; font-size:12px; line-height:22px; text-align:center"><a href="http://krishdev.com/babyShower" target="_blank" class="link-white" style="color:#ffffff; text-decoration:none"><span class="link-white" style="color:#000; text-decoration:none">VIEW INVITATION</span></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://krishdev.com/babyShower#venu" target="_blank" class="link-white" style="color:#000; text-decoration:none"><span class="link-white" style="color:#000; text-decoration:none">VENUE</span></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://krishdev.com/babyShower#rsvp" target="_blank" class="link-white" style="color:#000; text-decoration:none"><span class="link-white" style="color:#000; text-decoration:none">RSVP</span></a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://krishdev.com/#/contact" target="_blank" class="link-white" style="color:#000; text-decoration:none"><span class="link-white" style="color:#000; text-decoration:none">CONTACT US</span></a></div><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="20" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table></div></td><td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="20"></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" style=" background-color: #ffecee; background-image: url(http://www.helpwithmycareer.com/img-thirdparty/twinklelittlestart.png); background-repeat: no-repeat; background-size: contain; background-position-x: 1px;"><tbody><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#d2973b" style=" background: unset;"><tbody><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="img" style="font-size:0pt;line-height:0pt;text-align:left;background: #ff7373 !important;/* border-left: 3px solid #e6ae57; *//* border-top: 3px solid #e6ae57; */" width="27"><img src="http://helpwithmycareer.com/img-thirdparty/top-left.png" border="0" width="27" height="27" alt=""></td><td><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="img" style="font-size:0pt;line-height:0pt;display: none;text-align:left;" height="3" bgcolor="#e6ae57">&nbsp;</td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="24" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table></td><td class="img" style="font-size:0pt;line-height:0pt;text-align:left;background: #ff7373 !important;" width="27"><img border="0" width="27" height="27" alt="" src="http://helpwithmycareer.com/img-thirdparty/top-right.png"></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" class="toggleViewLarge" cellpadding="0"><tbody><tr><td class="img" style="font-size:0pt;line-height:0pt;text-align:left;display: none;" width="3" bgcolor="#e6ae57"></td><td class="img" style="font-size:0pt; line-height:0pt; text-align:left" width="10"></td><td><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="15" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><div class="h3-2-center" style="color:#1e1e1e; font-family:Arial, sans-serif; min-width:auto !important; font-size:20px; line-height:26px; text-align:center; letter-spacing:5px">YOU"VE RECEIVED</div><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="5" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><div class="h2" style="color:#ffffff;font-family:Georgia, serif;min-width:auto !important;font-size: 48px;line-height: 30px;text-align:center;"><em>an invitation!</em></div><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="35" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table></td><td class="img" style="font-size:0pt; line-height:0pt; text-align:left" width="10"></td><td class="img" style="font-size:0pt;line-height:0pt;text-align:left;display: none;" width="3" bgcolor="#e6ae57"></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" style=" background-color: unset; padding-top: 48%; border-left: 3px solid #e6ae57; border-right: 3px solid #e6ae57; border: none;"><tbody><tr><td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="20"></td><td><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="35" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="30" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#fafafa" style=" background: unset;"><tbody><tr><td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="40"></td><td><table width="100%" border="0" cellspacing="0" cellpadding="0" class="showOnMobile" style=" margin-top: 24%;"><tbody><tr><td class="img" style="font-size:0pt; line-height:0pt; text-align:left" width="10"></td><td><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer toggleViewLarge" style=" text-align:center; width:100%; min-width:100%"><tbody><tr><td class="spacer toggleViewLarge" style="text-align:center;width:100%;min-width:100%;font-size: 14px;color: #bfac61;padding: 0 0 25px 0;"><div class="">A BABY BOY IS WHAT YOU ARE!</div></td></tr></tbody></table><div class="h3-2-center" style="color:#1e1e1e; font-family:Arial, sans-serif; min-width:auto !important; font-size:20px; line-height:26px; text-align:center; letter-spacing:5px">YOU"VE RECEIVED</div><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="5" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><div class="h2" style="color:#ffffff; font-family:Georgia, serif; min-width:auto !important; font-size:60px; line-height:64px; text-align:center"><em>an invitation!</em></div><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="35" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table></td><td class="img" style="font-size:0pt; line-height:0pt; text-align:left" width="10"></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="text-align:center;width:100%;min-width:100%;"><tbody><tr><td class="spacer toggleViewLarge" style="text-align:center;width:100%;min-width:100%;font-size: 14px;color: #bfac61;padding: 0 0 25px 0;"><div class="">A BABY BOY IS WHAT YOU ARE!</div></td></tr><tr><td class="spacer" style="text-align:center;width:100%;min-width:100%;font-size: 42px;color: #bfac61;padding: 16px;" height="15"> <div class="name"> Krish &amp; Sabha</div></td></tr></tbody></table><div class="h5-1-center" style="color:#a88123; font-family:Georgia, serif; min-width:auto !important; font-size:16px; line-height:26px; text-align:center"><a href="#" target="_blank" class="link" style="color:#a88123; text-decoration:none"><span class="link" style="color:#a88123; text-decoration:none">@'+friendsFamilyList[i].name+'</span></a></div><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="20" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><div class="text-center" style="color:#1e1e1e; font-family:Arial, sans-serif; min-width:auto !important; font-size:14px; line-height:20px; text-align:center"><em>"Hey '+friendsFamilyList[i].name+', here"s your invite! <br>Check out our invitation. Join us for a baby shower honoring.</em></div><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="25" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center"><table width="210" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center" bgcolor="#d2973b"><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="img" style="font-size:0pt; line-height:0pt; text-align:left" width="15"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="50" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table></td><td bgcolor="#d2973b"><div class="text-btn" style="color:#ffffff; font-family:Arial, sans-serif; min-width:auto !important; font-size:16px; line-height:20px; text-align:center"><a href="http://krishdev.com/babyShower#rsvp" target="_blank" class="link-white" style="color:#ffffff; text-decoration:none"><span class="link-white" style="color:#ffffff; text-decoration:none">RSVP</span></a></div></td><td class="img" style="font-size:0pt; line-height:0pt; text-align:left" width="15"></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="30" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table></td><td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="40"></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="35" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><div class="h5-2-center" style="color:#1e1e1e; font-family:Arial, sans-serif; min-width:auto !important; font-size:16px; line-height:26px; text-align:center"></div></td><td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="20"></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#d2973b" style="background-color: #cacfff;"><tbody><tr><td><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="img" style="font-size:0pt; line-height:0pt; text-align:left" width="3" bgcolor="#e6ae57"></td><td><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="30" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><div class="h3-1-center" style="color:#1e1e1e; font-family:Georgia, serif; min-width:auto !important; font-size:20px; line-height:26px; text-align:center"><em>Follow Us</em></div><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="15" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center"><table border="0" cellspacing="0" cellpadding="0" style=" background-color: #cb9731; padding: 5px; border-radius: 10px;"><tbody><tr><td class="img-center" style="font-size:0pt; line-height:0pt; text-align:center" width="38"><a href="https://www.facebook.com/mynameiskrishnakumar" target="_blank"><img src="https://d1pgqke3goo8l6.cloudfront.net/PZeWpIm2TkSqtS6i07xE_ico_facebook.jpg" border="0" width="28" height="28" alt=""></a></td><td class="img-center" style="font-size:0pt; line-height:0pt; text-align:center" width="38"><a href="https://twitter.com/Krishna0711" target="_blank"><img src="https://d1pgqke3goo8l6.cloudfront.net/hAIPhWl2SB2cL0Atc4lB_ico_twitter.jpg" border="0" width="28" height="28" alt=""></a></td><td class="img-center" style="font-size:0pt; line-height:0pt; text-align:center" width="38"><a href="https://www.instagram.com/paasakaaran_krish/" target="_blank"><img src="https://d1pgqke3goo8l6.cloudfront.net/NrXUpqcRQwKnJKzLkqS1_ico_instagram.jpg" border="0" width="28" height="28" alt=""></a></td><td class="img-center" style="font-size:0pt; line-height:0pt; display:none; text-align:center" width="38"><a href="#" target="_blank"><img src="https://d1pgqke3goo8l6.cloudfront.net/VaewiS8gT5ClCCR9vAO1_ico_pinterest.jpg" border="0" width="28" height="28" alt=""></a></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="15" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table></td><td class="img" style="font-size:0pt; line-height:0pt; text-align:left" width="3" bgcolor="#e6ae57"></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="img" style="font-size:0pt;line-height:0pt;text-align:left;background: #ff7373 !important;" width="27"><img src="http://helpwithmycareer.com/img-thirdparty/bottom-left.png" border="0" width="27" height="27" alt=""></td><td><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="24" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="img" style="font-size:0pt; line-height:0pt; text-align:left" height="3" bgcolor="#e6ae57">&nbsp;</td></tr></tbody></table></td><td class="img" style="font-size:0pt;line-height:0pt;text-align:left;background: #ff7373 !important;" width="27"><img src="http://helpwithmycareer.com/img-thirdparty/bottom-right.png" border="0" width="27" height="27" alt=""></td></tr></tbody></table></td></tr></tbody></table></td></tr></tbody></table><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="20"></td><td><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="30" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table><div class="text-footer" style="color:#666666; font-family:Arial, sans-serif; min-width:auto !important; font-size:12px; line-height:18px; text-align:center">7001 Hansell Rd, Apt 2310<span class="mobile-block"></span>Plano, TX 75024<br><a href="http://krishdev.com" target="_blank" class="link-1" style="color:#666666; text-decoration:none"><span class="link-1" style="color:#666666; text-decoration:none">www.krishdev.com</span></a><span class="mobile-block"><span class="hide-for-mobile">|</span></span><a href="mailto:mailkrsihna2@gmail.com" target="_blank" class="link-1" style="color:#666666; text-decoration:none"><span class="link-1" style="color:#666666; text-decoration:none">mailkrishna2@gmail.com</span></a><span class="mobile-block"><span class="hide-for-mobile">|</span></span>Phone: <a href="tel:+16147875430" target="_blank" class="link-1" style="color:#666666; text-decoration:none"><span class="link-1" style="color:#666666; text-decoration:none">+1 (614) 787-5430</span></a></div><table width="100%" border="0" cellspacing="0" cellpadding="0" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%"><tbody><tr><td height="30" class="spacer" style="font-size:0pt; line-height:0pt; text-align:center; width:100%; min-width:100%">&nbsp;</td></tr></tbody></table></td><td class="content-spacing" style="font-size:0pt; line-height:0pt; text-align:left" width="20"></td></tr></tbody></table></td></tr></tbody></table><div class="wgmail" style="font-size:0pt; line-height:0pt; text-align:center"><img src="https://d1pgqke3goo8l6.cloudfront.net/oD2XPM6QQiajFKLdePkw_gmail_fix.gif" width="600" height="1" style="min-width:600px" alt="" border="0"></div></td></tr></tbody></table></body></html>'
+							};
+							this.$http.post('/api/sendEmail',data).then(response => {		
+								console.log(response.body);
+							}, response => {
+								console.log("error");
+								console.log(response.body);
+							});
+						}						
+					},
+					getQueryParams: function (qs) {
+					    qs = qs.split('+').join(' ');
+
+					    var params = {},
+					        tokens,
+					        re = /[?&]?([^=]+)=([^&]*)/g;
+
+					    while (tokens = re.exec(qs)) {
+					        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+					    }
+
+					    return params;
+					},
+					rsvp: function(ans, elm) {
+						if(this.rsvpSelected)
+							return false;
+						elm.target.classList.add("btn-blue");
+						var classList = Array.from(document.querySelectorAll("#welcome .btn-grp:not(.noOfparticipants) .btn:not(.btn-blue)"));
+						console.log(classList);
+						for(var i = 0 ; i < classList.length ; i++) {
+							classList[i].setAttribute("disabled","disabled");
+						}
+
+						this.affiliate.rsvp = ans;
+						var data = JSON.parse(JSON.stringify(this.affiliate));
+						var _this = this;
+						this.$http.post('/api/babyshower', data).then(response => {		
+							_this.participants.push(response.body);
+							_this.thisParticipant = response.body;
+							_this.rsvpSelected = true;
+							if(data.rsvp != "no")
+								_this.showNumbOfPartiColum = true;							
+						}, response => {
+							console.log("error");
+							console.log(response.body);
+						});
+					},
+					addParticipant: function (numb) {
+						this.thisParticipant.participants = numb;
+						var data = JSON.parse(JSON.stringify(this.thisParticipant));
+						var _this = this;
+						this.$http.post('/api/updateBabyshower', data).then(response => {		
+							_this.showNumbOfPartiColum = false;	
+							_this.successMessage();
+							_this.successEmail(data);
+							var lastItem = (_this.participants.length - 1);
+							_this.participants[lastItem].participants = data.participants;							
+						}, response => {
+							console.log("error");
+							console.log(response.body);
+						});
+					},
+					navigate: function(id) {
+						document.querySelector('#'+id).scrollIntoView({ 
+						  behavior: 'smooth' 
+						});
+					},
+					successMessage: function() {
+					    var x = document.getElementById("snackbar");
+					    x.className = "show";
+					    var _this = this;
+					    setTimeout(function(){ 
+					    	x.className = x.className.replace("show", ""); 
+							_this.showRsvpBtns = false;								    
+					    }, 2000);
+					},
+					successEmail: function(affiliate) {
+						var data = {
+								fromEmailId: "krishnakumar4315@gmail.com",
+								toEmailId: 'mailkrishna2@gmail.com',
+								subject:"Baby Shower Acceptance | "+affiliate.name,
+								emailBody:'<table border=0 cellpadding=0 cellspacing=0 width=100% bgcolor=#1e1e1e><tr style=background:#fff!important><td align=center valign=top><table border=0 cellpadding=0 cellspacing=0 width=100% bgcolor=#161616><tr></table><table border=0 cellpadding=0 cellspacing=0 width=600 class=mobile-shell><tr><td style="padding:5em 0 0">Hi Krish,<tr><td><div><h3>' + affiliate.name + '</h3>has responded with Baby Shower Invitation.</div><tr><td style="padding:1em 0"><b>RSVP: </b>' + affiliate.rsvp + '<tr><td style="padding:0 0 1em"><b>Participants: </b>' + affiliate.participants + '<tr><td><b>Email: </b>' + affiliate.email + '</table></table>'
+						};
+
+						this.$http.post('/api/sendEmail',data).then(response => {		
+							console.log(response.body);
+						}, response => {
+							console.log("error");
+							console.log(response.body);
+						});
+					}
+				}
+			});		
+		</script>
+	</body>
+</html>

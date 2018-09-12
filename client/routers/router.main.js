@@ -4,6 +4,8 @@ module.exports = function (app) {
 	app.get("/", index.getUserDetails);
 	app.get("/guesswhat", index.renderMarriagePage);
 	app.get("/wedding", index.renderMarriagePage);
+	app.get("/babyShower/", index.renderbabyshowerPage);
+	app.get("/adminBabyShower/", index.renderAdminBabyshowerPage);
 	//app.get("/api/register", ctrl.registerGetUser);
 	app.post("/api/register", ctrl.registerUser);
 	app.post("/api/login", ctrl.loginUser);
@@ -18,6 +20,9 @@ module.exports = function (app) {
 	app.get("/api/getMessages", ctrl.getMessages);
 	app.get("/api/getGallery", ctrl.getGallery);
 	app.get("/api/getGalleryCKE", ctrl.getGalleryCKE);
-
+	app.post("/api/babyshower", ctrl.babyshower);
+	app.post("/api/updateBabyshower", ctrl.updateBabyshower);
+	app.get("/api/babyshowerGetAllData", ctrl.babyshowerGetAllData);
+	app.get("/api/friendsFamilyGetAllData", ctrl.friendsFamilyGetAllData);
 	console.log('router Initialized');
 };

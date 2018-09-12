@@ -1,7 +1,15 @@
 var Account = require("../models/model.account");
+var Babyshower = require("../models/model.babyshower");
+var FriendsFamily = require("../models/model.friendsFamily");
 //var Universities = require("../models/model.univ");
 var passport = require("passport");
 var nodemailer = require("nodemailer");
+var xoauth2 = require('xoauth2');
+
+const fs = require('fs');
+const readline = require('readline');
+const {google} = require('googleapis');
+
 var ContentData = require("../models/model.myContent");
 var Contact = require("../models/model.contact");
 
@@ -29,11 +37,20 @@ var registerUser = function (req, res) {
 
 //Send email through npm sendmail
 var sendEmail = function (req, res) {
-	var smtpTransport = nodemailer.createTransport("SMTP", {
-		service: "Gmail", // sets automatically host, port and connection security settings
+	var smtpTransport = nodemailer.createTransport({
+		//service: "Gmail", // sets automatically host, port and connection security settings
+		host: 'smtp.gmail.com',
+	    port: 465,
+	    secure: true,
 		auth: {
-			user: "krishnakumar4315@gmail.com",
-			pass: "livehappily2013"
+			//xoauth2: xoauth2.createXOAuth2Generator({
+				type: 'OAuth2',
+				user: "krishnakumar4315@gmail.com",
+				clientId: "603367316954-67pej7ed33fg529n6e5cmve5pugclro2.apps.googleusercontent.com",
+				clientSecret:"QOOem3Zel6T456JXACjWZ1Cv",
+				refreshToken: "1/6KhePRPmLJlMpls--t2cP_LJ-gma0-qLLY6bvC4odr2d30Ryt1QoUATvEzgtA2CT",
+				accessToken: "ya29.GlsMBtW6Ka79RsyMoV9pPvQ21nRl_ClYEII2b1eVtbCwOeps_oII2gZK8ISEEGiqLq5bCIPKmWUV3hW5JemtiyUwnfz9niwzKKDxKcWECvqzeWvkHFk4lzWXcx0B"
+			//})
 		}
 	});
 	var mailOptions = { //email options
@@ -107,6 +124,47 @@ var insertContent = function (req, res) {
 		return res.send(data);
 	})
 };
+var babyshower = function (req, res) {
+	var participant = new Babyshower(req.body);
+	participant.save(function (err, data) {
+		if(err)
+			return res.send(err);
+		return res.send(data);
+	})
+};
+var updateBabyshower = function (req, res) {
+	var query = {
+		_id: req.body._id
+	};
+	Babyshower.update(query, req.body, {
+		multi: true
+	}, function (err, data) {
+		if (err)
+			return res.send(err);
+		return res.send(data);
+	});
+};
+var babyshowerGetAllData = function (req, res) {
+	Babyshower.find(function (err, data) {
+		if (err)
+			return res.send(err);
+		return res.send(data);
+	})
+};
+var friendsFamilyInsertContent = function (req, res) {
+	var friends = new FriendsFamily({"name":"Krish","id":"mailkrishna2@gmail.com","family":"true","friends":"false","married":"true"});
+	friends.save(function (err, data) {
+		
+	})
+};
+//friendsFamilyInsertContent();
+var friendsFamilyGetAllData = function (req, res) {
+	FriendsFamily.find(function (err, data) {
+		if(err)
+			return res.send(err);
+		return res.send(data);
+	})
+}
 
 var contact = function (req, res) {
 	var contact = new Contact(req.query);
@@ -235,5 +293,8 @@ exports.contact = contact;
 exports.getMessages = getMessages;
 exports.getGallery = getGallery;
 exports.getGalleryCKE = getGalleryCKE;
-
+exports.babyshower = babyshower;
+exports.babyshowerGetAllData = babyshowerGetAllData;
+exports.updateBabyshower = updateBabyshower;
+exports.friendsFamilyGetAllData = friendsFamilyGetAllData;
 console.log("controller Initialized");
