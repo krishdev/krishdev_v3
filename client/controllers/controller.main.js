@@ -152,9 +152,11 @@ var babyshowerGetAllData = function (req, res) {
 	})
 };
 var friendsFamilyInsertContent = function (req, res) {
-	var friends = new FriendsFamily({"name":"Krish","id":"mailkrishna2@gmail.com","family":"true","friends":"false","married":"true"});
+	var friends = new FriendsFamily(req.body);
 	friends.save(function (err, data) {
-		
+		if(err)
+			return res.send(err);
+		return res.send(data);
 	})
 };
 //friendsFamilyInsertContent();
@@ -297,4 +299,5 @@ exports.babyshower = babyshower;
 exports.babyshowerGetAllData = babyshowerGetAllData;
 exports.updateBabyshower = updateBabyshower;
 exports.friendsFamilyGetAllData = friendsFamilyGetAllData;
+exports.friendsFamilyInsertContent = friendsFamilyInsertContent;
 console.log("controller Initialized");

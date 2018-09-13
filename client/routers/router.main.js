@@ -24,5 +24,6 @@ module.exports = function (app) {
 	app.post("/api/updateBabyshower", ctrl.updateBabyshower);
 	app.get("/api/babyshowerGetAllData", ctrl.babyshowerGetAllData);
 	app.get("/api/friendsFamilyGetAllData", ctrl.friendsFamilyGetAllData);
+	app.post("/api/friendsFamilyInsertContent", ctrl.friendsFamilyInsertContent);
 	console.log('router Initialized');
 };
