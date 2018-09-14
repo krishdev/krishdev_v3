@@ -27,7 +27,7 @@
 			</ul>
 		</pre>
 	</section>
-	<form class="form-signin" method="post" name="index" ng-submit="sendPost(index.$valid)" novalidate>
+	<form class="form-signin" method="post" name="index" ng-submit="sendPost(index)" novalidate>
 		<div align="center" style="margin-left:10%;margin-right:10%">
 			<div class="row">
 				<div class="col-md-6">
@@ -67,6 +67,10 @@
 				</div>
 				<div class="col-md-12">
 					<input class="btn btn-lg btn-primary btn-block" type="submit" value="I reply in less than 24 hrs.">
+					<br/>
+					<div ng-show="showMessage" class="alert alert-success" role="alert">
+						{{successMessage}}
+					</div>
 				</div>
 				<div class="clr"></div>
 			</div>

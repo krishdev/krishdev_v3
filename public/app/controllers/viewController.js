@@ -1,4 +1,5 @@
 var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetchData, $timeout) {
+	$scope.showMessage = false;
 	dataFactoryFn.then(function (response) {
 		$scope.abtMe = response.data.aboutMe;
 		$scope.quickLinks = response.data.aboutMe.quickLinks;
@@ -33,53 +34,33 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 			$scope.repos = response.data;
 		});
 	$scope.sendPost = function (isValid) {
-		if (isValid) {
-
-			var data = {
-				"fromEmailId": $scope.emailContact,
-				"toEmailId": "krishnasinbox@outlook.com",
-				"subject": $scope.nameContact + " " + $scope.projectType + " | " + $scope.emailContact,
-				"emailBody": "Hello, <br> " + $scope.contentContact + " <br> Budget" + $scope.budgetContact
-			};
-			/*'{"inputUsername":"' + $scope.nameContact + '","inputEmail": "' + $scope.emailContact + '","inputContent":"' + $scope.contentContact + '","inputPhone":"' + $scope.phoneContact + '","inputProjectType":"' + $scope.projectType + '","inputBudget":"' + $scope.budgetContact + '"}';
-						data = JSON.parse(data)*/
-
-
-			/*postContact.postData(data).then(function (data) {
-				console.log(data + ' Data');
-				var modalInstance = $uibModal.open({
-					backdrop: true,
-					backdropClick: true,
-					dialogFade: false,
-					keyboard: true,
-					templateUrl: 'modal.tpl.html',
-					controller: 'ModalInstanceCtrl',
-					resolve: {} // empty storage
-				});
-
-				modalInstance.result.then(function () {}, function () {
-
-				});
-			});*/
+		var _this = this;
+		if (isValid.$valid) {
 			var thisDate = new Date();
 			$scope.messageData = {
-				subject: $scope.nameContact + " " + $scope.projectType + " | " + $scope.emailContact,
-				content: "Hello, <br> " + $scope.contentContact + " <br> Budget" + $scope.budgetContact + "<br> Ph: " + $scope.phoneContact,
-				time: thisDate.getTime(),
-				from: $scope.emailContact,
-				to: "krishnasinbox@outlook.com"
+				fromEmailId: "krishnakumar4315@gmail.com",
+				toEmailId:'mailkrishna2@gmail.com',
+				subject: "Krishdev.com has a message from "+$scope.nameContact ,
+				emailBody: '<table border=0 cellpadding=0 cellspacing=0 width=100% bgcolor=#1e1e1e><tr style=background:#fff!important><td align=center valign=top><table border=0 cellpadding=0 cellspacing=0 width=100% bgcolor=#161616><tr></table><table border=0 cellpadding=0 cellspacing=0 width=600 class=mobile-shell><tr><td style="padding:5em 0 0">Hi Krish,<tr><td><div>' 
+				+ $scope.contentContact + '</div><tr><td style="padding:1em 0"><b>Email: </b>' 
+				+ $scope.emailContact + '<tr><td style="padding:0 0 1em"><b>Phone: </b>' 
+				+ $scope.phoneContact + '<tr><td><b>Thanks, </b>' + $scope.nameContact + '</table></table>'
 			};
-
-			fetchData.getData("/api/contact", $scope.messageData).then(function (response) {
-				$scope.successMessage = $scope.emailSuccessMessage;
+			var data = JSON.parse(JSON.stringify($scope.messageData));	     				
+			postContact.postData(data).then(function (response) {
+				$scope.successMessage = "Thank you. Your message has been sent. I will reply asap.";
+				$scope.showMessage = true;
 				$timeout(function () {
-					$scope.successMessage = successMessageDefault;
-				}, 1000);
-			}, function errorCallBack() {
-				$scope.successMessage = $scope.emailSuccessMessage;
+					$scope.showMessage = false;
+				}, 3500);
+				isValid.$setUntouched();
+			}, function errorCallBack() {			     				
+				$scope.successMessage = "Sorry Something went wrong! Please email to mailkrishna2@gmail.com";
+				$scope.showMessage = true;
 				$timeout(function () {
-					$scope.successMessage = successMessageDefault;
-				}, 1000);
+					$scope.showMessage = false;
+				}, 3500);
+				isValid.$setUntouched();
 			});
 			$scope.nameContact = '';
 			$scope.emailContact = '';
@@ -87,6 +68,11 @@ var aboutMeCtrl = function ($scope, dataFactoryFn, postContact, $uibModal, fetch
 			$scope.phoneContact = '';
 			$scope.projectType = '';
 			$scope.budgetContact = '';
+
+			//reset validation form
+			$scope.index.$setPristine();
+			$scope.index.$setUntouched();
+			$scope.index.$submitted = false;
 		}
 	};
 };

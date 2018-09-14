@@ -65,7 +65,7 @@ var sendEmail = function (req, res) {
 			console.log(error);
 			return res.send(error);
 		} else {
-			console.log("Message sent: " + response.message);
+			console.log("Message sent: " + response);
 			return res.send(response.message);
 		}
 
@@ -166,7 +166,19 @@ var friendsFamilyGetAllData = function (req, res) {
 			return res.send(err);
 		return res.send(data);
 	})
-}
+};
+var friendsFamilyUpdateContent = function(req, res) {
+	var query = {
+		_id: req.body._id
+	};
+	FriendsFamily.update(query, req.body, {
+		multi: true
+	}, function (err, data) {
+		if (err)
+			return res.send(err);
+		return res.send(data);
+	});
+};
 
 var contact = function (req, res) {
 	var contact = new Contact(req.query);
@@ -300,4 +312,5 @@ exports.babyshowerGetAllData = babyshowerGetAllData;
 exports.updateBabyshower = updateBabyshower;
 exports.friendsFamilyGetAllData = friendsFamilyGetAllData;
 exports.friendsFamilyInsertContent = friendsFamilyInsertContent;
+exports.friendsFamilyUpdateContent = friendsFamilyUpdateContent;
 console.log("controller Initialized");
