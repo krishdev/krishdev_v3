@@ -584,7 +584,7 @@
 							    </tr>
 							  </thead>
 							  <tbody>
-							    <tr v-for="(part,index) in participants" v-if="participants.rsvp != 'no'">
+							    <tr v-for="(part,index) in participants" v-if="part.rsvp != 'no'">
 							      <th scope="row">{{index+1}}</th>
 							      <td>{{part.name}}</td>
 							      <td>
