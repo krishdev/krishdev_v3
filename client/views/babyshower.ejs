@@ -214,7 +214,7 @@
 			    padding: 2em 0;
 			}
 
-			.btn-grp button.btn {			    
+			.btn-grp .btn {			    
 			    background: transparent;
 			    border: 2px solid #fff;
 			    padding: 10px 30px;
@@ -426,11 +426,14 @@
 							<img src="assets/images/jodi/babyshower/babyshower.png" alt="BabyShower">
 						</div>
 						<h1>Krishna and Sabha's</h1>				    
-					    <div v-cloak class="btn-grp">
+					    <div v-cloak class="btn-grp" hidden>
 						    <button v-if="showRsvpBtns" id="yes" @click="rsvp('yes', $event)" class="btn">Yes</button>
 							<button v-if="showRsvpBtns" id="maybe" @click="rsvp('maybe', $event)" class="btn">May be</button>
 							<button v-if="showRsvpBtns" id="no" @click="rsvp('no', $event)" class="btn">No</button>
 							<button v-if="!showRsvpBtns" @click="navigate('rsvp')" class="btn view">View Participants</button>
+						</div>
+						<div v-cloak class="btn-grp">
+							<a href="#photos" class="btn view">View Photos</a>
 						</div>
 						<div v-cloak v-if="showNumbOfPartiColum" class="noOfparticipants btn-grp">
 							<input type="tel" class="form-control" v-model="affiliate.participants" placeholder="Number of participants"> 
@@ -440,8 +443,8 @@
 				</section>
 			    <section id="date">
 				    <article>
-				        <h1>Please join us for a</h1>
-				        <h1>Celebration</h1>
+				        <h1>Thank you for making the event wonderful!</h1>
+				        
 				        <div class="row align-left">
 				            <div class="col-md-6">
 				                <div>
@@ -466,15 +469,15 @@
 				    </article>
 				</section>
 			    <section id="venu" style="background: #f2f2f2;">
-				    <article>
-				    	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d835.846716837547!2d-96.81982077075962!3d33.072605322623886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c3cb3516ab63f%3A0x3e2dcf08ae77e98b!2sMaxima+Interactive!5e0!3m2!1sen!2sus!4v1536445097929" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+				    <article id="photos">
+				    	<a data-flickr-embed="true"  href="https://www.flickr.com/photos/151533033@N04/albums/72157696929045930" title="Baby Shower"><img src="https://farm2.staticflickr.com/1931/44818150654_3caf653ced_z.jpg" width="100%" height="auto" alt="Baby Shower"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 				    </article>
 				</section>
 				<section id="registery">
 				    <article>
-				        <h2>Baby Shower Registery</h2>
+				        <h2>View Album</h2>
 						<div class="btn-grp">
-						    <a href="https://www.babylist.com/baby-krishnakumar" class="btn" target="_blank">BABY LIST</a>
+						    <a href="https://flic.kr/s/aHsmkKcji1" class="btn" target="_blank">Album</a>
 						</div>
 				    </article>					
 				</section>
@@ -567,39 +570,7 @@
 					</div>
 				</section>
 				<section id="rsvp">
-					<article>
-					    <h2>RSVP</h2>
-					    <p>View who else is attending the function.</p>
-					    <div class="btn-grp">
-					        <button @click="showParticipants = !showParticipants" class="btn"><span v-if="!showParticipants">View</span><span v-if="showParticipants">Hide</span></button>
-					    </div>
-					    <div class="participants-container" v-if="showParticipants">
-					    	<table class="table">
-							  <thead>
-							    <tr>
-							      <th scope="col">#</th>
-							      <th scope="col">Name</th>
-							      <th scope="col">Rsvp</th>							      
-							      <th scope="col">Participants</th>
-							    </tr>
-							  </thead>
-							  <tbody>
-							    <tr v-for="(part,index) in participants" v-if="part.rsvp != 'no'">
-							      <th scope="row">{{index+1}}</th>
-							      <td>{{part.name}}</td>
-							      <td>
-							      	<span v-if="part.rsvp == 'yes'">Yes</span>
-									<span v-if="part.rsvp == 'no'">No</span>
-									<span v-if="part.rsvp == 'maybe'">May be</span>
-							      </td>
-							      <td>{{part.participants}}</td>
-							    </tr>
-							  </tbody>
-							</table>
-					    </div>
-						<p>If you have to modify your RSVP please text or email me.</p>
-						<p><a href="tel:+16147875430">+1(614) 787-5430</a> | <a href="mailto:mailkrsihna2@gmail.com"> mailkrishna2@gmail.com</a></p>
-					</article>
+					<article><h3>Thank you</h3></article>
 				</section>
 				<section id="copyright">
 				    <p>Created by <a href="http://www.krishdev.com">krishdev.com</a></p>
