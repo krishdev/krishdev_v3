@@ -26,5 +26,10 @@ module.exports = function (app) {
 	app.get("/api/friendsFamilyGetAllData", ctrl.friendsFamilyGetAllData);
 	app.post("/api/friendsFamilyInsertContent", ctrl.friendsFamilyInsertContent);
 	app.post("/api/friendsFamilyUpdateContent", ctrl.friendsFamilyUpdateContent);
+
+
+	app.get("/api/dhk/getAllKitchens", ctrl.getDhkAllKitchens);
+	app.post("/api/dhk/insertDhkKitchen", ctrl.insertDhkKitchen);
+
 	console.log('router Initialized');
 };

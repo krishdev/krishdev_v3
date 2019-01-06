@@ -1,6 +1,8 @@
 var Account = require("../models/model.account");
 var Babyshower = require("../models/model.babyshower");
 var FriendsFamily = require("../models/model.friendsFamily");
+var Dhk = require("../models/model.dhk");
+
 //var Universities = require("../models/model.univ");
 var passport = require("passport");
 var nodemailer = require("nodemailer");
@@ -294,6 +296,71 @@ var getGalleryCKE = function (req, res) {
 
 };
 
+
+/**
+* DHK 
+*/
+
+var getDhkAllKitchens = function(req, res) {
+	Dhk.find(function (err, data) {
+		if(err)
+			return res.send(err);
+		return res.send(data);
+	});
+};
+
+var insertOnce = function () {
+	let dhkonce = {
+	  	"id": "12ab",
+	  	"name": "My Kitchen",
+	  	"img": "//chottukieducation.com/static/dhk/home-img1.jpg",
+	  	"address1": "123 Broken Bridge",
+	  	"address2": "#321",
+	  	"city": "Plano",
+	  	"state": "TX",
+	  	"country": "USA",
+	  	"location": "",
+	  	"tagline": "Authentic south Indian food",
+	  	"menu": [{
+	  	  	"id": "12ab-12bc",
+	      	"name": "Dosa",
+	      	"img": "//chottukieducation.com/static/dhk/dosa.jpg",
+	      	"category": "Tiffen",
+	      	"region": "Indian",
+	      	"taste": "",
+	      	"price": "USD-6",
+	      	"minimumQuntity": "2 lbs",
+	      	"likes": 34,
+	      	"isActive": true
+	  	}],
+	  	"phone": "8452147847",
+	  	"email1": "test@test.com",
+	  	"email2": "test2@test.com",
+	  	"likes": 234,
+	  	"description": "Best food in Plano area for South Indian varities",
+	  	"isActive": true
+	};
+	var dhk = new Dhk(dhkonce);
+	dhk.save(function (err, data) {
+		if(err)
+			console.log(err);
+		console.log("Inserted");
+	})
+
+};
+insertOnce();
+
+var insertDhkKitchen = function(req, res) {
+	var dhk = new Dhk(req.body);
+	dhk.save(function (err, data) {
+		if(err)
+			return res.send(err);
+		return res.send(data);
+	})
+}
+
+/*==================*/
+
 exports.registerUser = registerUser;
 exports.loginUser = loginUser;
 exports.logout = logout;
@@ -313,4 +380,7 @@ exports.updateBabyshower = updateBabyshower;
 exports.friendsFamilyGetAllData = friendsFamilyGetAllData;
 exports.friendsFamilyInsertContent = friendsFamilyInsertContent;
 exports.friendsFamilyUpdateContent = friendsFamilyUpdateContent;
+
+exports.getDhkAllKitchens = getDhkAllKitchens;
+exports.insertDhkKitchen = insertDhkKitchen;
 console.log("controller Initialized");
