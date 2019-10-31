@@ -28,8 +28,8 @@ module.exports = function (app) {
 	app.post("/api/friendsFamilyUpdateContent", ctrl.friendsFamilyUpdateContent);
 
 
-	app.get("/api/dhk/getAllKitchens", ctrl.getDhkAllKitchens);
-	app.post("/api/dhk/insertDhkKitchen", ctrl.insertDhkKitchen);
+	// app.get("/api/dhk/getAllKitchens", ctrl.getDhkAllKitchens);
+	// app.post("/api/dhk/insertDhkKitchen", ctrl.insertDhkKitchen);
 
 	console.log('router Initialized');
 };

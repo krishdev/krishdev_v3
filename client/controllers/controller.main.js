@@ -1,7 +1,7 @@
 var Account = require("../models/model.account");
 var Babyshower = require("../models/model.babyshower");
 var FriendsFamily = require("../models/model.friendsFamily");
-var Dhk = require("../models/model.dhk");
+// var Dhk = require("../models/model.dhk");
 
 //var Universities = require("../models/model.univ");
 var passport = require("passport");
@@ -301,7 +301,8 @@ var getGalleryCKE = function (req, res) {
 * DHK 
 */
 
-var getDhkAllKitchens = function(req, res) {
+/**
+ var getDhkAllKitchens = function(req, res) {
 	Dhk.find(function (err, data) {
 		if(err)
 			return res.send(err);
@@ -358,6 +359,7 @@ var insertDhkKitchen = function(req, res) {
 		return res.send(data);
 	})
 }
+ */
 
 /*==================*/
 
@@ -381,6 +383,6 @@ exports.friendsFamilyGetAllData = friendsFamilyGetAllData;
 exports.friendsFamilyInsertContent = friendsFamilyInsertContent;
 exports.friendsFamilyUpdateContent = friendsFamilyUpdateContent;
 
-exports.getDhkAllKitchens = getDhkAllKitchens;
-exports.insertDhkKitchen = insertDhkKitchen;
+// exports.getDhkAllKitchens = getDhkAllKitchens;
+// exports.insertDhkKitchen = insertDhkKitchen;
 console.log("controller Initialized");
