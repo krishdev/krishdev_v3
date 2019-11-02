@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title><%= title %></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Krishna and Sabha's Baby shower invitation.">
+		<meta name="keywords" content="baby shower, krishnakumar weds sabhadhini, sabhadhini, krishnakumar,krishna, oct 14,october 14,sabhadhini baby shower,sabha baby shower">
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Font CSS -->
+		<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Italianno|Poppins|Courgette|Kaushan+Script" rel="stylesheet">
+		<link href="assets/css/fancybox.css" rel="stylesheet">
+
+
+		<style type="text/css">
+			@import url('//use.fontawesome.com/releases/v4.7.0/css/font-awesome-css.min.css');@font-face{font-family:'FontAwesome';src:url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot');src:url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+			url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff2') format('woff2'),
+			url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.woff') format('woff'),
+			url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.ttf') format('truetype'),
+			url('//use.fontawesome.com/releases/v4.7.0/fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
+		</style>	
+		<style>
+			[v-cloak],.v-cloak{
+				display: none;
+			}
+			body {
+				background-attachment: fixed;
+				background-image: url("/assets/images/cloudB.png") ;
+			    background-repeat: repeat-y;
+			    background-position: top center;
+			    background-color: #c8e9f0;
+			}
+			#timeline .row .col-md-6:first-child {
+			    border-right: 3px solid #add8e6;
+			}
+			#timeline .row .col-md-6 {
+			    position: relative;
+			    height: 230px;
+			}
+			#timeline .row .col-md-6 .timeline-left {
+			    left: 1%;
+			    top: 2%;
+			}
+
+			#timeline .row .col-md-6 .timeline-left, 
+			#timeline .row .col-md-6 .timeline-right {
+			    position: absolute;
+			    box-shadow: 2px 1px 2px #ffa07a;
+			    background: #f4faff;
+			}
+			#timeline .row .col-md-6>div {
+			    width: 225px;
+			}
+			#timeline .row article.col-md-6 header {
+			    font-size: 1.42em;
+			    padding: .51em;
+			    background: #9c55a7;
+			    color:#fff;
+		        font-family: Great Vibes;
+			}
+			#timeline .row article.col-md-6 p {
+			    padding: 3% 4%;
+			    text-align: center;
+			    background: #f0f8ffb5;
+		        font-family: 'Poppins', sans-serif;
+			}
+			#timeline .row article.col-md-6:first-child .timeline-line {
+			    width: 20%;
+			    height: 3px;
+			    background-color: rgba(229,243,152,.75);
+			    position: absolute;
+			    right: 0;
+			    top: 5em;
+			}
+			#timeline .row article.col-md-6:first-child .timeline-line {
+			    width: 20%;
+			    height: 3px;
+			    background-color: rgba(229,243,152,.75);
+			    position: absolute;
+			    right: 0;
+			    top: 5em;
+			}
+			#timeline .row article.col-md-6:last-child .timeline-line {
+			    width: 20%;
+			    height: 3px;
+			    background-color: rgba(229,243,152,.75);
+			    position: absolute;
+			    left: 0;
+			    bottom: 5em;
+			}
+			.emoji {
+			    position: absolute;
+			    z-index: 10;
+			    opacity: 0.7;
+			    top: -14px;
+			}
+			.emoji-left {
+			    left: -37px;
+			}
+			.emoji-right {
+			    right: -35px;
+			}
+			#timeline .row article.col-md-6 .timeline-line::after {
+			    width: 40px;
+			    height: 40px;
+			    background: #f1dbff;
+			    display: block;
+			    content: "";
+			    border-radius: 50%;
+			    position: absolute;
+			    top: -18px;
+			}
+			#timeline .row article.col-md-6:first-child .timeline-line::after {
+			    left: -40px;
+			}
+			#timeline .row .col-md-6 .timeline-right {
+			    right: 1%;
+			    bottom: 2%;
+			}
+			#timeline .row article.col-md-6:last-child .timeline-line::after {
+			    right: -40px;
+			}
+			#timeline .row article.col-md-6 .timeline-line::after {
+			    width: 40px;
+			    height: 40px;
+			    background: #f1dbff;
+			    display: block;
+			    content: "";
+			    border-radius: 50%;
+			    position: absolute;
+			    top: -18px;
+			}
+
+
+			@media only screen and (min-width: 768px) {
+			    #timeline .row .col-md-6>div {
+			        width: 315px;
+			    }
+			}
+
+			@media only screen and (min-width: 1024px){
+			    #timeline .row .col-md-6>div {
+			        width: 321px;
+			    }        
+			}
+			@media only screen and (max-width: 768px){
+			    #timeline .row .col-md-6 {
+			        border-left: 3px solid #add8e6;
+			        border-right: 3px solid #add8e6;
+			    } 
+			    #timeline .row .col-md-6 .timeline-left {
+			        left: 27%;
+			        top: 11%;
+			    }  
+			    #timeline .row article.col-md-6:first-child .timeline-line {
+			        width: 20%;
+			        left: 0;
+			    }
+			    .emoji-left {
+			        left: 127px;
+			    }
+			    .emoji-right {
+			        right: 128px;
+			    }
+			    #timeline .row article.col-md-6:first-child .timeline-line::after {
+			        left: 124px;
+			    }
+			    #timeline .row .col-md-6 .timeline-right {
+			        right: 30%;
+			        bottom: 50%;
+			    }
+			    #timeline .row article.col-md-6:last-child .timeline-line {
+			        width: 20%;
+			        bottom: 75%;
+			        left: 80%;
+			    }
+			    #timeline .row article.col-md-6:last-child .timeline-line::after {
+			        right: 124px;
+			    }
+			}
+			@media only screen and (max-width: 465px){
+			    .emoji-left {
+			        left: 43px;
+			    }  
+			    .emoji-right {
+			        right: 55px;
+			    } 
+			    #timeline .row article.col-md-6:first-child .timeline-line::after {
+			        left: 40px;
+			    }
+			    #timeline .row article.col-md-6:last-child .timeline-line::after {
+			        right: 50px;
+			    }
+			}
+		</style>	
+		<style>
+			#venu iframe {
+			    width: 100%;
+			}
+
+			section#welcome {
+			    text-align: center;
+			    padding: 15em 0;
+			    background: #6cc2d4;
+			}
+			@media (max-width:496px){
+			    section#welcome{
+			        padding: 7em 0;
+			    }
+			}
+
+			#welcome .btn-grp {
+			    padding: 2em 0;
+			}
+
+			.btn-grp button.btn {			    
+			    background: transparent;
+			    border: 2px solid #fff;
+			    padding: 10px 30px;
+			    border-radius: 50px;
+			    color: #fff;
+			}
+			.btn-grp #maybe {
+				margin: 0 1em;
+			}
+
+			#welcome h1 {
+			    color: #fff;
+			    font-family: 'Poppins', sans-serif;
+			    font-size: 4em;
+			}
+			.align-left {
+			    text-align: left;    
+			    padding: 0 2%
+			}
+			@media (max-width:360px) {
+			    #welcome .btn-grp {
+			        width:60%;
+			        margin:0 auto; 
+			    }
+			    #welcome .btn-grp .btn {
+			        display: block;
+			        margin:1em 0;
+			        width:100%;
+			    }
+			}
+			#app h1 {
+			    font-family: 'Poppins', sans-serif;
+			    font-size: 2.5em;
+			}
+			@media (min-width: 1200px) {
+			    .container {
+			        width: 80%;
+			        padding: 1em;
+			    }
+			}
+			@media (min-width: 760px){
+			    .align-left {
+			        padding: 0 18%;
+			    }
+			    #app h1 {
+			    	font-size: 3em;
+			    }
+			}
+			section#date {
+			    text-align: center;
+			    background: white;
+			    padding: 5em 1em;
+			}
+
+
+			section#timeline {
+		        padding: 1em 0;
+			    background: linear-gradient(0deg, rgba(2,173,231,0.5), rgba(2,173,231,0.5)), url(assets/images/jodi/first-birthday/kail-krish-sabha.jpg);
+			    background-size: cover;
+			    background-repeat: no-repeat;
+			    background-color: green;
+			    background-position: center;
+			}
+			section#timeline .text-center h2{
+			    color: #fff;
+			    font-family: 'Poppins', sans-serif;
+			    font-size: 3em;
+			}
+			section#venu {
+			    height: auto;
+			}
+			section#registery h2 {
+			    text-align: center;
+			    font-family: 'Poppins', sans-serif;
+			}
+
+			section#registery {
+			    background: #fff;
+			    padding: 6em 0;
+			    text-align: center;
+			}
+
+			#registery .btn {
+			    color: blueviolet;
+			    background: #fff;
+			    border: 2px solid blueviolet;
+			    margin: 2em 0 0;
+			    border-radius: 25px;
+			    padding: 0.7em 2em;
+			}
+			section#rsvp {
+			    background-color: #ff88c5;
+			    padding: 5em 0;
+			    text-align: center;
+			    font-family: 'Poppins', sans-serif;
+			}
+
+			#rsvp h2 {
+			    color: #fff;
+			    font-size: 3em;
+			    font-family: 'Poppins', sans-serif;
+			}
+
+			#rsvp p {
+			    font-size: 1.4em;
+			    margin: 1.2em 0;
+			}
+			section#copyright {
+			    padding: 2em 0;
+			    background: #6cc2d4;
+			    text-align: center;
+			    font-size: 16px;
+			    font-family: 'Poppins', sans-serif;
+			    border-bottom-right-radius: 20px;
+			    border-bottom-left-radius: 20px;
+			    color: #001b80;
+			    margin-bottom: 1em;
+			}
+
+			#copyright a {
+			    color: azure;
+			}
+			section#date .col-md-6 div {
+			    font-size: 1.1em;
+			    text-align: justify;
+			}
+			section#welcome {
+			    border-top-left-radius: 20px;
+			    border-top-right-radius: 20px;
+			}
+			.noOfparticipants.btn-grp input {
+			    width: 173px;
+			    display: inline-block;
+			    border: 2px solid #ffccef;
+			    height: 44px;
+			    border-radius: 20px;
+			}
+			.participants-container {
+			    width:100%;
+			    margin:0 auto;
+			    margin-top:2em;
+		        color: #fdfdfd;
+			}
+			.participants-container table th{
+			    text-align: center;
+			    color:#445182;
+			}
+			@media (min-width:769px) {
+			    .participants-container {
+			        width:50%;
+			    }   
+			}
+			.btn-blue {
+			    color: #c438ff !important;
+			    background: #fff !important;
+			}
+            .txt-white {
+                color: #fff;
+            }
+		</style>	
+		<style>
+			#snackbar {
+			    visibility: hidden;
+			    min-width: 250px;
+			    margin-left: -125px;
+			    background-color: #333;
+			    color: #fff;
+			    text-align: center;
+			    border-radius: 2px;
+			    padding: 16px;
+			    position: fixed;
+			    z-index: 1;
+			    left: 50%;
+			    bottom: 30px;
+			    font-size: 17px;
+			}
+
+			#snackbar.show {
+			    visibility: visible;
+			    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+			    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+			}
+
+			@-webkit-keyframes fadein {
+			    from {bottom: 0; opacity: 0;} 
+			    to {bottom: 30px; opacity: 1;}
+			}
+
+			@keyframes fadein {
+			    from {bottom: 0; opacity: 0;}
+			    to {bottom: 30px; opacity: 1;}
+			}
+
+			@-webkit-keyframes fadeout {
+			    from {bottom: 30px; opacity: 1;} 
+			    to {bottom: 0; opacity: 0;}
+			}
+
+			@keyframes fadeout {
+			    from {bottom: 30px; opacity: 1;}
+			    to {bottom: 0; opacity: 0;}
+			}
+		</style>	
+	</head>
+	<body>		
+		<section id="app">
+			<div style="height:10px;"></div>
+			<div class="container">
+				<section id="welcome">
+					<article>    
+					    <div class="">
+							<img src="/assets/images/jodi/first-birthday/first-birthday.png" alt="first-birthday-image">
+						</div>
+                        <h1>Kailash <i style="font-size: .5em;">(aka)</i> Adheev</h1>	
+                        <h3 class="txt-white">Join us to celebrate</h3>
+					    <div v-cloak class="btn-grp">
+						    <button v-if="showRsvpBtns" id="yes" @click="rsvp('yes', $event)" class="btn">Yes</button>
+							<button v-if="showRsvpBtns" id="maybe" @click="rsvp('maybe', $event)" class="btn">May be</button>
+							<button v-if="showRsvpBtns" id="no" @click="rsvp('no', $event)" class="btn">No</button>
+							<button v-if="!showRsvpBtns" @click="navigate('rsvp')" class="btn view">View Participants</button>
+						</div>
+						<div v-cloak v-if="showNumbOfPartiColum" class="noOfparticipants btn-grp">
+							<input type="tel" class="form-control" v-model="affiliate.participants" placeholder="Number of participants"> 
+							<button class="btn" @click="addParticipant(affiliate.participants)">Add</button>
+						</div>
+					</article>
+				</section>
+			    <section id="date">
+				    <article>
+				        <h1>We invite you and your family to</h1>
+				        <h1>join us for a celebration</h1>
+				        <div class="row align-left">
+				            <div class="col-md-6">
+				                <div>
+				                    <h3>Date &amp; Time</h3>
+				                    <span>Nov 16<sup>th</sup>, 12PM - 3PM</span>
+				            	</div>
+								<div>
+				                    <h3>Location</h3>
+				                    <div>12468, Haskell St</div>				                    
+				                    <div>Frisco, TX</div>
+				                </div>
+				            </div>
+				            <div class="col-md-6">
+				            	<div>
+									<h3>Tag</h3>
+									<div>Kailash's first birthday.</div>
+									<div>So let's celebrate before the big day over friends, food and sweets.</div>					
+				            	</div>
+				            </div>
+				        </div>
+				    </article>
+				</section>
+			    <section id="venu" style="background: #f2f2f2;">
+				    <article>
+				    	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3340.3890321515!2d-96.77353564861733!3d33.15141217201305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864c3dc29ad34ac9%3A0xdc9a9665686c8ff9!2s12468%20Haskell%20St%2C%20Frisco%2C%20TX%2075035!5e0!3m2!1sen!2sus!4v1572573933450!5m2!1sen!2sus" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+				    </article>
+				</section>
+				<section id="registery">
+				    <article>
+				        <h2>Gift registery</h2>
+						<div class="btn-grp">
+						    <a href="/baby-gift-registry" class="btn" target="_blank">REGISTER LIST</a>
+						</div>
+				    </article>					
+				</section>
+			    <section id="timeline">
+			    	<div class="container">
+						<div class="text-center">
+							<h2>STORYLINE</h2>
+							<hr class="star-primary">
+						</div>
+						<div class="row">
+							<article class="col-md-6">
+								<div class="timeline-left">
+									<header>He saw her</header>
+									<p>We met during our Under Graduation. Basically we went to the same college.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/exicted.png" class=" emoji emoji-left"></div>
+							</article>
+							<article class="col-md-6">
+								<div class="timeline-right">
+									<header>Friends</header>
+									<p>Orkut brought us together as friends.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/guess.png" class=" emoji emoji-right"></div>
+							</article>
+						</div>
+						<div class="row">
+							<article class="col-md-6">
+								<div class="timeline-left">
+									<header>Proposal</header>
+									<p>It was mutual.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/love.png" class=" emoji emoji-left"></div>
+							</article>
+							<article class="col-md-6">
+								<div class="timeline-right">
+									<header>I flew</header>
+									<p>I went for my higher studies. Long distance didn't stop us. It gave us time to understand a lot better.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/airplane.png" class=" emoji emoji-right"></div>
+							</article>
+						</div>
+						<div class="row">
+							<article class="col-md-6">
+								<div class="timeline-left">
+									<header>The go signal</header>
+									<p>We are really gifted to have such a wonderful parents.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/blessed.png" class=" emoji emoji-left"></div>
+							</article>
+							<article class="col-md-6">
+								<div class="timeline-right">
+									<header>Oct 30, 2017</header>
+									<p>We got married.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/cool.png" class=" emoji emoji-right"></div>
+							</article>
+						</div>
+						<div class="row">
+							<article class="col-md-6">
+								<div class="timeline-left">
+									<header>Honeymoon</header>
+									<p>Landed and enjoyed at the Indonesian Paradise @Bali Nov 8 - 12, 2017.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/blush.png" class=" emoji emoji-left"></div>
+							</article>
+							<article class="col-md-6">
+								<div class="timeline-right">
+									<header>Dec 20</header>
+									<p>Returned together to Newport Beach, California.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/return.png" class=" emoji emoji-right"></div>
+							</article>
+						</div>
+						<div class="row">
+							<article class="col-md-6">
+								<div class="timeline-left">
+									<header>Baby Shower</header>
+									<p>Oct 14, 2018. It is a boy.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/baby.png" class=" emoji emoji-left"></div>
+							</article>
+							<article class="col-md-6">
+                                <div class="timeline-right">
+                                    <header>First Cry</header>
+                                    <p>Baby boy was born, Nov 16<sup>th</sup> 2018.</p>
+                                </div>
+                                <div class="timeline-line"><img src="assets/images/jodi/emoji/baby-born.png" class=" emoji emoji-right"></div>
+                            </article>
+                        </div>
+                        <div class="row">
+                            <article class="col-md-6">
+                                <div class="timeline-left">
+                                    <header>Named Kailash</header>
+									<p>Baby boy named as Kailash and Adheev.</p>
+								</div>
+								<div class="timeline-line"><img src="assets/images/jodi/emoji/baby-name.png" class=" emoji emoji-left"></div>
+							</article>
+                            <article class="col-md-6">
+                                <div class="timeline-right">
+                                    <header>Visiting Grandparents</header>
+                                    <p>Kail and Sabha traveled to India for a vacation.</p>
+                                </div>
+                                <div class="timeline-line"><img src="assets/images/jodi/emoji/visit-india.png" class=" emoji emoji-right"></div>
+                            </article>
+						</div>
+						<div class="row">							
+                            <article class="col-md-6">
+                                <div class="timeline-left">
+                                    <header>Sep 24, 19</header>
+                                    <p>Meeting dad after a long break.</p>
+                                </div>
+                                <div class="timeline-line"><img src="assets/images/jodi/emoji/back-with-father.png" class=" emoji emoji-left"></div>
+                            </article>
+                            <article class="col-md-6">
+                                <div class="timeline-right">
+                                    <header>Oct 19, 19</header>
+                                    <p>First road trip in USA with Kail.</p>
+                                </div>
+                                <div class="timeline-line"><img src="assets/images/jodi/emoji/back-with-father.png" class=" emoji emoji-right"></div>
+                            </article>
+                        </div>                        
+					</div>
+				</section>
+				<section id="rsvp">
+					<article>
+					    <h2>RSVP</h2>
+					    <p>View who else is attending the function.</p>
+					    <div class="btn-grp">
+					        <button @click="showParticipants = !showParticipants" class="btn"><span v-if="!showParticipants">View</span><span v-if="showParticipants">Hide</span></button>
+					    </div>
+					    <div class="participants-container" v-if="showParticipants">
+					    	<table class="table">
+							  <thead>
+							    <tr>
+							      <th scope="col">#</th>
+							      <th scope="col">Name</th>
+							      <th scope="col">Rsvp</th>							      
+							      <th scope="col">Participants</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr v-for="(part,index) in participants" v-if="participants.rsvp != 'no'">
+							      <th scope="row">{{index+1}}</th>
+							      <td>{{part.name}}</td>
+							      <td>
+							      	<span v-if="part.rsvp == 'yes'">Yes</span>
+									<span v-if="part.rsvp == 'no'">No</span>
+									<span v-if="part.rsvp == 'maybe'">May be</span>
+							      </td>
+							      <td>{{part.participants}}</td>
+							    </tr>
+							  </tbody>
+							</table>
+					    </div>
+						<p>If you have to modify your RSVP please text or email me.</p>
+						<p><a href="tel:+16147875430">+1(614) 787-5430</a> | <a href="mailto:mailkrsihna2@gmail.com"> mailkrishna2@gmail.com</a></p>
+					</article>
+				</section>
+				<section id="copyright">
+				    <p>Created by <a href="http://www.krishdev.com">krishdev.com</a></p>
+				</section>
+			</div>
+			<div id="snackbar">Added your info..</div>
+		</section>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+		<script>
+			var app = new Vue({
+				el: "#app",
+				data: {
+					affiliate: {
+						name: "",
+						email: "",
+						rsvp: "",
+						participants: ""
+					},
+					participants:[],
+					showParticipants: false,
+					showNumbOfPartiColum: false,
+					showRsvpBtns: true,
+					thisParticipant:{},
+					rsvpSelected: false
+				},
+				created: function() {
+					var urlParam = this.getQueryParams(document.location.search);
+					var _this = this;
+					this.affiliate.name = urlParam.name;
+					this.affiliate.email = urlParam.email;
+					var isRegistered = false;
+					if(!this.affiliate.email) {
+						this.showRsvpBtns = false;
+					}
+					this.$http.get('/api/babyshowerGetAllData').then(response => {		
+						_this.participants = response.body;
+						for(var i = 0 ; i < _this.participants.length ; i++) {
+							if(_this.participants[i].email == _this.affiliate.email){
+								isRegistered = true;
+								break;
+							}
+						}
+						if(isRegistered) {
+							_this.showRsvpBtns = false;
+						}
+					}, response => {
+						console.log("error");
+						console.log(response.body);
+					});					
+				},
+				methods: {
+					getQueryParams: function (qs) {
+					    qs = qs.split('+').join(' ');
+
+					    var params = {},
+					        tokens,
+					        re = /[?&]?([^=]+)=([^&]*)/g;
+
+					    while (tokens = re.exec(qs)) {
+					        params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+					    }
+
+					    return params;
+					},
+					rsvp: function(ans, elm) {
+						if(this.rsvpSelected)
+							return false;
+						elm.target.classList.add("btn-blue");
+						var classList = Array.from(document.querySelectorAll("#welcome .btn-grp:not(.noOfparticipants) .btn:not(.btn-blue)"));
+						console.log(classList);
+						for(var i = 0 ; i < classList.length ; i++) {
+							classList[i].setAttribute("disabled","disabled");
+						}
+
+						this.affiliate.rsvp = ans;
+						var data = JSON.parse(JSON.stringify(this.affiliate));
+						var _this = this;
+						this.$http.post('/api/babyshower', data).then(response => {		
+							_this.participants.push(response.body);
+							_this.thisParticipant = response.body;
+							_this.rsvpSelected = true;
+							if(data.rsvp != "no")
+								_this.showNumbOfPartiColum = true;							
+						}, response => {
+							console.log("error");
+							console.log(response.body);
+						});
+					},
+					addParticipant: function (numb) {
+						this.thisParticipant.participants = numb;
+						var data = JSON.parse(JSON.stringify(this.thisParticipant));
+						var _this = this;
+						this.$http.post('/api/updateBabyshower', data).then(response => {		
+							_this.showNumbOfPartiColum = false;	
+							_this.successMessage();
+							_this.successEmail(data);
+							var lastItem = (_this.participants.length - 1);
+							_this.participants[lastItem].participants = data.participants;							
+						}, response => {
+							console.log("error");
+							console.log(response.body);
+						});
+					},
+					navigate: function(id) {
+						document.querySelector('#'+id).scrollIntoView({ 
+						  behavior: 'smooth' 
+						});
+					},
+					successMessage: function() {
+					    var x = document.getElementById("snackbar");
+					    x.className = "show";
+					    var _this = this;
+					    setTimeout(function(){ 
+					    	x.className = x.className.replace("show", ""); 
+							_this.showRsvpBtns = false;								    
+					    }, 2000);
+					},
+					successEmail: function(affiliate) {
+						var data = {
+								fromEmailId: "krishnakumar4315@gmail.com",
+								toEmailId: 'mailkrishna2@gmail.com',
+								subject:"Baby Shower Acceptance | "+affiliate.name,
+								emailBody:'<table border=0 cellpadding=0 cellspacing=0 width=100% bgcolor=#1e1e1e><tr style=background:#fff!important><td align=center valign=top><table border=0 cellpadding=0 cellspacing=0 width=100% bgcolor=#161616><tr></table><table border=0 cellpadding=0 cellspacing=0 width=600 class=mobile-shell><tr><td style="padding:5em 0 0">Hi Krish,<tr><td><div><h3>' + affiliate.name + '</h3>has responded with Baby Shower Invitation.</div><tr><td style="padding:1em 0"><b>RSVP: </b>' + affiliate.rsvp + '<tr><td style="padding:0 0 1em"><b>Participants: </b>' + affiliate.participants + '<tr><td><b>Email: </b>' + affiliate.email + '</table></table>'
+						};
+
+						this.$http.post('/api/sendEmail',data).then(response => {		
+							console.log(response.body);
+						}, response => {
+							console.log("error");
+							console.log(response.body);
+						});
+					}
+				}
+			});		
+		</script>
+	</body>
+</html>

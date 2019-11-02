@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <style>
+	/* @extend display-flex; */
+display-flex {
+  display: flex;
+  display: -webkit-flex; }
+
+/* @extend list-type-ulli; */
+list-type-ulli {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+/* poppins-300 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/poppins/poppins-v5-latin-300.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Light"), local("Poppins-Light"), url("../fonts/poppins/poppins-v5-latin-300.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-300italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 300;
+  src: url("../fonts/poppins/poppins-v5-latin-300italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Light Italic"), local("Poppins-LightItalic"), url("../fonts/poppins/poppins-v5-latin-300italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-300italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-300italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-300italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-300italic.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-regular - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/poppins/poppins-v5-latin-regular.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Regular"), local("Poppins-Regular"), url("../fonts/poppins/poppins-v5-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-regular.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-regular.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-regular.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-regular.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/poppins/poppins-v5-latin-italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Italic"), local("Poppins-Italic"), url("../fonts/poppins/poppins-v5-latin-italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-italic.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-500 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/poppins/poppins-v5-latin-500.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Medium"), local("Poppins-Medium"), url("../fonts/poppins/poppins-v5-latin-500.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-500.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-500.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-500.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-500.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-500italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 500;
+  src: url("../fonts/poppins/poppins-v5-latin-500italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Medium Italic"), local("Poppins-MediumItalic"), url("../fonts/poppins/poppins-v5-latin-500italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-500italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-500italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-500italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-500italic.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-600 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/poppins/poppins-v5-latin-600.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins SemiBold"), local("Poppins-SemiBold"), url("../fonts/poppins/poppins-v5-latin-600.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-600.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-600.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-600.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-600.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-700 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/poppins/poppins-v5-latin-700.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Bold"), local("Poppins-Bold"), url("../fonts/poppins/poppins-v5-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-700.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-700.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-700.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-700.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-700italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 700;
+  src: url("../fonts/poppins/poppins-v5-latin-700italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Bold Italic"), local("Poppins-BoldItalic"), url("../fonts/poppins/poppins-v5-latin-700italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-700italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-700italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-700italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-700italic.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-800 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/poppins/poppins-v5-latin-800.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins ExtraBold"), local("Poppins-ExtraBold"), url("../fonts/poppins/poppins-v5-latin-800.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-800.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-800.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-800.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-800.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-800italic - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: italic;
+  font-weight: 800;
+  src: url("../fonts/poppins/poppins-v5-latin-800italic.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins ExtraBold Italic"), local("Poppins-ExtraBoldItalic"), url("../fonts/poppins/poppins-v5-latin-800italic.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-800italic.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-800italic.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-800italic.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-800italic.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+/* poppins-900 - latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/poppins/poppins-v5-latin-900.eot");
+  /* IE9 Compat Modes */
+  src: local("Poppins Black"), local("Poppins-Black"), url("../fonts/poppins/poppins-v5-latin-900.eot?#iefix") format("embedded-opentype"), url("../fonts/poppins/poppins-v5-latin-900.woff2") format("woff2"), url("../fonts/poppins/poppins-v5-latin-900.woff") format("woff"), url("../fonts/poppins/poppins-v5-latin-900.ttf") format("truetype"), url("../fonts/poppins/poppins-v5-latin-900.svg#Poppins") format("svg");
+  /* Legacy iOS */ }
+a:focus, a:active {
+  text-decoration: none;
+  outline: none;
+  transition: all 300ms ease 0s;
+  -moz-transition: all 300ms ease 0s;
+  -webkit-transition: all 300ms ease 0s;
+  -o-transition: all 300ms ease 0s;
+  -ms-transition: all 300ms ease 0s; }
+
+input, select, textarea {
+  outline: none;
+  appearance: unset !important;
+  -moz-appearance: unset !important;
+  -webkit-appearance: unset !important;
+  -o-appearance: unset !important;
+  -ms-appearance: unset !important; }
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  appearance: none !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  -o-appearance: none !important;
+  -ms-appearance: none !important;
+  margin: 0; }
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  -o-box-shadow: none !important;
+  -ms-box-shadow: none !important; }
+
+input[type=checkbox] {
+  appearance: checkbox !important;
+  -moz-appearance: checkbox !important;
+  -webkit-appearance: checkbox !important;
+  -o-appearance: checkbox !important;
+  -ms-appearance: checkbox !important; }
+
+input[type=radio] {
+  appearance: radio !important;
+  -moz-appearance: radio !important;
+  -webkit-appearance: radio !important;
+  -o-appearance: radio !important;
+  -ms-appearance: radio !important; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+figure {
+  margin: 0; }
+
+p {
+  margin-bottom: 0px; }
+
+h2 {
+  line-height: 2.5;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #222;
+  font-family: Poppins;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 40px; }
+
+.clear {
+  clear: both; }
+
+body {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #222;
+  background: #e7f0fd;
+  font-weight: 600;
+  font-family: Poppins;
+  margin: 0px; }
+
+.main {
+  padding: 150px 0;
+  position: relative; }
+
+h1 {
+  position: absolute;
+  font-weight: 700;
+  font-size: 174px;
+  color: #fff;
+  opacity: 0.5;
+  right: 105px;
+  top: 45px;
+  top: -149px;
+  z-index: 9; }
+
+.container {
+  width: 520px;
+  background: #fff;
+  margin: 0 auto;
+  box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+  -ms-box-shadow: 0px 10px 9.9px 0.1px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px; }
+
+.sign-up-content {
+  padding: 40px 60px 32px 60px;
+  position: relative;
+  z-index: 99; }
+
+.form-radio {
+  margin: 0 -10px;
+  margin-bottom: 40px; }
+  .form-radio input {
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -9999px; }
+  .form-radio input + label {
+    margin: 0 8px;
+    padding: 11px 31px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    border: solid 2px #ebebeb;
+    background-color: #FFF;
+    font-size: 14px;
+    font-weight: 600;
+    color: #888;
+    text-align: center;
+    transition: border-color .15s ease-out,  color .25s ease-out,  background-color .15s ease-out, box-shadow .15s ease-out;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px; }
+  .form-radio input:checked + label {
+    background-color: #1da0f2;
+    color: #FFF;
+    border-color: #1da0f2;
+    z-index: 1; }
+  .form-radio input:focus + label {
+    outline: none; }
+  .form-radio input:hover {
+    background-color: #1da0f2;
+    color: #FFF;
+    border-color: #1da0f2; }
+
+input {
+  border: solid 2px #ebebeb;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: Poppins;
+  padding: 16px 30px 16px 140px; }
+
+.form-textbox {
+  position: relative; }
+  .form-textbox label {
+    position: absolute;
+    left: 28px;
+    top: 50%;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    font-weight: 600;
+    color: #888;
+    font-size: 14px; }
+
+#name {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
+
+#pass {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px; }
+
+#email {
+  border: none;
+  border-left: solid 2px #ebebeb;
+  border-right: solid 2px #ebebeb; }
+
+input[type=checkbox]:not(old) {
+  width: 2em;
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  display: none; }
+
+input[type=checkbox]:not(old) + label {
+  display: flex;
+    margin-top: 27px;
+    margin-bottom: 45px;
+    align-items: center; }
+
+input[type=checkbox]:not(old) + label > span {
+  display: inline-block;
+    width: .93rem;
+    height: .94rem;
+    background: url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20170%2017%22%20width%3D%22170%22%20height%3D%2217%22%3E%3Ctitle%3Ebrokersnexus_checkbox_radio_sprite%3C%2Ftitle%3E%3Cg%20style%3D%22isolation%3Aisolate%22%3E%3Cg%20style%3D%22isolation%3Aisolate%22%3E%3Ccircle%20cx%3D%2292.5%22%20cy%3D%227.5%22%20r%3D%227.5%22%20style%3D%22fill%3A%23fff%22%2F%3E%3Cpath%20d%3D%22M92.5%2C1A6.5%2C6.5%2C0%2C1%2C1%2C86%2C7.5%2C6.50736%2C6.50736%2C0%2C0%2C1%2C92.5%2C1m0-1A7.5%2C7.5%2C0%2C1%2C0%2C100%2C7.5%2C7.5%2C7.5%2C0%2C0%2C0%2C92.5%2C0Z%22%20style%3D%22fill%3A%23bababa%22%2F%3E%3Ccircle%20cx%3D%22109.79873%22%20cy%3D%227.5%22%20r%3D%227.5%22%20style%3D%22fill%3A%23fff%22%2F%3E%3Cpath%20d%3D%22M109.79873%2C2a5.5%2C5.5%2C0%2C1%2C1-5.5%2C5.5%2C5.50623%2C5.50623%2C0%2C0%2C1%2C5.5-5.5m0-2a7.5%2C7.5%2C0%2C1%2C0%2C7.5%2C7.5%2C7.5%2C7.5%2C0%2C0%2C0-7.5-7.5Z%22%20style%3D%22fill%3A%231346a3%22%2F%3E%3Cg%20style%3D%22isolation%3Aisolate%22%3E%3Ccircle%20cx%3D%22126.5%22%20cy%3D%227.5%22%20r%3D%227.5%22%20style%3D%22fill%3A%231346a3%22%2F%3E%3C%2Fg%3E%3Ccircle%20cx%3D%22143.49999%22%20cy%3D%227.5%22%20r%3D%227.5%22%20style%3D%22fill%3A%23fff%22%2F%3E%3Cpath%20d%3D%22M143.5%2C1A6.5%2C6.5%2C0%2C1%2C1%2C137%2C7.5%2C6.50736%2C6.50736%2C0%2C0%2C1%2C143.5%2C1m0-1A7.5%2C7.5%2C0%2C1%2C0%2C151%2C7.5%2C7.5%2C7.5%2C0%2C0%2C0%2C143.5%2C0Z%22%20style%3D%22fill%3A%23777%22%2F%3E%3Cg%20style%3D%22isolation%3Aisolate%22%3E%3Ccircle%20cx%3D%22160.5%22%20cy%3D%227.5%22%20r%3D%227.5%22%20style%3D%22fill%3A%23777%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20style%3D%22isolation%3Aisolate%22%3E%3Crect%20width%3D%2215%22%20height%3D%2215%22%20style%3D%22fill%3A%23fff%22%2F%3E%3Cpath%20d%3D%22M14%2C1V14H1V1H14m1-1H0V15H15V0Z%22%20style%3D%22fill%3A%23bababa%22%2F%3E%3Crect%20x%3D%2216.97053%22%20width%3D%2215%22%20height%3D%2215%22%20style%3D%22fill%3A%23fff%22%2F%3E%3Cpath%20d%3D%22M29.97053%2C2V13h-11V2h11m2-2h-15V15h15V0Z%22%20style%3D%22fill%3A%231346a3%22%2F%3E%3Cg%20style%3D%22isolation%3Aisolate%22%3E%3Crect%20x%3D%2234%22%20width%3D%2215%22%20height%3D%2215%22%20style%3D%22fill%3A%231346a3%22%2F%3E%3C%2Fg%3E%3Crect%20x%3D%2250.99999%22%20width%3D%2215%22%20height%3D%2215%22%20style%3D%22fill%3A%23fff%22%2F%3E%3Cpath%20d%3D%22M65%2C1V14H52V1H65m1-1H51V15H66V0Z%22%20style%3D%22fill%3A%23777%22%2F%3E%3Cg%20style%3D%22isolation%3Aisolate%22%3E%3Crect%20x%3D%2268%22%20width%3D%2215%22%20height%3D%2215%22%20style%3D%22fill%3A%23777%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3Cg%20style%3D%22mix-blend-mode%3Ascreen%3Bisolation%3Aisolate%22%3E%3Cpolygon%20points%3D%2244.81%204%2046%205.233%2040.432%2011%2037%207.445%2038.19%206.212%2040.432%208.534%2044.81%204%22%20style%3D%22fill%3A%23fff%22%2F%3E%3Cpolygon%20points%3D%2278.81%204%2080%205.233%2074.432%2011%2071%207.445%2072.19%206.212%2074.432%208.534%2078.81%204%22%20style%3D%22fill%3A%23fff%22%2F%3E%3Cpolygon%20points%3D%22163.81%204%20165%205.233%20159.432%2011%20156%207.445%20157.19%206.212%20159.432%208.534%20163.81%204%22%20style%3D%22fill%3A%23fff%22%2F%3E%3Cpolygon%20points%3D%22129.81%204%20131%205.233%20125.432%2011%20122%207.445%20123.19%206.212%20125.432%208.534%20129.81%204%22%20style%3D%22fill%3A%23fff%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E') no-repeat;
+    background-position-x: 0;
+    background-size: cover;
+    margin-right: .3em;
+  }
+
+  input[type=checkbox]:not(old) + label:hover > span {
+    background-position-x: -.94rem;
+}
+
+input[type=checkbox]:not(old):checked+label > span {
+    background-position-x: -1.88rem;
+}
+.float-top {
+    font-family: Roboto;
+    text-decoration: underline;
+    font-size: 1.1em;
+}
+
+.label-agree-term {
+  color: #888; }
+
+.term-service {
+  color: #1da0f2;
+  text-decoration: none;
+  padding-bottom: 1em;
+  display: block;
+  }
+  .term-service:hover {
+    text-decoration: underline;
+    display: block;
+    }
+    .o-Form-errors {
+    color: red;
+    padding-top: 1em;
+    font-size: .9em;
+}
+.submit {
+  background: #1da0f2;
+  color: #FFF;
+  border: none;
+  padding: 15px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: Poppins;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px; }
+  .submit:hover {
+    background: #0c85d0; }
+
+.loginhere {
+  text-align: center;
+  color: #888;
+  margin-top: 63px; }
+
+.loginhere-link {
+  color: #1da0f2;
+  text-decoration: none; }
+  .loginhere-link:hover {
+    text-decoration: underline; }
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset; }
+
+@media screen and (max-width: 768px) {
+  .container {
+    width: calc( 100% - 30px);
+    max-width: 100%; } }
+@media screen and (max-width: 575px) {
+  .sign-up-content {
+    padding: 40px 20px 32px 20px; }
+
+  .form-radio input + label {
+    display: block;
+    margin-bottom: 10px; } 
+	h1 {
+		right: 0;
+		font-size: 6em;
+		line-height: 1;
+		top: -72px;
+	}
+	}
+@media screen and (max-width: 400px) {
+  .form-textbox label {
+    left: 15px; }
+
+  input {
+    padding: 16px 30px 16px 100px; } 
+	
+	}
+
+/*# sourceMappingURL=style.css.map */
+</style>
+
+<style>
+@font-face {
+	 font-family: "Grotesque";
+	 src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Regular.eot"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Regular.ttf"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Regular.woff");
+	 font-weight: normal;
+}
+ @font-face {
+	 font-family: "Grotesque Black";
+	 src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Black.eot"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Black.ttf"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/BrandonGrotesque-Black.woff");
+	 font-weight: bold;
+}
+ * {
+	 box-sizing: border-box;
+}
+.c-Show-gifts {
+  margin: 7em auto;
+  max-width: 70%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+  flex-flow: column nowrap;
+}
+.gifts-wrapper {
+    position: relative;
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+	flex-flow: row wrap;
+}
+ article.card {
+	width: 32.33%;
+    height: 340px;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+    overflow: hidden;
+	margin-bottom: 1em;
+}
+ article.card .thumb {
+	 width: auto;
+	 height: 260px;
+	 background: url("/assets/images/gift-icon.png") no-repeat center;
+	 background-size: cover;
+	 border-radius: 3px;
+}
+ article.card .infos {
+	 width: auto;
+	 height: 350px;
+	 position: relative;
+	 padding: 14px 24px;
+	 background: #fff;
+	 transition: 0.4s 0.15s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+ article.card .infos .title {
+	 position: relative;
+	 margin: 10px 0;
+	 letter-spacing: 3px;
+	 color: #152536;
+	 font-family: 'Grotesque Black', sans-serif;
+	 font-size: 1rem;
+	 text-transform: uppercase;
+	 text-shadow: 0 0 0px #32577f;
+}
+ article.card .infos .flag {
+	 position: absolute;
+	 top: 50%;
+	 right: 0;
+	 transform: translateY(-50%);
+	 width: 35px;
+	 height: 23px;
+	 background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/397014/flag.png") no-repeat top right;
+	 background-size: 100% auto;
+	 display: inline-block;
+}
+ article.card .infos .date, article.card .infos .seats {
+	 margin-bottom: 10px;
+	 text-transform: uppercase;
+	 font-size: 0.85rem;
+	 color: rgba(21, 37, 54, .7);
+	 font-family: 'Grotesque', sans-serif;
+}
+ article.card .infos .seats {
+	 display: inline-block;
+	 margin-bottom: 24px;
+	 padding-bottom: 24px;
+	 border-bottom: 1px solid rgba(0, 0, 0, .2);
+	 opacity: 0;
+	 transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+ article.card .infos .txt {
+	 font-family: 'Merriweather', sans-serif;
+	 line-height: 2;
+	 font-size: 0.95rem;
+	 color: rgba(21, 37, 54, .7);
+	 opacity: 0;
+	 transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+ article.card .infos .details {
+	 position: absolute;
+	 left: 0;
+	 left: 0;
+	 bottom: 0;
+	 margin: 10px 0;
+	 padding: 20px 24px;
+	 letter-spacing: 1px;
+	 color: #4e958b;
+	 font-family: 'Grotesque Black', sans-serif;
+	 font-size: 0.9rem;
+	 text-transform: uppercase;
+	 cursor: pointer;
+	 opacity: 0;
+	 transition: 0.5s 0.25s cubic-bezier(0.17, 0.67, 0.5, 1.03);
+}
+ article.card:hover .infos {
+	 transform: translateY(-260px);
+}
+ article.card:hover .infos .seats, article.card:hover .infos .txt, article.card:hover .infos .details {
+	 opacity: 1;
+}
+@media screen and (max-width: 768px) {
+	article.card {
+		width: 49%;
+	}
+}
+@media screen and (max-width: 575px) {
+	article.card {
+		width: 100%;
+	}
+}
+ 
+</style>
+
+<style>
+    #snackbar {
+      visibility: hidden;
+      min-width: 250px;
+      margin-left: -125px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 2px;
+      padding: 16px;
+      position: fixed;
+      z-index: 1;
+      left: 50%;
+      bottom: 30px;
+      font-size: 17px;
+    }
+    
+    #snackbar.show {
+      visibility: visible;
+      -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+    
+    @-webkit-keyframes fadein {
+      from {bottom: 0; opacity: 0;} 
+      to {bottom: 30px; opacity: 1;}
+    }
+    
+    @keyframes fadein {
+      from {bottom: 0; opacity: 0;}
+      to {bottom: 30px; opacity: 1;}
+    }
+    
+    @-webkit-keyframes fadeout {
+      from {bottom: 30px; opacity: 1;} 
+      to {bottom: 0; opacity: 0;}
+    }
+    
+    @keyframes fadeout {
+      from {bottom: 30px; opacity: 1;}
+      to {bottom: 0; opacity: 0;}
+    }
+    </style>
+  </head>
+
+  <body v-cloak>
+    <section id="app" class="main">
+      <h1>Gift Registry</h1>
+      <div v-if="!showGifts" class="container">
+        <div class="sign-up-content">
+          <form novalidate @submit.prevent="registerGift" class="signup-form">
+            <h2 class="form-title">Register your gift</h2>
+
+            <div class="form-textbox">
+              <label for="name">Full name</label>
+              <input type="text" name="name" id="name" v-model="form.fullName">
+            </div>
+            <div class="form-textbox">
+              <label for="giftType">Gift Name</label>
+              <input type="text" name="giftType" id="giftType" v-model="form.giftName">
+            </div>
+            <div class="form-textbox">
+              <label for="url">Item Url</label>
+              <input type="text" name="url" id="url" v-model="form.giftUrl">
+            </div>
+            <div class="form-group">
+              <input type="checkbox" name="agree-term" id="agree-term" v-model="form.isAnonymous" class="agree-term">
+              <label for="agree-term" class="label-agree-term"><span><span></span></span>Register me as anonymous participant</label>
+            </div>
+            <div class="form-textbox">
+              <a href="#" class="term-service" @click.prevent="showGifts=!showGifts">Show All Registered Gifts</a><input type="submit" name="submit" id="submit" class="submit" value="Register my Gift">
+			</div>
+			<div v-if="!errors.isValid && isSubmitted" class="o-Form-errors">Please enter your Fullname and the Gift Name.</div>
+          </form>
+          <div id="snackbar">Gift Registered Successfully.</div>
+        </div>
+	  </div>
+	  
+	  <!-- Show all Gifts -->
+	  <div v-if="showGifts"  class="c-Show-gifts">
+        <a href="#" class="term-service float-top" @click.prevent="showGifts=!showGifts">Back To Gift Form</a>
+		  <div class="gifts-wrapper">
+			  
+				<article class="card" v-for="(gift, index) in allGifts" :key="gift.id">
+          <div class="thumb" v-if="gift.imageUrl" :style="{ backgroundImage: `url(${gift.imageUrl})` }"></div>
+          <div class="thumb" v-else style="background-size:100px;"></div>
+					<div class="infos">
+						<h2 class="title">{{gift.giftName}}
+						<h3 class="seats">{{gift.fullName}}</h3>
+						<p class="txt">{{gift.giftDescription}}</p>
+					</div>
+				</article>
+		  </div>
+	  </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+			form: {
+				fullName: '',
+				giftName: '',
+				giftUrl: '',
+				isAnonymous: false
+			},
+			showGifts: false,
+			isSubmitted: false,
+			errors: {
+				isValid: false,
+				fullName: {
+					isValid: false
+				},
+				giftName: {
+					isValid: false
+				}
+			},
+			isSuccess: false,
+			allGifts: []
+        },
+        created: function() {
+			this.$http.get('/api/getAllGiftRegistry').then(response => {
+				this.allGifts = response.body.data || [];
+				console.log(this.allGifts);
+			});
+        },
+        methods: {
+			registerGift: function () {
+				this.validate();
+				this.isSubmitted = true;
+				if(this.errors.isValid) {
+					this.$http.post('/api/getMetaItemsFromURL', this.form).then(response => {												
+						this.allGifts.push({
+							fullName: response.body.data && response.body.data.fullName ? response.body.data.fullName : '',
+							giftName:  response.body.data && response.body.data.giftName ? response.body.data.giftName : '',
+							imageUrl: response.body.data && response.body.data.imageUrl ? response.body.data.imageUrl : '',
+							giftDescription: response.body.data && response.body.data.giftDescription ? response.body.data.giftDescription : ''
+            });
+            this.resetForm();
+            this.isSuccess = true;
+            var x = document.getElementById("snackbar");
+            x.className = "show";
+            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+					}, response => {
+					// error callback
+					});
+				}				
+			},
+			resetForm: function () {
+				this.form.fullName = '';
+				this.form.giftType = '';
+				this.form.giftUrl = '';
+				this.form.isAnonymous = '';
+				this.isSubmitted = false;
+
+			},
+			validate: function () {
+				let inValid = false;
+				for(let item in this.errors) {
+					if(item != 'isValid') {
+						if(!this.form[item]) {
+							this.errors[item].isValid = false;
+							inValid = true;
+						} else if(this.form[item]) {
+							this.errors[item].isValid = true;							
+						}
+					}
+				}
+				this.errors.isValid = !inValid;
+			}
+        }
+      });
+
+    </script>
+  </body>
+
+</html>

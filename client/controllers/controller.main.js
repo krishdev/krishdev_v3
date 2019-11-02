@@ -1,12 +1,19 @@
 var Account = require("../models/model.account");
 var Babyshower = require("../models/model.babyshower");
 var FriendsFamily = require("../models/model.friendsFamily");
+var GiftRegistry = require("../models/model.giftRegistry");
 // var Dhk = require("../models/model.dhk");
 
 //var Universities = require("../models/model.univ");
 var passport = require("passport");
 var nodemailer = require("nodemailer");
 var xoauth2 = require('xoauth2');
+var request = require('request'),
+	cheerio = require('cheerio'),
+	path = require('path'),
+	bodyParser = require('body-parser'),
+	env  = process.env;
+var puppeteer = require('puppeteer');
 
 const fs = require('fs');
 const readline = require('readline');
@@ -296,6 +303,139 @@ var getGalleryCKE = function (req, res) {
 
 };
 
+/**
+ * GET meta tags from urls
+ */
+var getMetaItemsFromURL = function (req, res) {
+	/**
+	 * 	fullName
+		giftName
+		giftUrl
+		isAnonymous
+	 */
+	//make a new request to the URL provided in the HTTP POST request
+	
+	let form = {
+		fullName: req.body.fullName,
+		giftName: req.body.giftName,
+		giftUrl: req.body.giftUrl,
+		isAnonymous: req.body.isAnonymous,
+		giftDescription: '',
+		giftTitle: '',
+		imageUrl: '',
+	};
+	if(form.giftUrl) {
+		puppeteer
+		.launch()
+		.then(function(browser) {
+			return browser.newPage();
+		})
+		.then(function(page) {
+			return page.goto(req.body.giftUrl).then(function() {
+			return page.content();
+			});
+		})
+		.then(function(html) {
+			//create the cheerio object
+			resObj = {},
+				//set a reference to the document that came back
+				$ = cheerio.load(html),
+				//create a reference to the meta elements
+				$title = $('head title').text(),
+				$desc = $('meta[name="description"]').attr('content'),
+				$kwd = $('meta[name="keywords"]').attr('content'),
+				$ogTitle = $('meta[property="og:title"]').attr('content'),
+				$ogImage = $('meta[property="og:image"]').attr('content'),
+				$ogkeywords = $('meta[property="og:keywords"]').attr('content'),
+				$images = $('#main-image-container img');
+
+			if ($title) {
+				resObj.title = $title;
+			}
+
+			if ($desc) {
+				resObj.description = $desc;
+			}
+
+			if ($kwd) {
+				resObj.keywords = $kwd;
+			}
+
+			if ($ogImage && $ogImage.length){
+				resObj.ogImage = $ogImage;
+			}
+
+			if ($ogTitle && $ogTitle.length){
+				resObj.ogTitle = $ogTitle;
+			}
+
+			if ($ogkeywords && $ogkeywords.length){
+				resObj.ogkeywords = $ogkeywords;
+			}
+
+			if ($images && $images.length){
+				resObj.images = $($images[0]).attr('src');
+
+				// for (var i = 0; i < $images.length; i++) {
+				//     resObj.images.push($($images[i]).attr('src'));
+				// }
+			}
+
+			//send the response
+			form.giftTitle = resObj.title;
+			form.giftDescription = resObj.description;
+			form.imageUrl = resObj.images;
+			
+			var gifts = new GiftRegistry(form);
+			gifts.save(function (err, data) {
+				if(err)
+					return res.send(err);
+				data.fullName = data.isAnonymous != "false" ? 'One of the participants' : data.fullName;
+				return res.status(200).json({
+					data: data
+				});
+			});
+		})
+		.catch(function(err) {
+			console.log(err);
+			return res.send(JSON.stringify({error: 'There was an error of some kind'}));
+		});
+	} else {
+		var gifts = new GiftRegistry(form);
+		gifts.save(function (err, data) {
+			if(err)
+				return res.send(err);
+			data.fullName = data.isAnonymous != "false" ? 'One of the participants' : data.fullName;
+			return res.status(200).json({
+				data: data
+			});
+		});
+	}   
+}
+
+//Get all gifts();
+var getAllGiftRegistry = function (req, res) {
+	GiftRegistry.find(function (err, data) {
+		if(err)
+			return res.send(err);
+		let allData = data;
+		allData.forEach(item => {			
+			if(item.isAnonymous != "false") {
+				item.fullName = 'One of the participants'
+			}
+		})
+		return res.status(200).json({
+			data: allData
+		});
+	})
+};
+
+
+
+/**
+ * First Birthday
+ */
+
 
 /**
 * DHK 
@@ -382,6 +522,8 @@ exports.updateBabyshower = updateBabyshower;
 exports.friendsFamilyGetAllData = friendsFamilyGetAllData;
 exports.friendsFamilyInsertContent = friendsFamilyInsertContent;
 exports.friendsFamilyUpdateContent = friendsFamilyUpdateContent;
+exports.getMetaItemsFromURL = getMetaItemsFromURL;
+exports.getAllGiftRegistry = getAllGiftRegistry;
 
 // exports.getDhkAllKitchens = getDhkAllKitchens;
 // exports.insertDhkKitchen = insertDhkKitchen;

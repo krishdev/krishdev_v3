@@ -20,4 +20,19 @@ exports.renderAdminBabyshowerPage = function (req, res) {
 		title: "Krishna and Sabha's Baby Shower"
 	}))
 }
+exports.renderKailashFirstBirthdayPage = function (req, res) {
+	res.render("kail-first-birthday", ({
+		title: "Kailash's 1st Birthday - Krishna and Sabha"
+	}))
+}
+exports.renderAdminFirstBirthdayPage = function (req, res) {
+	res.render("admin-first-birthday", ({
+		title: "Admin Kail 1st birthday"
+	}))
+}
+exports.renderGiftRegistryPage = function (req, res) {
+	res.render("baby-gift-registry", ({
+		title: "Gift Registry - Kailash First Birthday"
+	}))
+}
 console.log("index - ended");

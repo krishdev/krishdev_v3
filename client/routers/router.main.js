@@ -6,6 +6,10 @@ module.exports = function (app) {
 	app.get("/wedding", index.renderMarriagePage);
 	app.get("/babyShower/", index.renderbabyshowerPage);
 	app.get("/adminBabyShower/", index.renderAdminBabyshowerPage);
+	app.get("/kail-first-birthday/", index.renderKailashFirstBirthdayPage);
+	app.get("/admin-first-birthday/", index.renderAdminFirstBirthdayPage);
+	app.get("/baby-gift-registry/", index.renderGiftRegistryPage);
+
 	//app.get("/api/register", ctrl.registerGetUser);
 	app.post("/api/register", ctrl.registerUser);
 	app.post("/api/login", ctrl.loginUser);
@@ -26,7 +30,8 @@ module.exports = function (app) {
 	app.get("/api/friendsFamilyGetAllData", ctrl.friendsFamilyGetAllData);
 	app.post("/api/friendsFamilyInsertContent", ctrl.friendsFamilyInsertContent);
 	app.post("/api/friendsFamilyUpdateContent", ctrl.friendsFamilyUpdateContent);
-
+	app.post("/api/getMetaItemsFromURL", ctrl.getMetaItemsFromURL);
+	app.get("/api/getAllGiftRegistry", ctrl.getAllGiftRegistry);
 
 	// app.get("/api/dhk/getAllKitchens", ctrl.getDhkAllKitchens);
 	// app.post("/api/dhk/insertDhkKitchen", ctrl.insertDhkKitchen);
