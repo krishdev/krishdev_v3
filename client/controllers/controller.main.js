@@ -373,13 +373,16 @@ var getMetaItemsFromURL = function (req, res) {
 				resObj.ogkeywords = $ogkeywords;
 			}
 
-			if ($images && $images.length){
-				resObj.images = $($images[0]).attr('src');
-
-				// for (var i = 0; i < $images.length; i++) {
-				//     resObj.images.push($($images[i]).attr('src'));
-				// }
+			if(resObj.ogImage) {
+				resObj.images = resObj.ogImage;
+			} else {
+				if ($images && $images.length){
+					resObj.images = $($images[0]).attr('src');					
+				}
 			}
+
+
+			
 
 			//send the response
 			form.giftTitle = resObj.title;
@@ -397,8 +400,19 @@ var getMetaItemsFromURL = function (req, res) {
 			});
 		})
 		.catch(function(err) {
+			console.log("------------------ Scrapping a web page ------------------");
+			console.log('URL: ' + form.giftUrl);
 			console.log(err);
-			return res.send(JSON.stringify({error: 'There was an error of some kind'}));
+			var gifts = new GiftRegistry(form);
+			gifts.save(function (errr, data) {
+				if(errr)
+					return res.send(errr);
+				data.fullName = data.isAnonymous != "false" ? 'One of the participants' : data.fullName;
+				return res.status(200).json({
+					data: data
+				});
+			});
+			//return res.send(JSON.stringify({error: 'There was an error of some kind'}));
 		});
 	} else {
 		var gifts = new GiftRegistry(form);
