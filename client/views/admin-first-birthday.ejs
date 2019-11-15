@@ -189,6 +189,7 @@
 					updateEmail: function (recipient){
 						var data;
 						var _this = this;
+						if(!recipient.id) recipient.id = recipient.email;
 						data = {
 								fromEmailId: "krishnakumar4315@gmail.com",
 								toEmailId: recipient.email,
