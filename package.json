@@ -38,7 +38,7 @@
     "cheerio": "^1.0.0-rc.3",
     "env": "0.0.2",
     "flickrapi": "^0.6.0",
-    "googleapis": "^27.0.0",
+    "googleapis": "^59.0.0",
     "path": "^0.12.7",
     "puppeteer": "^2.0.0",
     "request": "^2.88.0",
